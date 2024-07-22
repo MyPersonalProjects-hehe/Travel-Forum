@@ -4,3 +4,9 @@
   flex-direction: column;
   gap: 2cm;
 }
+
+.login-register {
+  display: flex;
+  flex-direction: row;
+  gap: 3cm;
+}
