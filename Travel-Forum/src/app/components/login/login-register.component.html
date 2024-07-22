@@ -1,14 +1,11 @@
 <div class="login">
   <div class="login-content">
     <div class="login-text">
-      <h1>Register now!</h1>
-      <p class="py-6">
-        Join our community by sharing your travel experience <br />
-        or connect with people!
-      </p>
+      <h1>{{ heading }}</h1>
+      <p class="py-6">Your travel buddies are waiting for you!</p>
     </div>
     <div class="login-body">
-      <form (ngSubmit)="register()" class="login-input">
+      <form (ngSubmit)="login()" class="login-input">
         <div class="form-control">
           <label class="label">
             <span class="label-text">Email</span>
@@ -37,7 +34,7 @@
           <!-- <button (click)="register()" class="btn">Register</button> -->
         </div>
         <div class="form-control mt-6">
-          <button type="submit" class="btn">Register</button>
+          <button type="submit" class="btn">{{ buttonText }}</button>
         </div>
       </form>
     </div>

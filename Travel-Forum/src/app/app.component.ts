@@ -1,13 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input, input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PopUp } from './components/login/pop-up.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './register/register.component';
+import { LoginRegisterComponent } from './components/login/login-register.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, PopUp, LoginComponent, RegisterComponent],
+  imports: [RouterOutlet, PopUp, LoginRegisterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
