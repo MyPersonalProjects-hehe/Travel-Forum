@@ -1,33 +1,58 @@
-// src/app/services/auth.service.ts
 import { Injectable } from '@angular/core';
 import {
   Auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  UserCredential,
 } from '@angular/fire/auth';
+import { Database } from '@angular/fire/database';
 import { Router } from '@angular/router';
+import { ref, set } from 'firebase/database';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private fireauth: Auth, private router: Router) {}
+  userInfo: any = '';
+  constructor(
+    private fireauth: Auth,
+    private router: Router,
+    private db: Database
+  ) {}
 
-  login(email: string, password: string) {
-    signInWithEmailAndPassword(this.fireauth, email, password)
-      .then(() => {
-        alert('Successfully logging');
-      })
-      .catch((err) => alert(err));
+  async login(email: string, password: string) {
+    if (email && password) {
+      await signInWithEmailAndPassword(this.fireauth, email, password)
+        .then(() => {
+          alert('Successfully logging');
+        })
+        .catch((err) => alert(err));
+    }
   }
 
-  register(email: string, password: string) {
-    createUserWithEmailAndPassword(this.fireauth, email, password)
-      .then((userCredential) => {
-        console.log(userCredential);
+  async register(email: string, password: string) {
+    try {
+      const userCredential = await createUserWithEmailAndPassword(
+        this.fireauth,
+        email,
+        password
+      );
+      alert('Successfully registered');
+      this.userInfo = userCredential.user;
+      return userCredential.user;
+    } catch (err) {
+      alert(err);
+      throw err;
+    }
+  }
 
-        alert('Successfully register');
-      })
-      .catch((err) => alert(err));
+  async createUser(username: string) {
+    const userRef = ref(this.db, `users/${username}`);
+
+    await set(userRef, {
+      username: username,
+      email: this.userInfo.email,
+      uid: this.userInfo.uid,
+    });
   }
 }

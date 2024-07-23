@@ -19,6 +19,21 @@
             name="email"
           />
         </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Username</span>
+          </label>
+          <input
+            type="username"
+            placeholder="username"
+            class="input"
+            required
+            [(ngModel)]="username"
+            name="username"
+          />
+        </div>
+
         <div class="form-control">
           <label class="label">
             <span class="label-text">Password</span>
@@ -34,6 +49,9 @@
         </div>
         <div class="form-buttons">
           <button type="submit" class="btn">Register</button>
+          <button (click)="onLoginClick()" type="button" class="btn">
+            Login
+          </button>
         </div>
       </form>
     </div>

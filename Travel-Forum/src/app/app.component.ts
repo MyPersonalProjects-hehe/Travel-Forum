@@ -1,5 +1,5 @@
 import { Component, Input, input } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Route, Router, RouterOutlet } from '@angular/router';
 import { PopUp } from './components/login/pop-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -16,8 +16,10 @@ export class AppComponent {
   title = 'Travel-Forum';
   activeComponent = true;
 
+  constructor(private router: Router) {}
   onButtonClicked(value: any) {
-    console.log(value);
-    this.activeComponent = !this.activeComponent;
+    console.log(value.value);
+    this.activeComponent = false;
+    this.router.navigate(['register']);
   }
 }
