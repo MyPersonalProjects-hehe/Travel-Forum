@@ -8,6 +8,8 @@ import { getDatabase, provideDatabase } from '@angular/fire/database';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getStorage, provideStorage } from '@angular/fire/storage';
 import { environment } from './environments/environment';
+import { UserService } from './services/user.service';
+import { AuthService } from './services/auth.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -17,6 +19,8 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()), // Add if using Firestore
-    provideStorage(() => getStorage()), // Add if using Firebase Storage
+    provideStorage(() => getStorage()), // Add if using Firebase Storage,
+    UserService,
+    AuthService,
   ],
 };
