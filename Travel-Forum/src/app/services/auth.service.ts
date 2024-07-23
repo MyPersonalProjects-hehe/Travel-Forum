@@ -3,10 +3,10 @@ import {
   Auth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  UserCredential,
 } from '@angular/fire/auth';
 import { Database } from '@angular/fire/database';
 import { Router } from '@angular/router';
+import { signOut } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 
 @Injectable({
@@ -21,12 +21,16 @@ export class AuthService {
   ) {}
 
   async login(email: string, password: string) {
-    if (email && password) {
-      await signInWithEmailAndPassword(this.fireauth, email, password)
-        .then(() => {
-          alert('Successfully logging');
-        })
-        .catch((err) => alert(err));
+    try {
+      const singedUser = await signInWithEmailAndPassword(
+        this.fireauth,
+        email,
+        password
+      );
+      alert('Successfully logging');
+      return singedUser.user;
+    } catch (error) {
+      throw error;
     }
   }
 
@@ -47,12 +51,23 @@ export class AuthService {
   }
 
   async createUser(username: string) {
-    const userRef = ref(this.db, `users/${username}`);
+    try {
+      const userRef = ref(this.db, `users/${username}`);
+      await set(userRef, {
+        username: username,
+        email: this.userInfo.email,
+        uid: this.userInfo.uid,
+      });
+    } catch (error) {
+      throw error;
+    }
+  }
 
-    await set(userRef, {
-      username: username,
-      email: this.userInfo.email,
-      uid: this.userInfo.uid,
-    });
+  async logout() {
+    try {
+      await signOut(this.fireauth);
+    } catch (error) {
+      throw error;
+    }
   }
 }
