@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserService } from './services/user.service';
 import { User } from 'firebase/auth';
 import { AuthService } from './services/auth.service';
+import { PostsComponent } from './components/posts/posts.component';
 
 @Component({
   selector: 'app-root',
@@ -19,15 +20,15 @@ import { AuthService } from './services/auth.service';
     RegisterComponent,
     NgIf,
     HomeComponent,
+    PostsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
   title = 'Travel-Forum';
-  activeComponent = true;
+  activeComponent: any = 'Login';
   user: User | null = null;
-  isLoggedIn: boolean = false;
 
   constructor(
     private router: Router,
@@ -36,20 +37,19 @@ export class AppComponent implements OnInit {
   ) {}
 
   onButtonClicked(value: any) {
-    console.log(value.value);
-    this.activeComponent = false;
+    this.activeComponent = value;
+    console.log(this.activeComponent);
   }
 
   ngOnInit() {
-    console.log(this.isLoggedIn);
-
     this.userService.user$.subscribe((user) => {
       this.user = user;
-      this.isLoggedIn = !!user;
     });
   }
 
-  logout() {
-    this.auth.logout();
+  async logout() {
+    console.log(this.user);
+
+    await this.auth.logout();
   }
 }
