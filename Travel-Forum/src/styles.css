@@ -21,7 +21,6 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #e5e7eb;
 }
 
 /* Container for the login content */
@@ -87,4 +86,10 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+
+.main-body {
+  background-image: url(https://i.pinimg.com/564x/e6/45/48/e645485329f33335c53c926b2654e800.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
