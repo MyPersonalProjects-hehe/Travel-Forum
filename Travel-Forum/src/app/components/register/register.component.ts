@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserCredential } from 'firebase/auth';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'register',
@@ -16,18 +16,19 @@ export class RegisterComponent {
   password: string = '';
   username: string = '';
 
-  constructor(private auth: AuthService, private router: Router) {}
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private userService: UserService
+  ) {}
 
   async register() {
     const user = await this.auth.register(this.email, this.password);
     await this.auth.createUser(this.username);
+    this.userService.setUser(user);
     this.email = '';
     this.password = '';
     this.username = '';
-    console.log(user);
-  }
-
-  onLoginClick() {
-    this.router.navigate(['login']);
+    console.log(this.userService.getUser());
   }
 }

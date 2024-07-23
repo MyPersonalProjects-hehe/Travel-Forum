@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'login',
@@ -14,10 +15,17 @@ export class LoginComponent {
   password: string = '';
   @Output() buttonValue = new EventEmitter<String>();
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) {}
 
-  login() {
-    this.authService.login(this.email, this.password);
+  async login() {
+    const user = await this.authService.login(this.email, this.password);
+    console.log(user);
+
+    this.userService.setUser(user);
+
     this.email = '';
     this.password = '';
   }
