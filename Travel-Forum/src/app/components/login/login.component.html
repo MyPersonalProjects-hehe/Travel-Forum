@@ -1,0 +1,50 @@
+<div class="login">
+  <div class="login-content">
+    <div class="login-text">
+      <h1>Login now!</h1>
+      <p class="py-6">Your travel buddies are waiting for you!</p>
+    </div>
+    <div class="login-body">
+      <form (ngSubmit)="login()" class="login-input">
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Email</span>
+          </label>
+          <input
+            type="email"
+            placeholder="email"
+            class="input"
+            required
+            [(ngModel)]="email"
+            name="email"
+          />
+        </div>
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Password</span>
+          </label>
+          <input
+            type="password"
+            placeholder="password"
+            class="input"
+            required
+            [(ngModel)]="password"
+            name="password"
+          />
+        </div>
+        <div class="form-buttons">
+          <button (click)="takeButtonValue('Login')" type="submit" class="btn">
+            Login
+          </button>
+          <button
+            (click)="takeButtonValue('Register')"
+            type="button"
+            class="btn"
+          >
+            Register
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

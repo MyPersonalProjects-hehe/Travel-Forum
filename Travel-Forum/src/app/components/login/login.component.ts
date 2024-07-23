@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 
@@ -6,14 +6,13 @@ import { FormsModule } from '@angular/forms';
   selector: 'login',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './login-register.component.html',
-  styleUrl: './login-register.component.css',
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.css',
 })
-export class LoginRegisterComponent {
+export class LoginComponent {
   email: string = '';
   password: string = '';
-  @Input() heading: string = 'Login now!';
-  @Input() buttonText: string = 'Login';
+  @Output() buttonValue = new EventEmitter<String>();
 
   constructor(private authService: AuthService) {}
 
@@ -21,5 +20,10 @@ export class LoginRegisterComponent {
     this.authService.login(this.email, this.password);
     this.email = '';
     this.password = '';
+  }
+
+  takeButtonValue(value: string) {
+    this.buttonValue.emit(value);
+    console.log(this.buttonValue);
   }
 }

@@ -2,8 +2,14 @@
   <div class="content">
     <pop-up></pop-up>
     <div class="login-register">
-      <login heading="Login" buttonText="Login"></login>
-      <login heading="Register" buttonText="Register"></login>
+      <login
+        *ngIf="activeComponent === true"
+        (buttonValue)="onButtonClicked($event)"
+      ></login>
+      <register
+        *ngIf="activeComponent === false"
+        (buttonValue)="onButtonClicked($event)"
+      ></register>
     </div>
   </div>
 </main>
