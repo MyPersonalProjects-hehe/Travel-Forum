@@ -2,14 +2,9 @@
   <div class="content">
     <pop-up></pop-up>
     <div class="login-register">
-      <login
-        *ngIf="activeComponent === false"
-        (buttonValue)="onButtonClicked($event)"
-      ></login>
-      <register
-        *ngIf="activeComponent === true"
-        (buttonValue)="onButtonClicked($event)"
-      ></register>
+      <login *ngIf="!isLoggedIn"></login>
+      <register *ngIf="!isLoggedIn"></register>
+      <home *ngIf="isLoggedIn"></home>
     </div>
   </div>
 </main>
