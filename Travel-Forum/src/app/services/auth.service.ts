@@ -28,6 +28,7 @@ export class AuthService {
         password
       );
       alert('Successfully logging');
+      this.router.navigate(['/home']);
       return singedUser.user;
     } catch (error) {
       throw error;
@@ -42,6 +43,7 @@ export class AuthService {
         password
       );
       alert('Successfully registered');
+      this.router.navigate(['/home']);
       this.userInfo = userCredential.user;
       return userCredential.user;
     } catch (err) {
@@ -66,6 +68,8 @@ export class AuthService {
   async logout() {
     try {
       await signOut(this.fireauth);
+      this.router.navigate(['/login']);
+      console.log(this.userInfo);
     } catch (error) {
       throw error;
     }
