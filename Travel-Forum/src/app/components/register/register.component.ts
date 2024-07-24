@@ -25,10 +25,9 @@ export class RegisterComponent {
   async register() {
     const user = await this.auth.register(this.email, this.password);
     await this.auth.createUser(this.username);
-    this.userService.setUser(user);
+
     this.email = '';
     this.password = '';
     this.username = '';
-    console.log(this.userService.getUser());
   }
 }
