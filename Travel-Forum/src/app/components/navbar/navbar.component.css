@@ -1,0 +1,55 @@
+/* Styling for the navigation bar */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  flex: 1;
+}
+
+.nav-link {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Main content styling */
+.main {
+  padding: 20px;
+}
+
+.content {
+  margin-top: 20px;
+}
+
+.login-register {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #008cba;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #005f5f;
+}
