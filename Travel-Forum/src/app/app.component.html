@@ -1,6 +1,7 @@
 <main class="main">
-  <h1>hey user {{ user?.email }}</h1>
-  <button (click)="click()">user</button>
+  <app-navbar></app-navbar>
+  <h1>Hey user {{ user?.email }}</h1>
+  <button (click)="click()">User</button>
   <div class="content">
     <pop-up *ngIf="!user"></pop-up>
 
@@ -20,4 +21,4 @@
   </div>
 </main>
 
-<router-outlet />
+<router-outlet></router-outlet>

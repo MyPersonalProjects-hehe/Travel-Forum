@@ -9,6 +9,7 @@ import { UserService } from './services/user.service';
 import { User } from 'firebase/auth';
 import { AuthService } from './services/auth.service';
 import { PostsComponent } from './components/posts/posts.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ import { PostsComponent } from './components/posts/posts.component';
     NgIf,
     HomeComponent,
     PostsComponent,
+    NavbarComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
