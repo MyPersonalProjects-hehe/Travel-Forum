@@ -1,4 +1,6 @@
 <main class="main">
+  <h1>hey user {{ user?.email }}</h1>
+  <button (click)="click()">user</button>
   <div class="content">
     <pop-up *ngIf="!user"></pop-up>
 
