@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
   activeComponent: any = 'Login';
   user: User | null = null;
 
-  constructor(private userService: UserService, private auth: AuthService) {}
+  constructor(private auth: AuthService) {}
 
   onButtonClicked(value: any) {
     this.activeComponent = value;
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.user$?.subscribe((user) => {
+    this.auth.user$?.subscribe((user) => {
       this.user = user;
     });
     console.log(this.user);

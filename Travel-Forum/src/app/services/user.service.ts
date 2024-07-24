@@ -6,10 +6,4 @@ import { AuthService } from './auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
-  user$: Observable<User | null> | undefined;
-
-  constructor(private authService: AuthService) {
-    this.user$ = this.authService.user$;
-  }
-}
+export class UserService {}
