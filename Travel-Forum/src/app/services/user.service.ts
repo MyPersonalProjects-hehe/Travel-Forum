@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import { User } from 'firebase/auth';
-import { BehaviorSubject } from 'rxjs';
+import { Observable } from 'rxjs';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  userSubject = new BehaviorSubject<User | null>(null);
-  user$ = this.userSubject.asObservable();
+  user$: Observable<User | null> | undefined;
 
-  setUser(user: User | null) {
-    this.userSubject.next(user);
-  }
-
-  getUser() {
-    return this.userSubject.value;
+  constructor(private authService: AuthService) {
+    this.user$ = this.authService.user$;
   }
 }

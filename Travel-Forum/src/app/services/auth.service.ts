@@ -6,19 +6,26 @@ import {
 } from '@angular/fire/auth';
 import { Database } from '@angular/fire/database';
 import { Router } from '@angular/router';
-import { signOut } from 'firebase/auth';
+import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   userInfo: any = '';
+  user$: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+
   constructor(
     private fireauth: Auth,
     private router: Router,
     private db: Database
-  ) {}
+  ) {
+    onAuthStateChanged(this.fireauth, (user) => {
+      this.user$.next(user);
+    });
+  }
 
   async login(email: string, password: string) {
     try {
@@ -29,6 +36,7 @@ export class AuthService {
       );
       alert('Successfully logging');
       this.router.navigate(['/home']);
+
       return singedUser.user;
     } catch (error) {
       throw error;
@@ -69,7 +77,6 @@ export class AuthService {
     try {
       await signOut(this.fireauth);
       this.router.navigate(['/login']);
-      console.log(this.userInfo);
     } catch (error) {
       throw error;
     }
