@@ -30,11 +30,7 @@ export class AppComponent implements OnInit {
   activeComponent: any = 'Login';
   user: User | null = null;
 
-  constructor(
-    private router: Router,
-    private userService: UserService,
-    private auth: AuthService
-  ) {}
+  constructor(private userService: UserService, private auth: AuthService) {}
 
   onButtonClicked(value: any) {
     this.activeComponent = value;
@@ -42,14 +38,17 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.userService.user$.subscribe((user) => {
+    this.userService.user$?.subscribe((user) => {
       this.user = user;
     });
+    console.log(this.user);
   }
 
   async logout() {
-    console.log(this.user);
-
     await this.auth.logout();
+  }
+
+  click() {
+    console.log(this.user);
   }
 }
