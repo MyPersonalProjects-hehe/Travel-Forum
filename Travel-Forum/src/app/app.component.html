@@ -1,5 +1,5 @@
 <main class="main">
-  <app-navbar></app-navbar>
+  <app-navbar *ngIf="user"></app-navbar>
   <h1>Hey user {{ user?.email }}</h1>
   <button (click)="click()">User</button>
   <div class="content">
@@ -16,8 +16,6 @@
         *ngIf="!user && activeComponent === 'Register'"
       ></register>
     </div>
-
-    <button *ngIf="user" class="btn" (click)="logout()">Logout</button>
   </div>
 </main>
 

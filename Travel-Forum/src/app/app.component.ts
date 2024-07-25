@@ -46,11 +46,7 @@ export class AppComponent implements OnInit {
     console.log(this.user);
   }
 
-  async logout() {
-    await this.auth.logout();
-  }
-
   click() {
-    console.log(this.user);
+    console.log(this.auth.isLoggedIn(), 'hereS');
   }
 }
