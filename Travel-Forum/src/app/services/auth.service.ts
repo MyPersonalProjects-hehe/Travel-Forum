@@ -16,6 +16,7 @@ import { BehaviorSubject } from 'rxjs';
 export class AuthService {
   userInfo: any = '';
   user$: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+  userData: any = null;
 
   constructor(
     private fireauth: Auth,
@@ -80,5 +81,10 @@ export class AuthService {
     } catch (error) {
       throw error;
     }
+  }
+
+  isLoggedIn() {
+    this.user$.subscribe((user) => (this.userData = user));
+    return this.userData;
   }
 }
