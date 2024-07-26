@@ -1,17 +1,19 @@
 <nav class="navbar">
+  <div class="flex-1">
+    <a class="navbar-brand">MyApp</a>
+  </div>
   <ul class="nav-list">
     <li class="nav-item">
       <a (click)="toggleHome()" class="nav-link">Home</a>
     </li>
-
+    <li class="nav-item">
+      <a (click)="toggleCreatePosts()" class="nav-link">Create Post</a>
+    </li>
     <li class="nav-item">
       <a routerLink="/contact" class="nav-link">Contact</a>
     </li>
     <li class="nav-item" *ngIf="!user">
       <a routerLink="/login" class="nav-link">Login</a>
-    </li>
-    <li class="nav-item" *ngIf="!user">
-      <a routerLink="/register" class="nav-link">Register</a>
     </li>
     <li class="nav-item" *ngIf="user">
       <a (click)="logout()" class="nav-link">Logout</a>

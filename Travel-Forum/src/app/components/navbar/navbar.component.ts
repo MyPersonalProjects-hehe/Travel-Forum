@@ -26,4 +26,8 @@ export class NavbarComponent implements OnInit {
   toggleHome() {
     this.route.navigate(['/home']);
   }
+
+  toggleCreatePosts() {
+    this.route.navigate(['/createPost']);
+  }
 }
