@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ref, set } from 'firebase/database';
+import { push, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 
 @Injectable({
@@ -11,7 +11,7 @@ export class UserService {
   async uploadPost(userUid: string, post: object) {
     try {
       const dataRef = ref(this.db, `posts/${userUid}`);
-      await set(dataRef, post);
+      await push(dataRef, post);
     } catch (error) {
       throw error;
     }
