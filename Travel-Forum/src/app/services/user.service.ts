@@ -1,9 +1,19 @@
 import { Injectable } from '@angular/core';
-import { User } from 'firebase/auth';
-import { Observable } from 'rxjs';
-import { AuthService } from './auth.service';
+import { ref, set } from 'firebase/database';
+import { Database } from '@angular/fire/database';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {}
+export class UserService {
+  constructor(private db: Database) {}
+
+  async uploadPost(userUid: string, post: object) {
+    try {
+      const dataRef = ref(this.db, `posts/${userUid}`);
+      await set(dataRef, post);
+    } catch (error) {
+      throw error;
+    }
+  }
+}
