@@ -68,6 +68,9 @@ export class AuthService {
         username: username,
         email: this.userInfo.email,
         uid: this.userInfo.uid,
+        myPosts: {
+          uid: '',
+        },
       });
     } catch (error) {
       throw error;
