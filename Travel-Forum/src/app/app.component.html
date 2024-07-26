@@ -1,7 +1,7 @@
 <main class="main">
   <app-navbar *ngIf="user"></app-navbar>
-  <h1>Hey user {{ user?.email }}</h1>
-  <button (click)="click()">User</button>
+  <h1 *ngIf="user">Hey user {{ user.email }}</h1>
+
   <div class="content">
     <pop-up *ngIf="!user"></pop-up>
 
