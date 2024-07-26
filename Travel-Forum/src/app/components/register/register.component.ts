@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'register',
@@ -16,14 +14,10 @@ export class RegisterComponent {
   password: string = '';
   username: string = '';
 
-  constructor(
-    private auth: AuthService,
-    private router: Router,
-    private userService: UserService
-  ) {}
+  constructor(private auth: AuthService) {}
 
   async register() {
-    const user = await this.auth.register(this.email, this.password);
+    await this.auth.register(this.email, this.password);
     await this.auth.createUser(this.username);
 
     this.email = '';
