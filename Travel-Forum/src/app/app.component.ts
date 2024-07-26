@@ -5,10 +5,10 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NgIf } from '@angular/common';
 import { HomeComponent } from './components/home/home.component';
-import { UserService } from './services/user.service';
+
 import { User } from 'firebase/auth';
 import { AuthService } from './services/auth.service';
-import { PostsComponent } from './components/posts/posts.component';
+
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 @Component({
@@ -21,7 +21,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RegisterComponent,
     NgIf,
     HomeComponent,
-    PostsComponent,
+
     NavbarComponent,
   ],
   templateUrl: './app.component.html',
