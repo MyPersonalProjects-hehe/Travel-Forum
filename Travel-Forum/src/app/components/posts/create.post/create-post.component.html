@@ -8,7 +8,7 @@
       </p>
     </div>
     <div class="form-body">
-      <form class="form-input">
+      <form (ngSubmit)="submitPost()" class="form-input">
         <div class="form-control">
           <label class="label">
             <span class="label-text">Title</span>
@@ -19,6 +19,21 @@
             class="input"
             required
             name="title"
+            [(ngModel)]="post.title"
+          />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Short Description</span>
+          </label>
+          <input
+            type="text"
+            placeholder="for example did you stay in a hotel or airbnb"
+            class="input"
+            required
+            name="short description"
+            [(ngModel)]="post.shortDescription"
           />
         </div>
 
@@ -28,19 +43,14 @@
           </label>
           <input
             type="text"
-            placeholder="Share a short story how your journey was"
+            placeholder="Share your journey "
             class="input"
             required
             name="description"
+            [(ngModel)]="post.description"
           />
         </div>
 
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Image</span>
-          </label>
-          <input type="file" class="input" required name="image" />
-        </div>
         <div class="form-buttons">
           <button type="submit" class="btn">Upload post</button>
         </div>
