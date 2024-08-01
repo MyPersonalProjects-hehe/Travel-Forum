@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { UserService } from '../../services/user.service';
 import { NgFor, NgIf } from '@angular/common';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
@@ -15,11 +14,7 @@ import { Database } from '@angular/fire/database';
 export class HomeComponent implements OnInit {
   currentUser: any = null;
   posts$: any = null;
-  constructor(
-    private userService: UserService,
-    private auth: AuthService,
-    private db: Database
-  ) {}
+  constructor(private auth: AuthService, private db: Database) {}
 
   ngOnInit(): void {
     this.auth.user$.subscribe((user) => (this.currentUser = user));
