@@ -27,12 +27,12 @@ export class HomeComponent implements OnInit {
 
     onValue(userRef, (snapshot) => {
       const data = snapshot.val();
-
-      this.posts$ = Object.entries(data).map(([id, post]) => ({
-        id,
-        post,
-      }));
-      console.log('User data updated:', this.posts$);
+      if (data) {
+        this.posts$ = Object.entries(data).map(([id, post]) => ({
+          id,
+          post,
+        }));
+      }
     });
   }
 }
