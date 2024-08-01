@@ -8,16 +8,18 @@ import {
   RouterLinkActive,
   RouterOutlet,
 } from '@angular/router';
+import { AvatarComponent } from '../avatar/avatar.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgIf, RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [NgIf, RouterOutlet, RouterLink, RouterLinkActive, AvatarComponent],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent implements OnInit {
   user: User | null = null;
+
   constructor(private auth: AuthService, private route: Router) {}
 
   ngOnInit(): void {
@@ -25,7 +27,6 @@ export class NavbarComponent implements OnInit {
   }
 
   async logout() {
-    return await this.auth.logout();
-    console.log(this.user);
+    await this.auth.logout();
   }
 }
