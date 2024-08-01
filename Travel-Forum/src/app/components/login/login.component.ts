@@ -29,6 +29,5 @@ export class LoginComponent {
 
   takeButtonValue(value: string) {
     this.buttonValue.emit(value);
-    console.log(this.buttonValue);
   }
 }

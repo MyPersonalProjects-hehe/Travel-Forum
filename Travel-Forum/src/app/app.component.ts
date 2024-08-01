@@ -36,17 +36,11 @@ export class AppComponent implements OnInit {
 
   onButtonClicked(value: any) {
     this.activeComponent = value;
-    console.log(this.activeComponent);
   }
 
   ngOnInit() {
     this.auth.user$?.subscribe((user) => {
       this.user = user;
     });
-    console.log(this.user);
-  }
-
-  click() {
-    console.log(this.auth.isLoggedIn(), 'hereS');
   }
 }
