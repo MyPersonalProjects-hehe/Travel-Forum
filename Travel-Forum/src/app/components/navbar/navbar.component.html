@@ -4,16 +4,34 @@
   </div>
   <ul class="nav-list">
     <li class="nav-item">
-      <a (click)="toggleHome()" class="nav-link">Home</a>
+      <a
+        routerLink="/home"
+        routerLinkActive="activeButton"
+        class="nav-link"
+        ariaCurrentWhenActive="page"
+        >Home</a
+      >
     </li>
     <li class="nav-item">
-      <a (click)="toggleCreatePosts()" class="nav-link">Create Post</a>
+      <a
+        routerLink="/createPost"
+        class="nav-link"
+        routerLinkActive="activeButton"
+        ariaCurrentWhenActive="page"
+        >Create Post</a
+      >
     </li>
     <li class="nav-item" *ngIf="!user">
       <a routerLink="/login" class="nav-link">Login</a>
     </li>
     <li class="nav-item" *ngIf="user">
-      <a (click)="logout()" class="nav-link">Logout</a>
+      <a
+        (click)="logout()"
+        class="nav-link"
+        routerLinkActive="activeButton"
+        ariaCurrentWhenActive="page"
+        >Logout</a
+      >
     </li>
   </ul>
 </nav>

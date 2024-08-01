@@ -26,4 +26,5 @@ export const routes: Routes = [
     component: CreatePost,
     canActivate: [authGuard],
   },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

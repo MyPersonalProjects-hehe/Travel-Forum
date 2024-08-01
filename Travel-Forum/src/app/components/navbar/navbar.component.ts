@@ -2,12 +2,17 @@ import { Component, OnInit } from '@angular/core';
 import { User } from 'firebase/auth';
 import { AuthService } from '../../services/auth.service';
 import { NgIf } from '@angular/common';
-import { Router, RouterOutlet } from '@angular/router';
+import {
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [NgIf, RouterOutlet],
+  imports: [NgIf, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css',
 })
@@ -21,13 +26,5 @@ export class NavbarComponent implements OnInit {
 
   async logout() {
     await this.auth.logout();
-  }
-
-  toggleHome() {
-    this.route.navigate(['/home']);
-  }
-
-  toggleCreatePosts() {
-    this.route.navigate(['/createPost']);
   }
 }
