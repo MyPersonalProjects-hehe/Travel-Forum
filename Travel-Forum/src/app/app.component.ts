@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { PopUp } from './components/login/pop-up.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { NgIf } from '@angular/common';
@@ -10,18 +9,19 @@ import { User } from 'firebase/auth';
 import { AuthService } from './services/auth.service';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { CardComponent } from './components/login/card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    PopUp,
+
     LoginComponent,
     RegisterComponent,
     NgIf,
     HomeComponent,
-
+    CardComponent,
     NavbarComponent,
   ],
   templateUrl: './app.component.html',
