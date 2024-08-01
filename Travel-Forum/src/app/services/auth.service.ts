@@ -80,8 +80,8 @@ export class AuthService {
 
   async logout() {
     try {
-      await signOut(this.fireauth);
       this.router.navigate(['/login']);
+      await signOut(this.fireauth);
     } catch (error) {
       throw error;
     }
