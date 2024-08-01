@@ -62,13 +62,14 @@ export class AuthService {
     }
   }
 
-  async createUser(username: string) {
+  async createUser(username: string, avatar: string) {
     try {
       const userRef = ref(this.db, `users/${username}`);
       await set(userRef, {
         username: username,
         email: this.userInfo.email,
         uid: this.userInfo.uid,
+        avatar: avatar,
         myPosts: {
           uid: '',
         },

@@ -25,7 +25,7 @@
             <span class="label-text">Username</span>
           </label>
           <input
-            type="username"
+            type="text"
             placeholder="username"
             class="input"
             required
@@ -45,6 +45,20 @@
             required
             [(ngModel)]="password"
             name="password"
+          />
+        </div>
+
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Avatar</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Provide an avatar with URL"
+            class="input"
+            required
+            [(ngModel)]="avatar"
+            name="avatar"
           />
         </div>
         <div class="form-buttons">

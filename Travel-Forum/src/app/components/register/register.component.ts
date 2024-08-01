@@ -13,15 +13,17 @@ export class RegisterComponent {
   email: string = '';
   password: string = '';
   username: string = '';
+  avatar: string = '';
 
   constructor(private auth: AuthService) {}
 
   async register() {
     await this.auth.register(this.email, this.password);
-    await this.auth.createUser(this.username);
+    await this.auth.createUser(this.username, this.avatar);
 
     this.email = '';
     this.password = '';
     this.username = '';
+    this.avatar = '';
   }
 }
