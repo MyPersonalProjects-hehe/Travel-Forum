@@ -29,7 +29,7 @@
           </label>
           <input
             type="text"
-            placeholder="for example did you stay in a hotel or airbnb"
+            placeholder="For example did you stay in a hotel or airbnb"
             class="input"
             required
             name="short description"
@@ -51,6 +51,19 @@
           />
         </div>
 
+        <div class="form-control">
+          <label class="label">
+            <span class="label-text">Image</span>
+          </label>
+          <input
+            type="text"
+            placeholder="Provide an image by URL"
+            class="input"
+            required
+            name="image"
+            [(ngModel)]="post.image"
+          />
+        </div>
         <div class="form-buttons">
           <button type="submit" class="btn">Upload post</button>
         </div>

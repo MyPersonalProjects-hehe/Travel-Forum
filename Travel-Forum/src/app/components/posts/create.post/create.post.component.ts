@@ -8,8 +8,8 @@ import { Router, RouterOutlet } from '@angular/router';
   selector: 'app-my-posts',
   standalone: true,
   imports: [FormsModule, RouterOutlet],
-  templateUrl: './create-post.component.html',
-  styleUrl: './create-post.component.css',
+  templateUrl: './create.post.component.html',
+  styleUrl: './create.post.component.css',
 })
 export class CreatePost {
   userId: any = null;
@@ -18,6 +18,7 @@ export class CreatePost {
     description: '',
     shortDescription: '',
     userEmail: '',
+    image: '',
   };
 
   constructor(
