@@ -1,5 +1,6 @@
 <div class="body">
-  <div *ngIf="currentUser" class="post-container">
+  <div class="post-container">
+    @if(posts$){
     <div *ngFor="let post of posts$" class="post-card">
       <img [src]="post.post.image" alt="Post Image" />
       <div class="post-content">
@@ -8,5 +9,11 @@
         <p class="post-description">{{ post.post.description }}</p>
       </div>
     </div>
+
+    }@else {
+    <div class="empty home">
+      <h1>No posts yet</h1>
+    </div>
+    }
   </div>
 </div>
