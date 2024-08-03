@@ -29,7 +29,6 @@ export class AvatarComponent implements OnInit {
           (obj: any) => obj.email === this.currentUser.email
         );
         this.currentUserInfo$ = filteredUsers[0];
-        console.log(this.currentUserInfo$);
       }
     });
   }
