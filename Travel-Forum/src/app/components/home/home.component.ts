@@ -3,11 +3,12 @@ import { AuthService } from '../../services/auth.service';
 import { NgFor, NgIf } from '@angular/common';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
+import { PostComponent } from '../posts/post/post.component';
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [NgFor, NgIf],
+  imports: [NgFor, NgIf, PostComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
