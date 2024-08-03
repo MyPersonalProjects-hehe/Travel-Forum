@@ -4,17 +4,29 @@ import { NgFor, NgIf } from '@angular/common';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { PostComponent } from '../posts/post/post.component';
+import { BlockComponent } from '../block/block.component';
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [NgFor, NgIf, PostComponent],
+  imports: [NgFor, NgIf, PostComponent, BlockComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
 export class HomeComponent implements OnInit {
   currentUser: any = null;
   posts$: any = null;
+  UserInfo: any = [
+    `Your profile info`,
+    `Date of register ${0}`,
+    `Number of friends ${0}`,
+  ];
+  PostsInfo: any = [
+    `Statistics`,
+    `Number of uploaded posts ${0}`,
+    `Likes ${0}`,
+  ];
+
   constructor(private auth: AuthService, private db: Database) {}
 
   ngOnInit(): void {

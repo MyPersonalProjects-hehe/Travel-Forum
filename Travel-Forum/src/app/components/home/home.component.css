@@ -1,5 +1,16 @@
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.post-side-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.side-info {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 }

@@ -1,14 +1,20 @@
 <div class="body">
-  <div class="post-container">
-    @if(posts$){
-    <div *ngFor="let post of posts$" class="post-card">
-      <post [post]="post"></post>
+  <div class="post-side-info">
+    <div class="side-info">
+      <block [info]="UserInfo"></block>
+      <block [info]="PostsInfo"></block>
     </div>
+    <div class="post-container">
+      @if(posts$){
+      <div *ngFor="let post of posts$" class="post-card">
+        <post [post]="post"></post>
+      </div>
 
-    }@else {
-    <div class="empty home">
-      <h1>No posts yet</h1>
+      }@else {
+      <div class="empty home">
+        <h1>No posts yet</h1>
+      </div>
+      }
     </div>
-    }
   </div>
 </div>
