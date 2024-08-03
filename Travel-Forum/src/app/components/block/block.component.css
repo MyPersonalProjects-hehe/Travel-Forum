@@ -1,0 +1,16 @@
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  background-color: white;
+  width: 430px;
+  height: 230px;
+  margin-left: 35px;
+  margin-top: 21px;
+}
+
+.block-heading {
+  font-size: large;
+}
