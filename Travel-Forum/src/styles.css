@@ -74,9 +74,8 @@
 }
 
 .main-body {
-  background-image: url(https://i.pinimg.com/564x/e6/45/48/e645485329f33335c53c926b2654e800.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #f9eed8;
+  font-family: cursive;
 }
 
 .activeButton {
@@ -94,16 +93,14 @@
   display: flex;
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
   overflow: hidden;
   margin-bottom: 20px;
-  width: 100%;
-  max-width: 800px;
 }
 
 .post-card img {
-  width: 800px;
-  height: 350px;
+  width: 600px;
+  height: 300px;
 }
 
 .post-content {
@@ -120,7 +117,7 @@
 }
 
 .post-description {
-  font-size: 1em;
+  font-size: medium;
   margin: 10px 0;
   color: #666;
 }
@@ -130,4 +127,9 @@
   color: #888;
   display: flex;
   justify-content: center;
+}
+
+.post-body {
+  width: 600px;
+  height: auto;
 }
