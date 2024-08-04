@@ -122,11 +122,11 @@
   color: #666;
 }
 
-.post-short-description {
+.post-short-description-heart {
   font-size: 0.9em;
   color: #888;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .post-body {
