@@ -1,0 +1,4 @@
+.like-heart:hover {
+  cursor: pointer;
+  fill: #a31431;
+}
