@@ -16,28 +16,18 @@ import { BlockComponent } from '../block/block.component';
 export class HomeComponent implements OnInit {
   currentUser: any = null;
   posts$: any = null;
-  UserInfo: any = [
-    `Your profile info`,
-    `Date of register : ${0}`,
-    `calendar`,
-    `Number of friends : ${0}`,
-    `user`,
-  ];
-  PostsInfo: any = [
-    `Statistics for posts`,
-    `Number of uploaded posts : ${0}`,
-    `number`,
-    `Likes : ${0}`,
-    `heart`,
-  ];
+  UserInfo: any = [];
+  PostsInfo: any = [];
 
   constructor(private auth: AuthService, private db: Database) {}
 
   ngOnInit(): void {
     this.auth.user$.subscribe((user) => (this.currentUser = user));
-    const userRef = ref(this.db, `posts/${this.currentUser?.uid}`);
+    const date = Number(this.currentUser.metadata.createdAt);
+    const dateOfRegister = new Date(date).toLocaleDateString();
 
-    onValue(userRef, (snapshot) => {
+    const postsRef = ref(this.db, `posts/${this.currentUser?.uid}`);
+    onValue(postsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
         this.posts$ = Object.entries(data).map(([id, post]) => ({
@@ -45,6 +35,20 @@ export class HomeComponent implements OnInit {
           post,
         }));
       }
+      this.UserInfo.push(
+        `Your profile info`,
+        `Date of register : ${dateOfRegister}`,
+        `calendar`,
+        `Number of friends : ${0}`,
+        `user`
+      );
+      this.PostsInfo.push(
+        `Statistics for posts`,
+        `Number of uploaded posts : ${this.posts$.length}`,
+        `number`,
+        `Likes : ${0}`,
+        `heart`
+      );
     });
   }
 }
