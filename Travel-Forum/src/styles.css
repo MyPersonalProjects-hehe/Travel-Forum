@@ -133,3 +133,10 @@
   width: 600px;
   height: auto;
 }
+
+svg {
+  width: 40px;
+  height: auto;
+  margin-top: 6px;
+  margin-left: 7px;
+}
