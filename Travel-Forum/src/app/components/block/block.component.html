@@ -2,8 +2,40 @@
   <div class="block-body">
     <h1 class="block-heading">{{ info[0] }}</h1>
     <ul>
-      <li>{{ info[1] }}</li>
-      <li>{{ info[2] }}</li>
+      <div
+        class="info-stats"
+        *ngIf="info[2] === 'calendar'; else elseBlockNumber"
+      >
+        <div class="icon">
+          <calendar></calendar>
+        </div>
+        <p>{{ info[1] }}</p>
+      </div>
+
+      <ng-template #elseBlockNumber>
+        <div class="info-stats">
+          <div class="icon">
+            <uploads></uploads>
+          </div>
+          <p>{{ info[1] }}</p>
+        </div>
+      </ng-template>
+
+      <div class="info-stats" *ngIf="info[4] === 'user'; else elseBlockHeart">
+        <div class="icon">
+          <user></user>
+        </div>
+        <p>{{ info[3] }}</p>
+      </div>
+
+      <ng-template #elseBlockHeart>
+        <div class="info-stats">
+          <div class="icon">
+            <heart></heart>
+          </div>
+          <p>{{ info[3] }}</p>
+        </div>
+      </ng-template>
     </ul>
   </div>
 </div>

@@ -18,13 +18,17 @@ export class HomeComponent implements OnInit {
   posts$: any = null;
   UserInfo: any = [
     `Your profile info`,
-    `Date of register ${0}`,
-    `Number of friends ${0}`,
+    `Date of register : ${0}`,
+    `calendar`,
+    `Number of friends : ${0}`,
+    `user`,
   ];
   PostsInfo: any = [
-    `Statistics`,
-    `Number of uploaded posts ${0}`,
-    `Likes ${0}`,
+    `Statistics for posts`,
+    `Number of uploaded posts : ${0}`,
+    `number`,
+    `Likes : ${0}`,
+    `heart`,
   ];
 
   constructor(private auth: AuthService, private db: Database) {}
