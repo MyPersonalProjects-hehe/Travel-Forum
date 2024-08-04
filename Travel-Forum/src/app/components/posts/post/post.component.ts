@@ -1,10 +1,11 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { LikeComponent } from '../../../icons/like/like.component';
 
 @Component({
   selector: 'post',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, LikeComponent],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
 })

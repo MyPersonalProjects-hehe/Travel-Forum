@@ -2,7 +2,10 @@
   <img [src]="post.post.image" alt="Post Image" />
   <div class="post-content">
     <h2 class="post-title">{{ post.post.title }}</h2>
-    <p class="post-short-description">{{ post.post.shortDescription }}</p>
+    <div class="post-short-description-heart">
+      <p>{{ post.post.shortDescription }}</p>
+      <like></like>
+    </div>
     <p class="post-description" *ngIf="showFullView">
       {{ post.post.description }}
     </p>
