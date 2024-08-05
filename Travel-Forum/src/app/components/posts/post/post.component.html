@@ -4,7 +4,13 @@
     <h2 class="post-title">{{ post.post.title }}</h2>
     <div class="post-short-description-heart">
       <p>{{ post.post.shortDescription }}</p>
-      <like></like>
+      <div *ngFor="let users of usersWhoLiked">
+        @if(users?.includes(userId)){
+        <dislike (click)="dislike()"></dislike>
+        }@else{
+        <like (click)="likePost(post)"></like>
+        }
+      </div>
     </div>
     <p class="post-description" *ngIf="showFullView">
       {{ post.post.description }}
