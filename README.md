@@ -1,18 +1,19 @@
-# Travel-Forum
+# 🌍 Travel-Forum
 
 <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/Untitled-2%20(2).png?raw=true" width="200" height="200">
 
-This is a small testing application just to have a glimpse of what Angular is. 
-Since i love to travel, the idea of the application was due to that and I decided to make it a travel forum. I choose to build this project using Angular and TypeScript, as both of them are interly new  for me. I wanted to see if i can find concepts that are similar to React, but in my opinion they are very different frameworks. 
-Have in mind as i`ve already said, the application may have bugs or things that are in development. Since it`s very hard for me to find information that is up-to-date with Angular`s updates, you are absolutely welcomed to contact me if u have worked with Angular or you may have an advice how to improve myself. 
+This is a small testing application developed to explore the basics of Angular. The idea of creating a travel forum stemmed from my love for travel. ✈️ I decided to build this project using Angular and TypeScript, both of which are new to me. Through this project, I aimed to identify similarities between Angular and React, but I found them to be very different frameworks.
 
-Here are the functionalities that i have in mind to include in my project : 
-- An user can register and have access to all the users` posts
-- Each post can be liked or commented
-- You can upload your personal posts, for example if you recently have been on a trip and you want to share with rest how was your experience there (Since i have a problem with using firebase`s Storage, the user has to upload any kind of photos using URL)
-- You can also update your account information 
-I  have many ideas, that i want to fullfill, but it is in process. 
-I hope you enjoy my small project and of course, feel free to reachout to me for any improvements!
+Please note that this application is still in development and may contain bugs. 🐞 Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚
+
+Functionalities 🛠️
+Here are the functionalities I plan to include in this project:
+
+User Registration: Users can register and access all posts. 📝
+Post Interaction: Each post can be liked 👍 or commented 💬.
+Personal Posts: Users can upload their own posts. For example, if you've recently been on a trip, you can share your experience with the rest of the community. (Due to issues with Firebase Storage, users must upload photos via URL.) 🖼️
+Account Management: Users can update their account information. 🔄
+I have many ideas that I want to fulfill, but they are still in progress. I hope you enjoy my small project, and of course, feel free to reach out to me with any improvements! 🌟
 
 
 **Languages:** <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" height="20">    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" height="20"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/typescript-icon-icon-1024x1024-vh3pfez8.png" height="20">
