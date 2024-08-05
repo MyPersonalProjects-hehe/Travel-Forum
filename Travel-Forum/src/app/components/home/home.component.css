@@ -14,3 +14,11 @@ body {
   flex-direction: column;
   gap: 100px;
 }
+
+@media (max-width: 1140px) {
+  .post-side-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
