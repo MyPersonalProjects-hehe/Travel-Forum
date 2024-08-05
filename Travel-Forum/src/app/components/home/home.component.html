@@ -7,7 +7,11 @@
     <div class="post-container">
       @if(posts$){
       <div *ngFor="let post of posts$" class="post-card">
-        <post [post]="post"></post>
+        <post
+          [post]="post"
+          [userId]="currentUser.uid"
+          [usersWhoLiked]="usersWhoLiked"
+        ></post>
       </div>
 
       }@else {

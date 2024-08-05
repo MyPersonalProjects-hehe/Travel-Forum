@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   posts$: any = null;
   UserInfo: any = [];
   PostsInfo: any = [];
+  usersWhoLiked: any = [];
 
   constructor(private auth: AuthService, private db: Database) {}
 
@@ -26,15 +27,28 @@ export class HomeComponent implements OnInit {
     const date = Number(this.currentUser.metadata.createdAt);
     const dateOfRegister = new Date(date).toLocaleDateString();
 
-    const postsRef = ref(this.db, `posts/${this.currentUser?.uid}`);
+    const postsRef = ref(this.db, `posts`);
     onValue(postsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        this.posts$ = Object.entries(data).map(([id, post]) => ({
-          id,
-          post,
-        }));
+        this.posts$ = Object.entries(data)
+          .map(([id, post]) => ({
+            id,
+            post,
+          }))
+          .filter((obj: any) => obj.post.userId === this.currentUser.uid);
       }
+
+      this.usersWhoLiked = this.posts$.map(
+        (postObj: any) => postObj.post.likedBy
+      );
+
+      if (this.usersWhoLiked[0] !== undefined) {
+        this.usersWhoLiked = this.usersWhoLiked
+          .map((obj: any) => Object.keys(obj))
+          .flat();
+      }
+
       this.UserInfo.push(
         `Your profile info`,
         `Date of register : ${dateOfRegister}`,
@@ -44,9 +58,9 @@ export class HomeComponent implements OnInit {
       );
       this.PostsInfo.push(
         `Statistics for posts`,
-        `Number of uploaded posts : ${this.posts$.length}`,
+        `Number of uploaded posts : ${this.posts$?.length || 0}`,
         `number`,
-        `Likes : ${0}`,
+        `Likes : ${this.usersWhoLiked?.length || 0}`,
         `heart`
       );
     });
