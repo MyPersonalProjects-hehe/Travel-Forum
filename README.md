@@ -6,13 +6,13 @@ This is a small testing application developed to explore the basics of Angular. 
 
 Please note that this application is still in development and may contain bugs. 🐞 Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚
 
-Functionalities 🛠️ <br />
+<h2> Functionalities 🛠️</h2><br />
 Here are the functionalities I plan to include in this project:
 
-<h2>User Registration:</h2> Users can register and access all posts. 📝
+<h2>User Registration:</h2> Users can register and access all posts. 📝 <br />
 <h2>Post Interaction:</h2> Each post can be liked 👍 or commented 💬.   <br />
-Personal Posts: Users can upload their own posts. For example, if you've recently been on a trip, you can share your experience with the rest of the community. (Due to issues with Firebase Storage, users must upload photos via URL.) 🖼️  <br />
- Account Management: Users can update their account information. 🔄   <br />
+<h2>Personal Posts:</h2> Users can upload their own posts. For example, if you've recently been on a trip, you can share your experience with the rest of the community. (Due to issues with Firebase Storage, users must upload photos via URL.) 🖼️  <br />
+<h2>Account Management: </h2>Users can update their account information. 🔄   <br />
 I have many ideas that I want to fulfill, but they are still in progress. I hope you enjoy my small project, and of course, feel free to reach out to me with any improvements! 🌟
 
 
