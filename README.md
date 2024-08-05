@@ -30,16 +30,17 @@ I hope you enjoy my small project and of course, feel free to reachout to me for
 
 To install and run the project, follow these steps:
 
-1. Clone the [Motion Mate _GitHub repository_](https://github.com/A58-Agents-Team1/Motion.Mate) locally:
+1. Clone the [
+MyPersonalProjects-hehe Travel-Forum _GitHub repository_] https://github.com/MyPersonalProjects-hehe/Travel-Forum.git locally:
 
 ```bash
-git clone https://github.com/A58-Agents-Team1/Motion.Mate.git
+git clone https://github.com/MyPersonalProjects-hehe/Travel-Forum.git
 ```
 
 2. Navigate to the project directory:
 
 ```bash
-cd Motion.Mate
+cd Travel-Forum
 ```
 
 3. Install project dependencies:
@@ -51,10 +52,9 @@ npm install
 4. To run the project, use the following command:
 
 ```bash
-npm run dev
+ng serve
 ```
 
 5. Open localhost link in browser to view web-platform.
 
-## <img src="https://firebasestorage.googleapis.com/v0/b/dare2fit-f6eb4.appspot.com/o/assets%2FREADME-images%2Fdatabase.png?alt=media&token=958f4c41-6532-4e07-a31d-e437ebe00527&_gl=1*o97b6d*_ga*MjExMzk5MTA5MC4xNjgzMjcwMjg1*_ga_CW55HF8NVT*MTY4NjU3Njg5Ni4xMDMuMS4xNjg2NTc3OTQ0LjAuMC4w"  width="30" height="30"> Database Scheme (Structure)
-
+http://localhost:4200/
