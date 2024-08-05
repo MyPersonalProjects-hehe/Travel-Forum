@@ -1,6 +1,6 @@
 # Travel-Forum
 
-<img src="[https://raw.githubusercontent.com/A58-Agents-Team1/Motion.Mate/main/src/assets/logo.png](https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/Untitled-2%20(2).png?raw=true)" width="100" height="100">
+<img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/Untitled-2%20(2).png?raw=true" width="100" height="100">
 
 This is a small testing application just to have a glimpse of what Angular is. 
 Since i love to travel, the idea of the application was due to that and I decided to make it a travel forum. I choose to build this project using Angular and TypeScript, as both of them are interly new  for me. I wanted to see if i can find concepts that are similar to React, but in my opinion they are very different frameworks. 
