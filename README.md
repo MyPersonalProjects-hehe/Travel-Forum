@@ -9,7 +9,7 @@ Please note that this application is still in development and may contain bugs. 
 Functionalities 🛠️ <br />
 Here are the functionalities I plan to include in this project:
 
-<h2>User Registration:</h2> Users can register and access all posts. 📝  <br />
+<h2>User Registration:</h2> Users can register and access all posts. 📝
 <h2>Post Interaction:</h2> Each post can be liked 👍 or commented 💬.   <br />
 Personal Posts: Users can upload their own posts. For example, if you've recently been on a trip, you can share your experience with the rest of the community. (Due to issues with Firebase Storage, users must upload photos via URL.) 🖼️  <br />
  Account Management: Users can update their account information. 🔄   <br />
