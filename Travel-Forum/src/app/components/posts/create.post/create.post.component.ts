@@ -19,6 +19,8 @@ export class CreatePost {
     shortDescription: '',
     userEmail: '',
     image: '',
+    likedBy: 0,
+    userId: '',
   };
 
   constructor(
@@ -30,9 +32,9 @@ export class CreatePost {
   async submitPost() {
     this.auth.user$.subscribe((user) => {
       this.post.userEmail = user?.email;
-      this.userId = user?.uid;
+      this.post.userId = user?.uid;
     });
-    await this.userService.uploadPost(this.userId, this.post);
+    await this.userService.uploadPost(this.post);
     this.post = {};
     this.rout.navigate(['/home']);
   }
