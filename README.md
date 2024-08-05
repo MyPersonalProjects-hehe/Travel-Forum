@@ -6,7 +6,7 @@ This is a small testing application developed to explore the basics of Angular. 
 
 Please note that this application is still in development and may contain bugs. 🐞 Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚
 
-<h2> Functionalities 🛠️</h2><br />
+<h2> Functionalities 🛠️</h2>
 Here are the functionalities I plan to include in this project:
 
 <h2>User Registration:</h2> Users can register and access all posts. 📝 <br />
