@@ -43,4 +43,17 @@ export class UserService {
       throw error;
     }
   }
+
+  async fetchPost(postId: any) {
+    try {
+      const postsRef = (await get(ref(this.db, `posts/${postId}`))).val();
+      const post = {
+        id: postId,
+        post: postsRef,
+      };
+      return post;
+    } catch (error) {
+      throw error;
+    }
+  }
 }
