@@ -38,7 +38,6 @@ export class HomeComponent implements OnInit {
           }))
           .filter((obj: any) => obj.post.userId === this.currentUser.uid);
       }
-      console.log(this.posts$);
 
       this.UserInfo.push(
         `Your profile info`,

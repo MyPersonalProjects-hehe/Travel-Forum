@@ -3,12 +3,12 @@ import { PostComponent } from '../post/post.component';
 import { AuthService } from '../../../services/auth.service';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'allPosts',
   standalone: true,
-  imports: [PostComponent, NgFor],
+  imports: [PostComponent, NgFor, NgIf],
   templateUrl: './all.posts.component.html',
   styleUrl: './all.posts.component.css',
 })
@@ -29,7 +29,6 @@ export class AllPostsComponent implements OnInit {
           post,
         }));
       }
-      console.log(this.posts$);
     });
   }
 }
