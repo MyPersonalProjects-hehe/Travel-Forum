@@ -82,44 +82,52 @@
   background-color: #d38a65;
 }
 
-.post-container {
+.posts-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .post-card {
   display: flex;
+  flex-direction: column;
   background-color: white;
   border-radius: 8px;
   box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
   overflow: hidden;
-  margin-bottom: 20px;
+  margin: 50px;
+  width: 600px;
+  height: auto;
+  border: solid;
+  border-color: black;
 }
 
 .post-card img {
-  width: 600px;
+  width: 100%;
   height: 300px;
+  object-fit: cover;
 }
 
 .post-content {
   padding: 20px;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .post-title {
   font-size: 1.5em;
   margin: 0;
   color: #333;
-  display: flex;
-  justify-content: center;
+  text-align: center;
 }
 
 .post-description {
   font-size: medium;
   margin: 10px 0;
   color: #666;
+  overflow: hidden;
 }
 
 .post-short-description-heart {
@@ -130,8 +138,10 @@
 }
 
 .post-body {
-  width: 600px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 svg {
