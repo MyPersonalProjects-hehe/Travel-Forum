@@ -15,7 +15,6 @@ import { DislikeComponent } from '../../../icons/like/dislike/dislike.component'
 export class PostComponent {
   @Input() post: any;
   @Input() userId: any;
-  @Input() usersWhoLiked: any = false;
   showFullView: boolean = false;
   user: any = null;
 
@@ -28,5 +27,9 @@ export class PostComponent {
 
   async dislike() {
     await this.userService.dislikePost(this.post, this.userId);
+  }
+
+  showFullPost() {
+    this.showFullView = !this.showFullView;
   }
 }
