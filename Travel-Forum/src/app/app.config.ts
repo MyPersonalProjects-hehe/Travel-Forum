@@ -18,8 +18,8 @@ export const appConfig: ApplicationConfig = {
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore()), // Add if using Firestore
-    provideStorage(() => getStorage()), // Add if using Firebase Storage,
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
     UserService,
     AuthService,
   ],
