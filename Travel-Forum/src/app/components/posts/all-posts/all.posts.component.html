@@ -5,16 +5,12 @@
       Be open to share your thoughts by leaving a comment or just press like!
     </p>
   </div>
-  <div class="posts-container">
-    @if(posts$?.length > 0){
+  <div class="posts-container" *ngIf="posts$?.length > 0; else emptyPosts">
     <div *ngFor="let post of posts$" class="post-card">
       <post [post]="post" [userId]="currentUser.uid"></post>
     </div>
-
-    }@else {
-    <div class="empty home">
-      <h1>No posts yet</h1>
-    </div>
-    }
   </div>
+  <ng-template class="emptyHome" #emptyPosts>
+    <h1>No posts yet</h1>
+  </ng-template>
 </div>
