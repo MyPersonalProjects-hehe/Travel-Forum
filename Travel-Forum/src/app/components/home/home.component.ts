@@ -38,16 +38,7 @@ export class HomeComponent implements OnInit {
           }))
           .filter((obj: any) => obj.post.userId === this.currentUser.uid);
       }
-
-      this.usersWhoLiked = this.posts$.map(
-        (postObj: any) => postObj.post.likedBy
-      );
-
-      if (this.usersWhoLiked[0] !== undefined) {
-        this.usersWhoLiked = this.usersWhoLiked
-          .map((obj: any) => Object.keys(obj))
-          .flat();
-      }
+      console.log(this.posts$);
 
       this.UserInfo.push(
         `Your profile info`,
@@ -60,7 +51,7 @@ export class HomeComponent implements OnInit {
         `Statistics for posts`,
         `Number of uploaded posts : ${this.posts$?.length || 0}`,
         `number`,
-        `Likes : ${this.usersWhoLiked?.length || 0}`,
+        `Likes : ${0}`,
         `heart`
       );
     });
