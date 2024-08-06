@@ -4,6 +4,7 @@ import { Component, Input } from '@angular/core';
 import { LikeComponent } from '../../../icons/like/like.component';
 import { UserService } from '../../../services/user.service';
 import { DislikeComponent } from '../../../icons/like/dislike/dislike.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'post',
@@ -15,10 +16,14 @@ import { DislikeComponent } from '../../../icons/like/dislike/dislike.component'
 export class PostComponent {
   @Input() post: any;
   @Input() userId: any;
-  showFullView: boolean = false;
+  @Input() showFullView: boolean = false;
   user: any = null;
 
-  constructor(private userService: UserService, private auth: AuthService) {}
+  constructor(
+    private userService: UserService,
+    private auth: AuthService,
+    private route: Router
+  ) {}
 
   async likePost(post: any) {
     this.auth.user$.subscribe((user) => (this.user = user));
@@ -29,7 +34,13 @@ export class PostComponent {
     await this.userService.dislikePost(this.post, this.userId);
   }
 
-  showFullPost() {
+  showFullPost(navigationPath: string) {
     this.showFullView = !this.showFullView;
+
+    if (navigationPath === 'home') {
+      this.route.navigate(['home']);
+    } else {
+      this.route.navigate([`/fullViewPost/${navigationPath}`]);
+    }
   }
 }
