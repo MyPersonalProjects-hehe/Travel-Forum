@@ -6,11 +6,21 @@ import { UserService } from '../../../services/user.service';
 import { DislikeComponent } from '../../../icons/like/dislike/dislike.component';
 import { Router } from '@angular/router';
 import { RouterService } from '../../../services/router.service';
+import { CommentComponent } from '../../../icons/comment/comment.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'post',
   standalone: true,
-  imports: [NgIf, LikeComponent, NgClass, NgFor, DislikeComponent],
+  imports: [
+    NgIf,
+    LikeComponent,
+    NgClass,
+    NgFor,
+    DislikeComponent,
+    CommentComponent,
+    FormsModule,
+  ],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
 })
@@ -20,6 +30,8 @@ export class PostComponent implements OnInit {
   @Input() showFullView: boolean = false;
   user: any = null;
   previousNavPath: any = null;
+  showComment: boolean = false;
+  comment: string = '';
 
   constructor(
     private userService: UserService,
@@ -47,5 +59,18 @@ export class PostComponent implements OnInit {
     } else {
       this.route.navigate([`/fullViewPost/${navigationPath}`]);
     }
+  }
+
+  async submitComment() {
+    await this.userService.uploadComment(
+      this.comment,
+      this.post.id,
+      this.userId
+    );
+  }
+
+  toggleComment() {
+    this.showComment = !this.showComment;
+    // console.log(this.post);
   }
 }

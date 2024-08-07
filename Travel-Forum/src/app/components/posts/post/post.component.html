@@ -5,14 +5,32 @@
     <div class="post-short-description-heart">
       <p>{{ post.post?.shortDescription }}</p>
     </div>
+
     <div class="post-description" *ngIf="showFullView; else hidePost">
-      {{ post.post.description }}
-      <button (click)="showFullPost(previousNavPath)" class="btn">
+      {{ post.post.description }} <br />
+      <button (click)="showFullPost(previousNavPath)" class="btn-post">
         Go back
       </button>
     </div>
     <ng-template #hidePost>
-      <button (click)="showFullPost(post.id)" class="btn">Full view</button>
+      <div class="icons">
+        <comment (click)="toggleComment()"></comment>
+        <like></like>
+        <button (click)="showFullPost(post.id)" class="btn-post">
+          Full view
+        </button>
+      </div>
     </ng-template>
+
+    <form (ngSubmit)="submitComment()" *ngIf="showComment">
+      <input
+        type="text"
+        placeholder="Leave a comment"
+        class="input"
+        [(ngModel)]="comment"
+        name="comment"
+      />
+      <button class="btn-post" type="submit">Submit</button>
+    </form>
   </div>
 </div>
