@@ -21,6 +21,7 @@ export class CreatePost {
     image: '',
     likedBy: 0,
     userId: '',
+    comments: '',
   };
 
   constructor(
