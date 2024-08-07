@@ -1,22 +1,22 @@
 import { Injectable } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RouterService {
-  lastRoute = '';
-  constructor(private router: Router) {
-    console.log(this.lastRoute, 'after refresh');
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.lastRoute = event.url;
-        console.log(this.lastRoute, 'before refresh');
-      }
-    });
-  }
+  previousRoute: any;
+  currentRoute: any;
 
-  getLastRoute() {
-    return this.lastRoute;
+  constructor(private router: Router) {
+    this.currentRoute = router.url;
+
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event) => {
+        this.previousRoute = this.currentRoute;
+        this.currentRoute = event.url;
+      });
   }
 }
