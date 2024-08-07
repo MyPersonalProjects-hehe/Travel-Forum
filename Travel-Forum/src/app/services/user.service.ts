@@ -56,4 +56,15 @@ export class UserService {
       throw error;
     }
   }
+
+  async uploadComment(comment: string, postId: any, userId: any) {
+    const data: any = {};
+    data[userId] = comment;
+    try {
+      const postRef = ref(this.db, `posts/${postId}/comments`);
+      await push(postRef, data);
+    } catch (error) {
+      throw error;
+    }
+  }
 }
