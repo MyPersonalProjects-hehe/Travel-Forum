@@ -7,7 +7,9 @@
     </div>
     <div class="post-description" *ngIf="showFullView; else hidePost">
       {{ post.post.description }}
-      <button (click)="showFullPost('home')" class="btn">Go back</button>
+      <button (click)="showFullPost(previousNavPath)" class="btn">
+        Go back
+      </button>
     </div>
     <ng-template #hidePost>
       <button (click)="showFullPost(post.id)" class="btn">Full view</button>

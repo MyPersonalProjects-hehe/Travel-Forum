@@ -1,10 +1,11 @@
 import { AuthService } from './../../../services/auth.service';
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LikeComponent } from '../../../icons/like/like.component';
 import { UserService } from '../../../services/user.service';
 import { DislikeComponent } from '../../../icons/like/dislike/dislike.component';
 import { Router } from '@angular/router';
+import { RouterService } from '../../../services/router.service';
 
 @Component({
   selector: 'post',
@@ -13,16 +14,18 @@ import { Router } from '@angular/router';
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
 })
-export class PostComponent {
+export class PostComponent implements OnInit {
   @Input() post: any;
   @Input() userId: any;
   @Input() showFullView: boolean = false;
   user: any = null;
+  previousNavPath: any = null;
 
   constructor(
     private userService: UserService,
     private auth: AuthService,
-    private route: Router
+    private route: Router,
+    private routeService: RouterService
   ) {}
 
   async likePost(post: any) {
@@ -34,11 +37,13 @@ export class PostComponent {
     await this.userService.dislikePost(this.post, this.userId);
   }
 
-  showFullPost(navigationPath: string) {
-    this.showFullView = !this.showFullView;
+  ngOnInit() {
+    this.previousNavPath = this.routeService.previousRoute;
+  }
 
-    if (navigationPath === 'home') {
-      this.route.navigate(['home']);
+  showFullPost(navigationPath: string) {
+    if (navigationPath === this.previousNavPath) {
+      this.route.navigate([this.previousNavPath]);
     } else {
       this.route.navigate([`/fullViewPost/${navigationPath}`]);
     }
