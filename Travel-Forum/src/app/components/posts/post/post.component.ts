@@ -41,7 +41,6 @@ export class PostComponent implements OnInit {
   ) {}
 
   async likePost(post: any) {
-    this.auth.user$.subscribe((user) => (this.user = user));
     await this.userService.likePost(post, this.userId);
   }
 
@@ -50,6 +49,8 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.auth.user$.subscribe((user) => (this.user = user));
+
     this.previousNavPath = this.routeService.previousRoute;
   }
 
