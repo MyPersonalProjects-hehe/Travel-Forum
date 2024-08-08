@@ -5,12 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { UserService } from '../../../services/user.service';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
-import { NgFor, NgIf } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'fullViewPost',
   standalone: true,
-  imports: [PostComponent, NgFor, NgIf],
+  imports: [PostComponent, NgFor, NgIf, CommonModule],
   templateUrl: './full.view.post.component.html',
   styleUrl: './full.view.post.component.css',
 })
@@ -41,8 +41,8 @@ export class FullViewPostComponent implements OnInit {
       const data = snapshot.val();
       if (data) {
         this.comments$ = Object.values(data);
-        console.log(this.comments$, this.userId);
       }
+      console.log(this.comments$);
     });
   }
 
