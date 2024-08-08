@@ -7,7 +7,6 @@ p {
   text-align: center;
 }
 
-/* Arrow button */
 .arrow-button {
   background-color: #007bff;
   color: white;
@@ -17,10 +16,9 @@ p {
   font-size: 20px;
 }
 
-/* Comment section */
 .comment-section {
   position: fixed;
-  right: -400px; /* Width of the sliding window */
+  right: -400px;
   top: 0;
   width: 300px;
   height: 100%;
