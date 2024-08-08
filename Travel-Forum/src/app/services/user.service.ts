@@ -58,10 +58,24 @@ export class UserService {
   }
 
   async uploadComment(comment: string, postId: any, userId: any) {
-    const data: any = {};
-    data[userId] = comment;
     try {
       const postRef = ref(this.db, `posts/${postId}/comments`);
+      const userRef = await get(ref(this.db, `users`));
+      const snapshot = userRef.val();
+      const userObject: any = Object.values(snapshot).filter(
+        (userObj: any) => userObj.uid === userId
+      );
+      const username = userObject[0].username;
+      const avatar = userObject[0].avatar;
+
+      const data: any = {
+        createdOn: Date.now(),
+        likes: 0,
+        createdBy: username,
+        comment: comment,
+        avatar: avatar,
+      };
+
       await push(postRef, data);
     } catch (error) {
       throw error;

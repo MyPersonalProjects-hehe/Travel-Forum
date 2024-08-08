@@ -12,7 +12,13 @@
 
   <div *ngIf="comments$?.length > 0; else noComments">
     <div class="comment" *ngFor="let comment of comments$">
-      <h4>Comment: {{ comment[userId] }}</h4>
+      <div class="avatar">
+        <img [src]="comment.avatar" alt="avatar " />
+        <h4>{{ comment.createdBy }}</h4>
+      </div>
+      <h1>{{ comment.comment }}</h1>
+
+      <p>{{ comment.createdOn | date : "short" }}</p>
     </div>
   </div>
   <ng-template #noComments>
