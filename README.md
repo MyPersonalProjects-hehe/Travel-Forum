@@ -9,13 +9,13 @@ Please note that this application is still in development and may contain bugs. 
 <h2> Functionalities 🛠️</h2>
 Here are the functionalities I plan to include in this project:
 
-<h2>User Registration:</h2> Users can register and access all posts. 📝 <br />
-<h2>Post Interaction:</h2> Each post can be liked 👍 or commented 💬.   <br />
-<h2>Personal Posts:</h2> Users can upload their own posts. For example, if you've recently been on a trip, you can share your experience with the rest of the community. (Due to issues with Firebase Storage, users must upload photos via URL.) 🖼️  <br />
-<h2>Account Management: </h2>Users can update their account information. 🔄 <br />
+<h4>User Registration: </h4> Users can register and access all posts. 📝 <br />
+<h4>Post Interaction: </h4> Each post can be liked 👍 or commented 💬.   <br />
+<h4>Personal Posts: </h4> Users can upload their own posts. For example, if you've recently been on a trip, you can share your experience with the rest of the community. (Due to issues with Firebase Storage, users must upload photos via URL.) 🖼️  <br />
+<h4>Account Management: </h4> Users can update their account information. 🔄 <br />
 
 
-## <img src="https://firebasestorage.googleapis.com/v0/b/dare2fit-f6eb4.appspot.com/o/assets%2FREADME-images%2Ffeatures.png?alt=media&token=e5fc5779-b3db-41c2-a576-947ca382ea5a&_gl=1*81oei1*_ga*MjExMzk5MTA5MC4xNjgzMjcwMjg1*_ga_CW55HF8NVT*MTY4NjU3Njg5Ni4xMDMuMS4xNjg2NTc3OTgzLjAuMC4w"  width="30" height="30"> Features
+## <img src="https://firebasestorage.googleapis.com/v0/b/dare2fit-f6eb4.appspot.com/o/assets%2FREADME-images%2Ffeatures.png?alt=media&token=e5fc5779-b3db-41c2-a576-947ca382ea5a&_gl=1*81oei1*_ga*MjExMzk5MTA5MC4xNjgzMjcwMjg1*_ga_CW55HF8NVT*MTY4NjU3Njg5Ni4xMDMuMS4xNjg2NTc3OTgzLjAuMC4w"  width="30" height="30"> Stack
 
 **Languages:** <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" height="20">    <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" height="20"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/typescript-icon-icon-1024x1024-vh3pfez8.png" height="20">
 
