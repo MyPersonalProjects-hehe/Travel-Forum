@@ -50,8 +50,10 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit() {
-    const commentsCount: any = [this.post.post].filter(
-      (post: any) => post.comments
+    this.auth.user$.subscribe((user) => (this.user = user));
+    this.previousNavPath = this.routeService.previousRoute;
+    const commentsCount: any = [this.post?.post].filter(
+      (post: any) => post?.comments
     );
 
     if (commentsCount.length > 0) {
@@ -60,9 +62,6 @@ export class PostComponent implements OnInit {
         this.countOfComments?.comments
       ).length;
     }
-
-    this.auth.user$.subscribe((user) => (this.user = user));
-    this.previousNavPath = this.routeService.previousRoute;
   }
 
   showFullPost(navigationPath: string) {
