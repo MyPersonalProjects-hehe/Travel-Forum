@@ -132,11 +132,9 @@
   gap: 30px;
 }
 
-.post-short-description-heart {
+.post-short-description {
   font-size: 0.9em;
   color: #888;
-  display: flex;
-  justify-content: space-between;
 }
 
 .post-body {
@@ -150,7 +148,6 @@ svg {
   width: 40px;
   height: auto;
   margin-top: 6px;
-  margin-left: 5px;
 }
 
 .icons {
