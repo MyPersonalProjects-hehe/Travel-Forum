@@ -42,7 +42,6 @@ export class FullViewPostComponent implements OnInit {
       if (data) {
         this.comments$ = Object.values(data);
       }
-      console.log(this.comments$);
     });
   }
 
