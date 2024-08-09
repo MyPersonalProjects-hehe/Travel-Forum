@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { NgIf } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'comment',
   standalone: true,
-  imports: [],
+  imports: [NgIf],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.css',
 })
-export class CommentComponent {}
+export class CommentComponent {
+  @Input() commentsCount: any;
+
+  d() {
+    console.log(this.commentsCount);
+  }
+}
