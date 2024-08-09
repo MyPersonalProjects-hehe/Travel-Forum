@@ -1,1 +1,6 @@
-
+.avatar img {
+  display: flex;
+  border-radius: 60%;
+  width: 90px;
+  height: 90px;
+}
