@@ -8,17 +8,17 @@
 
     <div class="post-description" *ngIf="showFullView; else hidePost">
       {{ post.post.description }} <br />
-      <button (click)="showFullPost(previousNavPath)" class="btn-post">
+      <button class="btn" (click)="showFullPost(previousNavPath)">
         Go back
       </button>
     </div>
     <ng-template #hidePost>
       <div class="icons">
-        <comment (click)="toggleComment()"></comment>
-        <like></like>
-        <button (click)="showFullPost(post.id)" class="btn-post">
-          Full view
-        </button>
+        <div *ngIf="post.post.userId !== userId">
+          <comment (click)="toggleComment()"></comment>
+          <like></like>
+        </div>
+        <button (click)="showFullPost(post.id)" class="btn">Full view</button>
       </div>
     </ng-template>
 
@@ -30,7 +30,7 @@
         [(ngModel)]="comment"
         name="comment"
       />
-      <button class="btn-post" type="submit">Submit</button>
+      <button class="btn" type="submit">Submit</button>
     </form>
   </div>
 </div>
