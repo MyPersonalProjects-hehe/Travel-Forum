@@ -2,7 +2,7 @@
   <img [src]="post.post?.image" alt="Post Image" />
   <div class="post-content">
     <h2 class="post-title">{{ post.post?.title }}</h2>
-    <div class="post-short-description-heart">
+    <div class="post-short-description">
       <p>{{ post.post?.shortDescription }}</p>
     </div>
 
@@ -14,11 +14,21 @@
     </div>
     <ng-template #hidePost>
       <div class="icons">
-        <div *ngIf="post.post.userId !== userId">
-          <comment (click)="toggleComment()"></comment>
+        <div *ngIf="post.post.userId !== userId; else postByUser">
+          <comment
+            [commentsCount]="countOfComments"
+            (click)="toggleComment()"
+          ></comment>
           <like></like>
         </div>
         <button (click)="showFullPost(post.id)" class="btn">Full view</button>
+
+        <ng-template #postByUser>
+          <div>
+            <comment [commentsCount]="countOfComments"></comment>
+            <like></like>
+          </div>
+        </ng-template>
       </div>
     </ng-template>
 

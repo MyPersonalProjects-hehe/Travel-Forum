@@ -32,6 +32,7 @@ export class PostComponent implements OnInit {
   previousNavPath: any = null;
   showComment: boolean = false;
   comment: string = '';
+  countOfComments: any = 0;
 
   constructor(
     private userService: UserService,
@@ -49,8 +50,18 @@ export class PostComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.auth.user$.subscribe((user) => (this.user = user));
+    const commentsCount: any = [this.post.post].filter(
+      (post: any) => post.comments
+    );
 
+    if (commentsCount.length > 0) {
+      this.countOfComments = commentsCount[0];
+      this.countOfComments = Object.values(
+        this.countOfComments?.comments
+      ).length;
+    }
+
+    this.auth.user$.subscribe((user) => (this.user = user));
     this.previousNavPath = this.routeService.previousRoute;
   }
 
@@ -72,6 +83,5 @@ export class PostComponent implements OnInit {
 
   toggleComment() {
     this.showComment = !this.showComment;
-    // console.log(this.post);
   }
 }
