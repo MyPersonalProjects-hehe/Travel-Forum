@@ -6,27 +6,36 @@
       <p>{{ post.post?.shortDescription }}</p>
     </div>
 
-    <div class="post-description" *ngIf="showFullView; else hidePost">
+    <div class="post-description" *ngIf="showFullView; else shortView">
       {{ post.post.description }} <br />
       <button class="btn" (click)="showFullPost(previousNavPath)">
         Go back
       </button>
     </div>
-    <ng-template #hidePost>
+
+    <ng-template #shortView>
       <div class="icons">
         <div *ngIf="post.post.userId !== userId; else postByUser">
           <comment
             [commentsCount]="countOfComments"
             (click)="toggleComment()"
           ></comment>
-          <like></like>
+          <like
+            *ngIf="!isLiked; else dislike"
+            [isLiked]="isLiked"
+            (click)="likePost(post)"
+          ></like>
+
+          <ng-template #dislike>
+            <like [isLiked]="isLiked" (click)="dislikePost()"></like>
+          </ng-template>
         </div>
         <button (click)="showFullPost(post.id)" class="btn">Full view</button>
 
         <ng-template #postByUser>
           <div>
             <comment [commentsCount]="countOfComments"></comment>
-            <like></like>
+            <bookmarkHeart></bookmarkHeart>
           </div>
         </ng-template>
       </div>

@@ -38,7 +38,14 @@ export class UserService {
   async dislikePost(post: any, userId: any) {
     try {
       const postRef = ref(this.db, `posts/${post.id}/likedBy/${userId}`);
+      const usersRef = (await get(ref(this.db, `users`))).val();
+      const usernameObj: any = Object.values(usersRef).filter(
+        (userObj: any) => userObj.uid === userId
+      );
+      const username = usernameObj[0].username;
+      const userRef = ref(this.db, `users/${username}/likedPosts`);
       await remove(postRef);
+      await remove(userRef);
     } catch (error) {
       throw error;
     }
