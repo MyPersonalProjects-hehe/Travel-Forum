@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'like',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './like.component.html',
   styleUrl: './like.component.css',
 })
-export class LikeComponent {}
+export class LikeComponent {
+  @Input() isLiked: any;
+}
