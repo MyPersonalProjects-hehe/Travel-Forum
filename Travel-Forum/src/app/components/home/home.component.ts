@@ -39,6 +39,11 @@ export class HomeComponent implements OnInit {
           .filter((obj: any) => obj.post.userId === this.currentUser.uid);
       }
 
+      const likes = this.posts$.reduce((acc: number, obj: any) => {
+        acc += [obj.post?.likedBy].length;
+        return acc;
+      }, 0);
+
       this.UserInfo.push(
         `Your profile info`,
         `Date of register : ${dateOfRegister}`,
@@ -50,7 +55,7 @@ export class HomeComponent implements OnInit {
         `Statistics for posts`,
         `Number of uploaded posts : ${this.posts$?.length || 0}`,
         `number`,
-        `Likes : ${0}`,
+        `Likes : ${likes || 0}`,
         `heart`
       );
     });

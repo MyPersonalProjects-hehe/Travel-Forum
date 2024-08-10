@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'bookmarkHeart',
@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
   templateUrl: './bookmark.heart.component.html',
   styleUrl: './bookmark.heart.component.css',
 })
-export class BookmarkHeartComponent {}
+export class BookmarkHeartComponent {
+  @Input() likes: any;
+}

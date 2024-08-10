@@ -38,6 +38,7 @@ export class PostComponent implements OnInit {
   comment: string = '';
   countOfComments: any = 0;
   isLiked: boolean = false;
+  likes: any;
 
   constructor(
     private userService: UserService,
@@ -71,8 +72,14 @@ export class PostComponent implements OnInit {
 
     onValue(ref(this.db, `posts/${this.post.id}/likedBy`), (snapshot) => {
       const data = snapshot.val();
+
       if (data) {
         const userIds = Object.keys(data);
+        const likes = Object.keys(data).length;
+        console.log(Object.keys(data));
+
+        this.likes = likes;
+
         if (userIds.includes(this.userId)) {
           this.isLiked = true;
         } else {
