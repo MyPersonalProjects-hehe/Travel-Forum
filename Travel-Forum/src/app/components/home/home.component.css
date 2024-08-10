@@ -15,6 +15,10 @@ body {
   gap: 100px;
 }
 
+.post-card {
+  animation: popIn 0.6s ease-out forwards;
+}
+
 @media (max-width: 1140px) {
   .post-side-info {
     display: flex;
