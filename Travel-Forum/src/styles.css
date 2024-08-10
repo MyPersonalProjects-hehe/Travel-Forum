@@ -1,3 +1,14 @@
+/** Global components **/
+
+.main-body {
+  background-color: #f9eed8;
+  font-family: cursive;
+}
+
+.activeButton {
+  background-color: #d38a65;
+}
+
 .btn {
   width: 200px;
   height: 50px;
@@ -15,6 +26,18 @@
 .btn:hover {
   background-color: #62453d;
 }
+
+.avatar {
+  display: flex;
+  align-items: row;
+  gap: 20px;
+}
+
+h1 {
+  margin-top: 32px;
+}
+
+/** Form control **/
 
 .form {
   display: flex;
@@ -75,13 +98,14 @@
   gap: 5px;
 }
 
-.main-body {
-  background-color: #f9eed8;
-  font-family: cursive;
-}
+/** Post card **/
 
-.activeButton {
-  background-color: #d38a65;
+.post-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: popIn 0.6s ease-out forwards;
 }
 
 .posts-container {
@@ -137,13 +161,6 @@
   color: #888;
 }
 
-.post-body {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
 svg {
   width: 40px;
   height: auto;
@@ -160,20 +177,22 @@ svg {
   margin-left: 55px;
 }
 
+/** Keyframes and media **/
+@keyframes popIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 @media (max-width: 768px) {
   .avatar {
     display: flex;
     justify-content: center;
     margin-bottom: 7px;
   }
-}
-
-.avatar {
-  display: flex;
-  align-items: row;
-  gap: 20px;
-}
-
-h1 {
-  margin-top: 32px;
 }
