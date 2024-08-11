@@ -81,7 +81,10 @@ export class AuthService {
 
   async logout() {
     try {
-      this.router.navigate(['/login']);
+      this.router.navigate([this.router.url]).then(() => {
+        window.location.reload();
+      });
+
       await signOut(this.fireauth);
     } catch (error) {
       throw error;
