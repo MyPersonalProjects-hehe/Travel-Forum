@@ -70,14 +70,12 @@ export class PostComponent implements OnInit {
       ).length;
     }
 
-    onValue(ref(this.db, `posts/${this.post.id}/likedBy`), (snapshot) => {
+    onValue(ref(this.db, `posts/${this.post?.id}/likedBy`), (snapshot) => {
       const data = snapshot.val();
 
       if (data) {
         const userIds = Object.keys(data);
         const likes = Object.keys(data).length;
-        console.log(Object.keys(data));
-
         this.likes = likes;
 
         if (userIds.includes(this.userId)) {

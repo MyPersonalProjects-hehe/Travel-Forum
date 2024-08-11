@@ -30,7 +30,7 @@
             <like [isLiked]="isLiked" (click)="dislikePost()"></like>
           </ng-template>
         </div>
-        <button (click)="showFullPost(post.id)" class="btn">Full view</button>
+        <button (click)="showFullPost(post?.id)" class="btn">Full view</button>
 
         <ng-template #postByUser>
           <div>
