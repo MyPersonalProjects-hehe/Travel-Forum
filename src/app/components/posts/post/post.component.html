@@ -1,55 +1,61 @@
-<div class="post-body" *ngIf="post">
-  <img [src]="post.post?.image" alt="Post Image" />
-  <div class="post-content">
-    <h2 class="post-title">{{ post.post?.title }}</h2>
-    <div class="post-short-description">
-      <p>{{ post.post?.shortDescription }}</p>
+<div class="post">
+  <div class="post__body" *ngIf="post">
+    <div class="post__img image-fit">
+      <img [src]="post.post?.image" alt="Post Image" />
     </div>
 
-    <div class="post-description" *ngIf="showFullView; else shortView">
-      {{ post.post.description }} <br />
-      <button class="btn" (click)="showFullPost(previousNavPath)">
-        Go back
-      </button>
-    </div>
+    <div class="post__content">
+      <h2 class="post__title">{{ post.post?.title }}</h2>
 
-    <ng-template #shortView>
-      <div class="icons">
-        <div *ngIf="post.post.userId !== userId; else postByUser">
-          <comment
-            [commentsCount]="countOfComments"
-            (click)="toggleComment()"
-          ></comment>
-          <like
-            *ngIf="!isLiked; else dislike"
-            [isLiked]="isLiked"
-            (click)="likePost(post)"
-          ></like>
+      <p class="post__description">{{ post.post?.shortDescription }}</p>
 
-          <ng-template #dislike>
-            <like [isLiked]="isLiked" (click)="dislikePost()"></like>
+      <div class="post__description" *ngIf="showFullView; else shortView">
+        {{ post.post.description }} <br />
+        <button class="btn" (click)="showFullPost(previousNavPath)">
+          Go back
+        </button>
+      </div>
+
+      <ng-template #shortView>
+        <div class="icons">
+          <div *ngIf="post.post.userId !== userId; else postByUser">
+            <comment
+              [commentsCount]="countOfComments"
+              (click)="toggleComment()"
+            ></comment>
+            <like
+              *ngIf="!isLiked; else dislike"
+              [isLiked]="isLiked"
+              (click)="likePost(post)"
+            ></like>
+
+            <ng-template #dislike>
+              <like [isLiked]="isLiked" (click)="dislikePost()"></like>
+            </ng-template>
+          </div>
+          <button (click)="showFullPost(post?.id)" class="btn">
+            Full view
+          </button>
+
+          <ng-template #postByUser>
+            <div>
+              <comment [commentsCount]="countOfComments"></comment>
+              <bookmarkHeart [likes]="likes"></bookmarkHeart>
+            </div>
           </ng-template>
         </div>
-        <button (click)="showFullPost(post?.id)" class="btn">Full view</button>
+      </ng-template>
 
-        <ng-template #postByUser>
-          <div>
-            <comment [commentsCount]="countOfComments"></comment>
-            <bookmarkHeart [likes]="likes"></bookmarkHeart>
-          </div>
-        </ng-template>
-      </div>
-    </ng-template>
-
-    <form (ngSubmit)="submitComment()" *ngIf="showComment">
-      <input
-        type="text"
-        placeholder="Leave a comment"
-        class="input"
-        [(ngModel)]="comment"
-        name="comment"
-      />
-      <button class="btn" type="submit">Submit</button>
-    </form>
+      <form (ngSubmit)="submitComment()" *ngIf="showComment">
+        <input
+          type="text"
+          placeholder="Leave a comment"
+          class="input"
+          [(ngModel)]="comment"
+          name="comment"
+        />
+        <button class="btn" type="submit">Submit</button>
+      </form>
+    </div>
   </div>
 </div>

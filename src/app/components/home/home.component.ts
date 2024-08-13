@@ -11,7 +11,7 @@ import { BlockComponent } from '../block/block.component';
   standalone: true,
   imports: [NgFor, NgIf, PostComponent, BlockComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent implements OnInit {
   currentUser: any = null;

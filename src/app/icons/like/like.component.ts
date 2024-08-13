@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './like.component.html',
-  styleUrl: './like.component.css',
+  styleUrl: './like.component.scss',
 })
 export class LikeComponent {
   @Input() isLiked: any;

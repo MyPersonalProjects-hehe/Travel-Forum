@@ -1,10 +1,12 @@
 <p>Here you can leave a comment or like the post!</p>
 <div class="full-view-post-container">
-  <div class="post-card">
-    <post [post]="post$" [showFullView]="true"></post>
-    <button class="arrow-button" (click)="toggleCommentSection()">
-      Comment section →
-    </button>
+  <div class="container">
+    <div class="post">
+      <post [post]="post$" [showFullView]="true"></post>
+      <button class="arrow-button" (click)="toggleCommentSection()">
+        Comment section →
+      </button>
+    </div>
   </div>
 </div>
 <div class="comment-section" [class.open]="isCommentSectionOpen">

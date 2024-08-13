@@ -26,7 +26,7 @@ import { Database } from '@angular/fire/database';
     BookmarkHeartComponent,
   ],
   templateUrl: './post.component.html',
-  styleUrl: './post.component.css',
+  styleUrl: './post.component.scss',
 })
 export class PostComponent implements OnInit {
   @Input() post: any;

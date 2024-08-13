@@ -1,6 +1,12 @@
-body {
-  margin: 0;
-  padding: 0;
+.home-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding-top: 50px;
+
+  .home__posts > div {
+    margin-bottom: 30px;
+  }
 }
 
 .post-side-info {
@@ -12,7 +18,7 @@ body {
 .side-info {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 50px;
 }
 
 .post-card {

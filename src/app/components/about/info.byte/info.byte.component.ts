@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './info.byte.component.html',
-  styleUrl: './info.byte.component.css',
+  styleUrl: './info.byte.component.scss',
 })
 export class InfoByteComponent {}

@@ -12,7 +12,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
   standalone: true,
   imports: [PostComponent, NgFor, NgIf, CommonModule],
   templateUrl: './full.view.post.component.html',
-  styleUrl: './full.view.post.component.css',
+  styleUrl: './full.view.post.component.scss',
 })
 export class FullViewPostComponent implements OnInit {
   currentUser: any;

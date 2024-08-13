@@ -1,17 +1,15 @@
-<div class="body">
-  <div class="post-side-info">
-    <div class="side-info">
-      <block [info]="UserInfo"></block>
-      <block [info]="PostsInfo"></block>
-    </div>
-    <div class="post-container" *ngIf="posts$?.length > 0; else emptyHome">
-      <div *ngFor="let post of posts$" class="post-card">
-        <post [post]="post" [userId]="currentUser.uid"></post>
-      </div>
-    </div>
-
-    <ng-template class="empty home" #emptyHome>
-      <h1>No posts yet</h1>
-    </ng-template>
+<div class="home-container container">
+  <div class="side-info">
+    <block [info]="UserInfo"></block>
+    <block [info]="PostsInfo"></block>
   </div>
+  <div class="home__posts" *ngIf="posts$?.length > 0; else emptyHome">
+    <div *ngFor="let post of posts$">
+      <post [post]="post" [userId]="currentUser.uid"></post>
+    </div>
+  </div>
+
+  <ng-template class="empty home" #emptyHome>
+    <h1>No posts yet</h1>
+  </ng-template>
 </div>

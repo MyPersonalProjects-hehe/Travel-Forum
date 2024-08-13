@@ -1,0 +1,15 @@
+.like-heart {
+  cursor: pointer;
+
+  svg {
+    transition: fill 0.2s;
+  }
+
+  &:hover svg {
+    fill: #a31431;
+  }
+}
+
+.liked {
+  fill: #a31431;
+}

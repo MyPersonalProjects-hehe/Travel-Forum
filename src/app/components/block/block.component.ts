@@ -16,7 +16,7 @@ import { UploadsComponent } from '../../icons/uploads/uploads.component';
     UploadsComponent,
   ],
   templateUrl: './block.component.html',
-  styleUrl: './block.component.css',
+  styleUrl: './block.component.scss',
 })
 export class BlockComponent {
   @Input() info: any = null;
