@@ -39,10 +39,10 @@ export class HomeComponent implements OnInit {
           .filter((obj: any) => obj.post.userId === this.currentUser.uid);
       }
 
-      const likes = this.posts$.reduce((acc: number, obj: any) => {
-        acc += [obj.post?.likedBy].length;
-        return acc;
-      }, 0);
+      const likes = this.posts$
+        .filter((obj: any) => obj.post.likedBy)
+        .map((obj: any) => Object.keys(obj.post.likedBy))
+        .flat().length;
 
       this.UserInfo.push(
         `Your profile info`,

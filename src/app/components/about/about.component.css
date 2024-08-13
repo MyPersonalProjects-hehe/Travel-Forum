@@ -1,0 +1,39 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.byte-one {
+  animation: byte-one 2s ease-out forwards;
+}
+
+.byte-two {
+  animation: byte-two 3s ease-out forwards;
+  animation-delay: 2s;
+  visibility: hidden;
+}
+
+@keyframes byte-one {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes byte-two {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+}

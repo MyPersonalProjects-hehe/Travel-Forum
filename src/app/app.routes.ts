@@ -6,6 +6,7 @@ import { authGuard, notAuthGuard } from './services/auth.guard';
 import { CreatePost } from './components/posts/create.post/create.post.component';
 import { FullViewPostComponent } from './components/posts/full.view.post/full.view.post.component';
 import { AllPostsComponent } from './components/posts/all.posts/all.posts.component';
+import { AboutComponent } from './components/about/about.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,11 @@ export const routes: Routes = [
   {
     path: 'fullViewPost/:id',
     component: FullViewPostComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'about',
+    component: AboutComponent,
     canActivate: [authGuard],
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
