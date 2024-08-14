@@ -1,10 +1,10 @@
 # 🌍 Travel-Forum
 
-<img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/Untitled-2%20(2).png?raw=true" width="200" height="200">
-
 This is a small testing application developed to explore the basics of Angular. The idea of creating a travel forum stemmed from my love for travel. ✈️ I decided to build this project using Angular and TypeScript, both of which are new to me. Through this project, I aimed to identify similarities between Angular and React, but I found them to be very different frameworks.
 
-Please note that this application is still in development and may contain bugs. 🐞 Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚
+Please note that this application is still in development and may contain bugs.🐞  You have may also noticed that almost everywehere the types for TS are written to 'any'. As i mentioned TS and Angular are unknown to me, my focus right now is on Angular`s basics and in the future i will correct the types when i have more solid understanding of how TS works.
+
+Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚
 
 <h2> Functionalities 🛠️</h2>
 Here are the functionalities I plan to include in this project:
