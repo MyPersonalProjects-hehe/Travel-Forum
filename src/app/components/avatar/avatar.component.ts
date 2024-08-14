@@ -9,7 +9,7 @@ import { Database } from '@angular/fire/database';
   standalone: true,
   imports: [],
   templateUrl: './avatar.component.html',
-  styleUrl: './avatar.component.css',
+  styleUrl: './avatar.component.scss',
 })
 export class AvatarComponent implements OnInit {
   currentUser: any = null;

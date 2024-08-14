@@ -1,26 +1,22 @@
-.full-view-post-container {
+.fullView__post {
   display: flex;
   justify-content: center;
-}
 
-p {
-  text-align: center;
-}
+  .arrow__button {
+    background-color: var(--c-primary);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-left: auto;
+    transition: background-color 0.3s ease;
 
-.arrow-button {
-  background-color: var(--c-primary);
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  cursor: pointer;
-  font-size: 18px;
-  border-radius: 5px;
-  margin-top: 20px;
-  margin-left: auto;
-  transition: background-color 0.3s ease;
-
-  &:hover {
-    background-color: var(--c-dark);
+    &:hover {
+      background-color: var(--c-dark);
+    }
   }
 }
 

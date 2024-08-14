@@ -9,7 +9,7 @@ import { Router, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [FormsModule, RouterOutlet],
   templateUrl: './create.post.component.html',
-  styleUrl: './create.post.component.css',
+  styleUrl: './create.post.component.scss',
 })
 export class CreatePost {
   userId: any = null;

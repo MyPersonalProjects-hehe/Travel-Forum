@@ -1,4 +1,4 @@
-.home-container {
+.home__container {
   display: flex;
   align-items: flex-start;
   gap: 40px;
@@ -7,28 +7,10 @@
   .home__posts > div {
     margin-bottom: 30px;
   }
-}
 
-.post-side-info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-}
-
-.side-info {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.post-card {
-  animation: popIn 0.6s ease-out forwards;
-}
-
-@media (max-width: 1140px) {
-  .post-side-info {
+  .side__info {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 50px;
   }
 }

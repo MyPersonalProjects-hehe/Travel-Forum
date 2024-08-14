@@ -7,7 +7,7 @@
     <div class="post__content">
       <h2 class="post__title">{{ post.post?.title }}</h2>
 
-      <p class="post__description">{{ post.post?.shortDescription }}</p>
+      <p>{{ post.post?.shortDescription }}</p>
 
       <div class="post__description" *ngIf="showFullView; else shortView">
         {{ post.post.description }} <br />

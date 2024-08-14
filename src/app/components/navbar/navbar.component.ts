@@ -15,7 +15,7 @@ import { AvatarComponent } from '../avatar/avatar.component';
   standalone: true,
   imports: [NgIf, RouterOutlet, RouterLink, RouterLinkActive, AvatarComponent],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css',
+  styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent implements OnInit {
   user: User | null = null;

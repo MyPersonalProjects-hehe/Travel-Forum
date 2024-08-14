@@ -1,17 +1,17 @@
 <div class="form">
-  <div class="form-content">
-    <div class="form-text">
+  <div class="form__content">
+    <div class="form__text">
       <h1>Create your personal post from your last trip!</h1>
       <p class="py-6">
         Upload a picture from your travel destination <br />
         and a description how was your experience there
       </p>
     </div>
-    <div class="form-body">
-      <form (ngSubmit)="submitPost()" class="form-input">
-        <div class="form-control">
+    <div class="form__body">
+      <form (ngSubmit)="submitPost()" class="form__input">
+        <div class="form__control">
           <label class="label">
-            <span class="label-text">Title</span>
+            <span class="label__text">Title</span>
           </label>
           <input
             type="text"
@@ -23,9 +23,9 @@
           />
         </div>
 
-        <div class="form-control">
+        <div class="form__control">
           <label class="label">
-            <span class="label-text">Short Description</span>
+            <span class="label__text">Short Description</span>
           </label>
           <input
             type="text"
@@ -37,9 +37,9 @@
           />
         </div>
 
-        <div class="form-control">
+        <div class="form__control">
           <label class="label">
-            <span class="label-text">Description</span>
+            <span class="label__text">Description</span>
           </label>
           <input
             type="text"
@@ -51,9 +51,9 @@
           />
         </div>
 
-        <div class="form-control">
+        <div class="form__control">
           <label class="label">
-            <span class="label-text">Image</span>
+            <span class="label__text">Image</span>
           </label>
           <input
             type="text"
@@ -64,7 +64,7 @@
             [(ngModel)]="post.image"
           />
         </div>
-        <div class="form-buttons">
+        <div class="form__buttons">
           <button type="submit" class="btn">Upload post</button>
         </div>
       </form>

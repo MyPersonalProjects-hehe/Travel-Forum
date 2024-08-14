@@ -10,7 +10,7 @@ import { NgFor, NgIf } from '@angular/common';
   standalone: true,
   imports: [PostComponent, NgFor, NgIf],
   templateUrl: './all.posts.component.html',
-  styleUrl: './all.posts.component.css',
+  styleUrl: './all.posts.component.scss',
 })
 export class AllPostsComponent implements OnInit {
   currentUser: any;
