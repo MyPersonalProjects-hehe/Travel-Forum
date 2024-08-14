@@ -57,5 +57,9 @@
     padding: 50px 10px 20px;
     width: 100%;
     animation: slideIn 0.2s;
+
+    > * {
+      margin: 6px;
+    }
   }
 }
