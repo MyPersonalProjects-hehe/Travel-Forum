@@ -5,11 +5,12 @@ import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { PostComponent } from '../posts/post/post.component';
 import { BlockComponent } from '../block/block.component';
+import { CarouselModule } from 'primeng/carousel';
 
 @Component({
   selector: 'home',
   standalone: true,
-  imports: [NgFor, NgIf, PostComponent, BlockComponent],
+  imports: [NgFor, NgIf, PostComponent, BlockComponent, CarouselModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

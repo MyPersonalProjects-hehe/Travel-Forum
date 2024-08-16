@@ -3,10 +3,19 @@
     <block [info]="UserInfo"></block>
     <block [info]="PostsInfo"></block>
   </div>
+
   <div class="home__posts" *ngIf="posts$?.length > 0; else emptyHome">
-    <div *ngFor="let post of posts$">
-      <post [post]="post" [userId]="currentUser.uid"></post>
-    </div>
+    <p-carousel
+      [value]="posts$"
+      [numVisible]="1"
+      [numScroll]="1"
+      orientation="horizontal"
+      verticalViewPortHeight="360px"
+    >
+      <ng-template let-post pTemplate="item">
+        <post [post]="post" [userId]="currentUser.uid"></post>
+      </ng-template>
+    </p-carousel>
   </div>
 
   <ng-template class="empty home" #emptyHome>
