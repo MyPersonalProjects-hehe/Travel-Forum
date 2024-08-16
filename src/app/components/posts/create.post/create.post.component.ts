@@ -2,12 +2,15 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { UserService } from '../../../services/user.service';
-import { Router, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { MessageService } from 'primeng/api';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'app-my-posts',
   standalone: true,
-  imports: [FormsModule, RouterOutlet],
+  imports: [FormsModule, RouterOutlet, ToastModule],
+  providers: [MessageService],
   templateUrl: './create.post.component.html',
   styleUrl: './create.post.component.scss',
 })
@@ -27,7 +30,7 @@ export class CreatePost {
   constructor(
     private auth: AuthService,
     private userService: UserService,
-    private rout: Router
+    private messageService: MessageService
   ) {}
 
   async submitPost() {
@@ -35,8 +38,23 @@ export class CreatePost {
       this.post.userEmail = user?.email;
       this.post.userId = user?.uid;
     });
-    await this.userService.uploadPost(this.post);
-    this.post = {};
-    this.rout.navigate(['/home']);
+
+    try {
+      await this.userService.uploadPost(this.post);
+      this.messageService.add({
+        severity: 'success',
+        summary: 'Success',
+        detail: 'Successfully uploaded post in your home page!',
+        life: 3000,
+      });
+      this.post = {};
+    } catch (error) {
+      this.messageService.add({
+        severity: 'error',
+        summary: 'Error',
+        detail: `${error}`,
+        life: 3000,
+      });
+    }
   }
 }

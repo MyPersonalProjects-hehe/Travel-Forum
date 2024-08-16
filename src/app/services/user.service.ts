@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { get, push, ref, remove, set, update } from 'firebase/database';
 import { Database } from '@angular/fire/database';
+import { validatePost } from './validations';
 
 @Injectable({
   providedIn: 'root',
@@ -10,6 +11,7 @@ export class UserService {
 
   async uploadPost(post: object) {
     try {
+      validatePost(post);
       const dataRef = ref(this.db, `posts`);
       await push(dataRef, post);
     } catch (error) {
