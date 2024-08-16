@@ -4,11 +4,12 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from '@angular/fire/auth';
-import { Database } from '@angular/fire/database';
+import { Database, get } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { BehaviorSubject } from 'rxjs';
+import { validateRegister } from './validations';
 
 @Injectable({
   providedIn: 'root',
@@ -44,20 +45,29 @@ export class AuthService {
     }
   }
 
-  async register(email: string, password: string) {
+  async register(email: string, password: string, username: string) {
     try {
+      const usersRef = Object.keys((await get(ref(this.db, `users`))).val());
+      validateRegister(email, username, usersRef);
+
       const userCredential = await createUserWithEmailAndPassword(
         this.fireauth,
         email,
         password
       );
-      alert('Successfully registered');
-      this.router.navigate(['/home']);
       this.userInfo = userCredential.user;
-
+      this.router.navigate(['/home']);
       return userCredential.user;
-    } catch (err) {
-      alert(err);
+    } catch (err: any) {
+      if (err.message.includes('auth/email-already-in-use')) {
+        throw new Error('Email is already in use!');
+      }
+      if (err.message.includes('auth/weak-password')) {
+        throw new Error(
+          'Weak password! Password should be at least 6 characters!'
+        );
+      }
+
       throw err;
     }
   }
