@@ -18,7 +18,7 @@ Here are the functionalities I plan to include in this project:
 
 **Languages:** <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" height="20"> <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" height="20"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/typescript-icon-icon-1024x1024-vh3pfez8.png" height="20">
 
-**Frameworks/Libraries:** <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/27530684-09d7c75a-5a5a-11e7-9893-1395507feb2e.png" height="30"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/angular-icon-logo-5FC0C40EAC-seeklogo.com.png" height="30">
+**Frameworks/Libraries:** <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/angular-icon-logo-5FC0C40EAC-seeklogo.com.png" height="30"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/angular-icon-logo-5FC0C40EAC-seeklogo.com.png" height="30">
 
 **Linters:** <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" height="20">
 
