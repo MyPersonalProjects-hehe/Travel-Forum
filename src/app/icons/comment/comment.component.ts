@@ -10,8 +10,4 @@ import { Component, Input } from '@angular/core';
 })
 export class CommentComponent {
   @Input() commentsCount: any;
-
-  d() {
-    console.log(this.commentsCount);
-  }
 }
