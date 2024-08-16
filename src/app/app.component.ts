@@ -14,7 +14,6 @@ import { CardComponent } from './components/login/card.component';
   standalone: true,
   imports: [
     RouterOutlet,
-
     LoginComponent,
     RegisterComponent,
     NgIf,

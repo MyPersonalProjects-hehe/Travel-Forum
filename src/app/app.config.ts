@@ -10,6 +10,7 @@ import { getStorage, provideStorage } from '@angular/fire/storage';
 import { environment } from './environments/environment';
 import { UserService } from './services/user.service';
 import { AuthService } from './services/auth.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +23,6 @@ export const appConfig: ApplicationConfig = {
     provideStorage(() => getStorage()),
     UserService,
     AuthService,
+    provideAnimationsAsync(),
   ],
 };
