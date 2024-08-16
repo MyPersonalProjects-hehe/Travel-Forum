@@ -4,11 +4,12 @@ import { AuthService } from '../../../services/auth.service';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { NgFor, NgIf } from '@angular/common';
+import { ScrollTopModule } from 'primeng/scrolltop';
 
 @Component({
   selector: 'allPosts',
   standalone: true,
-  imports: [PostComponent, NgFor, NgIf],
+  imports: [PostComponent, NgFor, NgIf, ScrollTopModule],
   templateUrl: './all.posts.component.html',
   styleUrl: './all.posts.component.scss',
 })
