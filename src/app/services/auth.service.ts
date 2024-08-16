@@ -35,7 +35,7 @@ export class AuthService {
         email,
         password
       );
-      alert('Successfully logging');
+
       this.router.navigate(['/home']);
 
       return singedUser.user;
