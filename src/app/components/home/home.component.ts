@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.user$.subscribe((user) => (this.currentUser = user));
-    const date = Number(this.currentUser.metadata.createdAt);
+    const date = Number(this.currentUser?.metadata?.createdAt);
     const dateOfRegister = new Date(date).toLocaleDateString();
 
     const postsRef = ref(this.db, `posts`);
@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
 
       this.UserInfo.push(
         `Your profile info`,
-        `Date of register : ${dateOfRegister}`,
+        `Date of register : ${dateOfRegister || 0}`,
         `calendar`,
         `Number of friends : ${0}`,
         `user`
