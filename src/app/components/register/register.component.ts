@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { registerError } from '../../services/toast';
 
 @Component({
   selector: 'register',
@@ -31,13 +32,8 @@ export class RegisterComponent {
       this.password = '';
       this.username = '';
       this.avatar = '';
-    } catch (error) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: `${error}`,
-        life: 3000,
-      });
+    } catch (error: any) {
+      this.messageService.add(registerError(error));
     }
   }
 }

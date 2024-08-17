@@ -5,6 +5,7 @@ import { UserService } from '../../../services/user.service';
 import { RouterOutlet } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { uploadPostError, uploadPostSuccess } from '../../../services/toast';
 
 @Component({
   selector: 'app-my-posts',
@@ -41,20 +42,10 @@ export class CreatePost {
 
     try {
       await this.userService.uploadPost(this.post);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Successfully uploaded post in your home page!',
-        life: 3000,
-      });
+      this.messageService.add(uploadPostSuccess);
       this.post = {};
-    } catch (error) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: `${error}`,
-        life: 3000,
-      });
+    } catch (error: any) {
+      this.messageService.add(uploadPostError(error));
     }
   }
 }

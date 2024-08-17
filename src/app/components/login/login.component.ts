@@ -3,6 +3,7 @@ import { AuthService } from '../../services/auth.service';
 import { FormsModule } from '@angular/forms';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { loginError, loginSuccess } from '../../services/toast';
 
 @Component({
   selector: 'login',
@@ -25,22 +26,12 @@ export class LoginComponent {
   async login() {
     try {
       await this.authService.login(this.email, this.password);
-      this.messageService.add({
-        severity: 'success',
-        summary: 'Success',
-        detail: 'Successfully logged in!',
-        life: 3000,
-      });
+      this.messageService.add(loginSuccess);
 
       this.email = '';
       this.password = '';
     } catch (error) {
-      this.messageService.add({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Wrong email or password!',
-        life: 3000,
-      });
+      this.messageService.add(loginError);
     }
   }
 

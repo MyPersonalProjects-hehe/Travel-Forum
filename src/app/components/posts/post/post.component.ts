@@ -11,6 +11,12 @@ import { FormsModule } from '@angular/forms';
 import { BookmarkHeartComponent } from '../../../icons/bookmark-heart/bookmark.heart.component';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
+import { MessageService } from 'primeng/api';
+import {
+  uploadCommentError,
+  uploadCommentSuccess,
+} from '../../../services/toast';
+import { ToastModule } from 'primeng/toast';
 
 @Component({
   selector: 'post',
@@ -24,7 +30,9 @@ import { Database } from '@angular/fire/database';
     CommentComponent,
     FormsModule,
     BookmarkHeartComponent,
+    ToastModule,
   ],
+  providers: [MessageService],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
 })
@@ -45,16 +53,9 @@ export class PostComponent implements OnInit {
     private auth: AuthService,
     private route: Router,
     private routeService: RouterService,
-    private db: Database
+    private db: Database,
+    private messageService: MessageService
   ) {}
-
-  async likePost(post: any) {
-    await this.userService.likePost(post, this.userId);
-  }
-
-  async dislikePost() {
-    await this.userService.dislikePost(this.post, this.userId);
-  }
 
   ngOnInit() {
     this.auth.user$.subscribe((user) => (this.user = user));
@@ -96,14 +97,27 @@ export class PostComponent implements OnInit {
   }
 
   async submitComment() {
-    await this.userService.uploadComment(
-      this.comment,
-      this.post.id,
-      this.userId
-    );
+    try {
+      await this.userService.uploadComment(
+        this.comment,
+        this.post.id,
+        this.userId
+      );
+      this.messageService.add(uploadCommentSuccess);
+    } catch (error: any) {
+      this.messageService.add(uploadCommentError(error));
+    }
   }
 
   toggleComment() {
     this.showComment = !this.showComment;
+  }
+
+  async likePost(post: any) {
+    await this.userService.likePost(post, this.userId);
+  }
+
+  async dislikePost() {
+    await this.userService.dislikePost(this.post, this.userId);
   }
 }

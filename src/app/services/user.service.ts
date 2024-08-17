@@ -91,7 +91,7 @@ export class UserService {
 
       await push(postRef, data);
     } catch (error) {
-      alert(error);
+      throw error;
     }
   }
 }
