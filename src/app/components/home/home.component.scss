@@ -1,8 +1,9 @@
 .home__container {
   display: flex;
   align-items: flex-start;
-  gap: 40px;
-  padding-top: 50px;
+  justify-content: space-between;
+  gap: 5rem;
+  padding-top: 5rem;
 
   .home__posts {
     width: 59%;
@@ -14,6 +15,11 @@
     flex-direction: column;
     gap: 50px;
   }
+}
+
+.empty__home {
+  display: flex;
+  justify-content: end;
 }
 
 @media (max-width: 1123px) {
