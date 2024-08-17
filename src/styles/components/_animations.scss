@@ -20,3 +20,29 @@
     opacity: 1;
   }
 }
+
+@keyframes byte-one {
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes byte-two {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+    visibility: visible;
+  }
+}
