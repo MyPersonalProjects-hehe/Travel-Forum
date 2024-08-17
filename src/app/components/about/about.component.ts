@@ -8,4 +8,6 @@ import { InfoByteComponent } from './info.byte/info.byte.component';
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss',
 })
-export class AboutComponent {}
+export class AboutComponent {
+  reverse: boolean = true;
+}

@@ -1,11 +1,18 @@
 <div class="body">
-  <!-- <h2>The platform is created by the love for traveling and adventures</h2>
-  <h2>
-    We encourage people to share their journeys and pass on the emotions they
-    crated during that trip
-  </h2>
-  <h3>Here are the functionalities provided for travel buddies</h3>
-  <div class="byte-one"><infoByte></infoByte></div>
-  <div class="byte-two"><infoByte></infoByte></div>
-  <div class="byte-three"><infoByte></infoByte></div> -->
+  <div class="heading">
+    <h2>The platform is created by the love for traveling and adventures</h2>
+    <h2>
+      We encourage people to share their journeys and pass on the emotions they
+      crated during that trip
+    </h2>
+    <h3>Here are the functionalities provided for travel buddies</h3>
+  </div>
+
+  <div class="byte-one"><infoByte [likeFunctionality]="true"></infoByte></div>
+  <div class="byte-two">
+    <infoByte [uploadFunctionality]="true" [reverse]="reverse"></infoByte>
+  </div>
+  <div class="byte-three">
+    <infoByte [commentFunctionality]="true"></infoByte>
+  </div>
 </div>
