@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   standalone: true,
   imports: [NgIf],
   templateUrl: './comment.component.html',
-  styleUrl: './comment.component.css',
+  styleUrl: './comment.component.scss',
 })
 export class CommentComponent {
   @Input() commentsCount: any;

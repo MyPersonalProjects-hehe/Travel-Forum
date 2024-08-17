@@ -5,6 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './heart.component.html',
-  styleUrl: './heart.component.css',
+  styleUrl: './heart.component.scss',
 })
 export class HeartComponent {}
