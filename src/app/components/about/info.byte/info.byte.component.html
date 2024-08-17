@@ -1,13 +1,18 @@
-<div class="block">
-  <div class="block-body">
-    <img
-      src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0f/ff/d4/32.jpg"
-    />
-    <h1 class="block-heading">Hello</h1>
-    <ul>
-      <div class="info-stats">
-        <div class="icon">asd</div>
-      </div>
-    </ul>
+<div class="block" [class.isReverse]="reverse">
+  <div class="block__body">
+    <span *ngIf="likeFunctionality" class="block__content">
+      <clipboard></clipboard>
+      <p>Like posts</p>
+    </span>
+
+    <span *ngIf="uploadFunctionality" class="block__content">
+      <p>Upload posts by sharing experience on your last trip</p>
+      <camera></camera>
+    </span>
+
+    <span *ngIf="commentFunctionality" class="block__content">
+      <p>Upload posts by sharing experience on your last trip</p>
+      <comment></comment>
+    </span>
   </div>
 </div>
