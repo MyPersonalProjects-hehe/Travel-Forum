@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { onAuthStateChanged, signOut, User } from 'firebase/auth';
 import { ref, set } from 'firebase/database';
 import { BehaviorSubject } from 'rxjs';
-import { validateRegister } from './validations';
+import { validateLogin, validateRegister } from './validations';
 
 @Injectable({
   providedIn: 'root',
@@ -31,6 +31,8 @@ export class AuthService {
 
   async login(email: string, password: string) {
     try {
+      validateLogin(email, password);
+
       const singedUser = await signInWithEmailAndPassword(
         this.fireauth,
         email,
@@ -40,7 +42,10 @@ export class AuthService {
       this.router.navigate(['/home']);
 
       return singedUser.user;
-    } catch (error) {
+    } catch (error: any) {
+      if (error.message.includes('(auth/invalid-credential)')) {
+        throw new Error('An account with this email doesn`t exist!');
+      }
       throw error;
     }
   }

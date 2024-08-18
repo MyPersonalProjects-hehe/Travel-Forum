@@ -31,7 +31,7 @@ export class LoginComponent {
       this.email = '';
       this.password = '';
     } catch (error) {
-      this.messageService.add(loginError);
+      this.messageService.add(loginError(error));
     }
   }
 

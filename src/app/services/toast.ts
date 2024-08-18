@@ -21,11 +21,13 @@ export const loginSuccess = {
   life: 3000,
 };
 
-export const loginError = {
-  severity: 'error',
-  summary: 'Error',
-  detail: 'Wrong email or password!',
-  life: 3000,
+export const loginError = (error: any) => {
+  return {
+    severity: 'error',
+    summary: 'Error',
+    detail: `${error}`,
+    life: 3000,
+  };
 };
 
 export const registerError = (error: any) => {

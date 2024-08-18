@@ -18,6 +18,9 @@ export const validateRegister = (
   username: string,
   users: any
 ) => {
+  if (email.length < 1) {
+    throw new Error('Please provide an email!');
+  }
   if (!email.includes('@')) {
     throw new Error('Please provide a valid email!');
   }
@@ -28,5 +31,15 @@ export const validateRegister = (
 
   if (username.length < 3) {
     throw new Error('Username must be more than 3 characters!');
+  }
+};
+
+export const validateLogin = (email: string, password: string) => {
+  if (email.length < 1) {
+    throw new Error('Please provide an email!');
+  }
+
+  if (password.length < 1) {
+    throw new Error('Please provide a password!');
   }
 };
