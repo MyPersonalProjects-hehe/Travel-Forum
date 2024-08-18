@@ -1,17 +1,19 @@
 <main class="main">
   <app-navbar *ngIf="user"></app-navbar>
   <div class="content">
-    <card *ngIf="!user"></card>
+    <card *ngIf="!user" class="card"></card>
 
-    <div class="login-register">
+    <div class="login__register">
       <login
         (buttonValue)="onButtonClicked($event)"
         *ngIf="!user && activeComponent === 'Login'"
+        class="fade-in"
       ></login>
 
       <register
         (buttonValue)="onButtonClicked($event)"
         *ngIf="!user && activeComponent === 'Register'"
+        class="fade-in"
       ></register>
     </div>
   </div>
