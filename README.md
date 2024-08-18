@@ -19,7 +19,6 @@ Here are the functionalities I plan to include in this project:
 **Languages:** <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" height="20"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/png-transparent-angularjs-typescript-javascript-vue-js-others-blue-angle-text-thumbnail.png" height="20" >  <br /> 
 **Frameworks/Libraries:** <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/angular-icon-logo-5FC0C40EAC-seeklogo.com.png" height="30">
 
-**Linters:** <img src="https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white" height="20">
 
 **Databases:** <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white" height="20">
 
