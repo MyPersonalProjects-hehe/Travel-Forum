@@ -6,27 +6,27 @@
   .post {
     width: 50rem;
     height: auto;
-  }
 
-  .arrow__button {
-    background-color: var(--c-primary);
-    color: white;
-    border: none;
-    padding: 15px 20px;
-    cursor: pointer;
-    font-size: 18px;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-left: auto;
-    transition: background-color 0.3s ease;
+    .arrow__button {
+      background-color: var(--c-primary);
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 18px;
+      border-radius: 5px;
+      margin-top: 20px;
+      margin-left: auto;
+      transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: var(--c-dark);
+      &:hover {
+        background-color: var(--c-dark);
+      }
     }
   }
 }
 
-.comment-section {
+.comment__section {
   position: fixed;
   right: -500px;
   top: 0;
@@ -38,57 +38,53 @@
   padding: 20px;
   z-index: 1000;
   overflow-y: auto;
+
+  .comment {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    h1 {
+      font-size: 1em;
+      color: #555;
+      margin: 10px 0;
+      word-wrap: break-word;
+    }
+
+    h4 {
+      font-size: 1em;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    p {
+      font-size: 0.8em;
+      color: #999;
+      margin-top: auto;
+      text-align: right;
+    }
+
+    .avatar img {
+      display: flex;
+      border-radius: 60%;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+  }
 }
 
-.comment-section.open {
+.comment__section.open {
   right: 0;
-}
-
-.comment-section h3 {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 10px;
-}
-
-.comment {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  margin-right: 40px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-h4 {
-  font-size: 1em;
-  color: #333;
-  margin-top: 10px;
-}
-
-.comment h1 {
-  font-size: 1em;
-  color: #555;
-  margin: 10px 0;
-  word-wrap: break-word;
-}
-
-.comment p {
-  font-size: 0.8em;
-  color: #999;
-  margin-top: auto;
-  text-align: right;
-}
-
-.comment-section p {
-  color: #666;
-}
-
-.avatar img {
-  display: flex;
-  border-radius: 60%;
-  width: 50px;
-  height: 50px;
 }
