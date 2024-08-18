@@ -5,6 +5,11 @@
   height: 90px;
 }
 
+p {
+  margin-right: 1rem;
+  margin-top: 2rem;
+}
+
 @media (max-width: 768px) {
   .avatar {
     display: flex;

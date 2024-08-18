@@ -3,9 +3,9 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: #f8f9fa;
+  background-color: var(--c-white);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid #e0e0e0;
+  border-bottom: 2px solid var(--c-white);
 }
 
 .flex-1 {
@@ -16,8 +16,6 @@
   display: flex;
   align-items: center;
   list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .nav-link {
@@ -31,8 +29,8 @@
 }
 
 .nav-link:hover {
-  background-color: #e2e6ea;
-  color: #ff6600;
+  background-color: var(--c-white);
+  color: var(--c-primary);
   cursor: pointer;
 }
 
@@ -45,7 +43,7 @@
     flex-direction: column;
     width: 100%;
     padding-top: 1rem;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--c-white);
   }
 
   .nav-item {
