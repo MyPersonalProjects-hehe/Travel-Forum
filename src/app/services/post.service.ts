@@ -9,11 +9,32 @@ import { validatePost } from './validations';
 export class PostService {
   constructor(private db: Database) {}
 
+  async deletePost(post: any) {
+    try {
+      const postRef = ref(this.db, `posts/${post.id}`);
+      await remove(postRef);
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async uploadPost(post: object) {
     try {
       validatePost(post);
       const dataRef = ref(this.db, `posts`);
       await push(dataRef, post);
+    } catch (error) {
+      throw error;
+    }
+  }
+  async fetchPost(postId: any) {
+    try {
+      const postsRef = (await get(ref(this.db, `posts/${postId}`))).val();
+      const post = {
+        id: postId,
+        post: postsRef,
+      };
+      return post;
     } catch (error) {
       throw error;
     }
@@ -48,19 +69,6 @@ export class PostService {
       const userRef = ref(this.db, `users/${username}/likedPosts`);
       await remove(postRef);
       await remove(userRef);
-    } catch (error) {
-      throw error;
-    }
-  }
-
-  async fetchPost(postId: any) {
-    try {
-      const postsRef = (await get(ref(this.db, `posts/${postId}`))).val();
-      const post = {
-        id: postId,
-        post: postsRef,
-      };
-      return post;
     } catch (error) {
       throw error;
     }
