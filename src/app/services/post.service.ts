@@ -6,7 +6,7 @@ import { validatePost } from './validations';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class PostService {
   constructor(private db: Database) {}
 
   async uploadPost(post: object) {
@@ -85,7 +85,7 @@ export class UserService {
         avatar: avatar,
       };
 
-      if (comment.length <= 3) {
+      if (comment.length <= 3 || !comment) {
         throw new Error('Comment must be more than 3 characters!');
       }
 
