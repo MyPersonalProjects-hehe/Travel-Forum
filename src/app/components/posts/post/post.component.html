@@ -19,7 +19,7 @@
       <ng-template #shortView>
         <div class="icons">
           <div *ngIf="post.post.userId !== userId; else postByUser">
-            <comment [commentsCount]="countOfComments"></comment>
+            <comment (click)="toggleComment()" [post]="post"></comment>
             <like [isLiked]="isLiked" [post]="post" [userId]="userId"></like>
           </div>
           <button (click)="showFullPost(post?.id)" class="btn">
@@ -28,7 +28,8 @@
 
           <ng-template #postByUser>
             <div>
-              <comment [commentsCount]="countOfComments"></comment>
+              <comment [post]="post"></comment>
+              <delete></delete>
               <bookmarkHeart [likes]="likes"></bookmarkHeart>
             </div>
           </ng-template>
