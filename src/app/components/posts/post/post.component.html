@@ -19,19 +19,8 @@
       <ng-template #shortView>
         <div class="icons">
           <div *ngIf="post.post.userId !== userId; else postByUser">
-            <comment
-              [commentsCount]="countOfComments"
-              (click)="toggleComment()"
-            ></comment>
-            <like
-              *ngIf="!isLiked; else dislike"
-              [isLiked]="isLiked"
-              (click)="likePost(post)"
-            ></like>
-
-            <ng-template #dislike>
-              <like [isLiked]="isLiked" (click)="dislikePost()"></like>
-            </ng-template>
+            <comment [commentsCount]="countOfComments"></comment>
+            <like [isLiked]="isLiked" [post]="post" [userId]="userId"></like>
           </div>
           <button (click)="showFullPost(post?.id)" class="btn">
             Full view

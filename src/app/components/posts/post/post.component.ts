@@ -3,7 +3,6 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { LikeComponent } from '../../../icons/like/like.component';
 import { UserService } from '../../../services/user.service';
-import { DislikeComponent } from '../../../icons/like/dislike/dislike.component';
 import { Router } from '@angular/router';
 import { RouterService } from '../../../services/router.service';
 import { CommentComponent } from '../../../icons/comment/comment.component';
@@ -26,7 +25,6 @@ import { ToastModule } from 'primeng/toast';
     LikeComponent,
     NgClass,
     NgFor,
-    DislikeComponent,
     CommentComponent,
     FormsModule,
     BookmarkHeartComponent,
@@ -111,13 +109,5 @@ export class PostComponent implements OnInit {
 
   toggleComment() {
     this.showComment = !this.showComment;
-  }
-
-  async likePost(post: any) {
-    await this.userService.likePost(post, this.userId);
-  }
-
-  async dislikePost() {
-    await this.userService.dislikePost(this.post, this.userId);
   }
 }
