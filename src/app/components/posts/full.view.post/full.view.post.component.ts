@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { PostComponent } from '../post/post.component';
 import { AuthService } from '../../../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../../../services/user.service';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { PostService } from '../../../services/post.service';
 
 @Component({
   selector: 'fullViewPost',
@@ -25,7 +25,7 @@ export class FullViewPostComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private route: ActivatedRoute,
-    private userService: UserService,
+    private postService: PostService,
     private db: Database
   ) {}
 
@@ -33,7 +33,7 @@ export class FullViewPostComponent implements OnInit {
     this.auth.user$.subscribe((user) => (this.currentUser = user));
     this.userId = this.currentUser.uid;
     this.postId = this.route.snapshot.paramMap.get('id');
-    this.post$ = await this.userService.fetchPost(this.postId);
+    this.post$ = await this.postService.fetchPost(this.postId);
 
     const postsRef = ref(this.db, `posts/${this.post$.id}/comments`);
 

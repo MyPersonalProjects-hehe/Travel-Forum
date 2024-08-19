@@ -2,7 +2,6 @@ import { AuthService } from './../../../services/auth.service';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { LikeComponent } from '../../../icons/like/like.component';
-import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 import { RouterService } from '../../../services/router.service';
 import { CommentComponent } from '../../../icons/comment/comment.component';
@@ -16,6 +15,8 @@ import {
   uploadCommentSuccess,
 } from '../../../services/toast';
 import { ToastModule } from 'primeng/toast';
+import { DeleteComponent } from '../../../icons/delete/delete.component';
+import { PostService } from '../../../services/post.service';
 
 @Component({
   selector: 'post',
@@ -29,6 +30,7 @@ import { ToastModule } from 'primeng/toast';
     FormsModule,
     BookmarkHeartComponent,
     ToastModule,
+    DeleteComponent,
   ],
   providers: [MessageService],
   templateUrl: './post.component.html',
@@ -42,12 +44,11 @@ export class PostComponent implements OnInit {
   previousNavPath: any = null;
   showComment: boolean = false;
   comment: string = '';
-  countOfComments: any = 0;
   isLiked: boolean = false;
   likes: any;
 
   constructor(
-    private userService: UserService,
+    private postService: PostService,
     private auth: AuthService,
     private route: Router,
     private routeService: RouterService,
@@ -58,16 +59,6 @@ export class PostComponent implements OnInit {
   ngOnInit() {
     this.auth.user$.subscribe((user) => (this.user = user));
     this.previousNavPath = this.routeService.previousRoute;
-    const commentsCount: any = [this.post?.post].filter(
-      (post: any) => post?.comments
-    );
-
-    if (commentsCount.length > 0) {
-      this.countOfComments = commentsCount[0];
-      this.countOfComments = Object.values(
-        this.countOfComments?.comments
-      ).length;
-    }
 
     onValue(ref(this.db, `posts/${this.post?.id}/likedBy`), (snapshot) => {
       const data = snapshot.val();
@@ -96,7 +87,7 @@ export class PostComponent implements OnInit {
 
   async submitComment() {
     try {
-      await this.userService.uploadComment(
+      await this.postService.uploadComment(
         this.comment,
         this.post.id,
         this.userId

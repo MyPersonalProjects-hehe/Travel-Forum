@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { UserService } from '../../services/user.service';
 import { NgIf } from '@angular/common';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'like',
@@ -14,13 +14,13 @@ export class LikeComponent {
   @Input() post: any;
   @Input() userId: any;
 
-  constructor(private userService: UserService) {}
+  constructor(private postService: PostService) {}
 
   async likePost() {
-    await this.userService.likePost(this.post, this.userId);
+    await this.postService.likePost(this.post, this.userId);
   }
 
   async dislikePost() {
-    await this.userService.dislikePost(this.post, this.userId);
+    await this.postService.dislikePost(this.post, this.userId);
   }
 }

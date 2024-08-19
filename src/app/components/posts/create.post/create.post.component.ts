@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
-import { UserService } from '../../../services/user.service';
 import { RouterOutlet } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { uploadPostError, uploadPostSuccess } from '../../../services/toast';
+import { PostService } from '../../../services/post.service';
 
 @Component({
   selector: 'app-my-posts',
@@ -30,7 +30,7 @@ export class CreatePost {
 
   constructor(
     private auth: AuthService,
-    private userService: UserService,
+    private postService: PostService,
     private messageService: MessageService
   ) {}
 
@@ -41,7 +41,7 @@ export class CreatePost {
     });
 
     try {
-      await this.userService.uploadPost(this.post);
+      await this.postService.uploadPost(this.post);
       this.messageService.add(uploadPostSuccess);
       this.post = {};
     } catch (error: any) {
