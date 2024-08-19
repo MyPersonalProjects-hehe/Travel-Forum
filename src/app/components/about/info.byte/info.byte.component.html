@@ -1,18 +1,30 @@
-<div class="block" [class.isReverse]="reverse">
-  <div class="block__body">
-    <span *ngIf="likeFunctionality" class="block__content">
-      <clipboard></clipboard>
-      <p>Like posts</p>
-    </span>
+<div class="container">
+  <div class="content" [class.isReverse]="reverse">
+    <div class="blocks">
+      <span *ngIf="likeFunctionality" class="block__content">
+        <clipboard></clipboard>
+        <p>Like posts</p>
+      </span>
 
-    <span *ngIf="uploadFunctionality" class="block__content">
-      <p>Upload posts by sharing experience on your last trip</p>
-      <camera></camera>
-    </span>
+      <span *ngIf="uploadFunctionality" class="block__content">
+        <p>Upload posts by sharing experience on your last trip</p>
+        <camera></camera>
+      </span>
 
-    <span *ngIf="commentFunctionality" class="block__content">
-      <p>Leave your thoughts on posts by commenting</p>
-      <comment></comment>
-    </span>
+      <span *ngIf="commentFunctionality" class="block__content">
+        <p>Leave your thoughts on posts by commenting</p>
+        <comment></comment>
+      </span>
+    </div>
+    <div *ngIf="creditFunctionality" class="credits__block">
+      <p>
+        All the beautiful images are provided by
+        <a href="https://www.tripadvisor.com/" target="_blank">TripAdvisor</a>.
+      </p>
+      <img
+        src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/0f/3d/64/7e.jpg"
+        alt="people"
+      />
+    </div>
   </div>
 </div>

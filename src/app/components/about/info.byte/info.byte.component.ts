@@ -16,4 +16,5 @@ export class InfoByteComponent {
   @Input() likeFunctionality: any;
   @Input() uploadFunctionality: any;
   @Input() commentFunctionality: any;
+  @Input() creditFunctionality: any;
 }
