@@ -29,7 +29,7 @@
           <ng-template #postByUser>
             <div>
               <comment [post]="post"></comment>
-              <delete></delete>
+              <delete [post]="post"></delete>
               <bookmarkHeart [likes]="likes"></bookmarkHeart>
             </div>
           </ng-template>
