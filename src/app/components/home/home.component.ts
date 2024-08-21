@@ -20,6 +20,7 @@ export class HomeComponent implements OnInit {
   UserInfo: any = [];
   PostsInfo: any = [];
   usersWhoLiked: any = [];
+  likes: any;
 
   constructor(private auth: AuthService, private db: Database) {}
 
@@ -38,12 +39,11 @@ export class HomeComponent implements OnInit {
             post,
           }))
           .filter((obj: any) => obj.post.userId === this.currentUser.uid);
+        this.likes = this.posts$
+          .filter((obj: any) => obj.post.likedBy)
+          .map((obj: any) => Object.keys(obj.post.likedBy))
+          .flat().length;
       }
-
-      const likes = this.posts$
-        .filter((obj: any) => obj.post.likedBy)
-        .map((obj: any) => Object.keys(obj.post.likedBy))
-        .flat().length;
 
       this.UserInfo.push(
         `Your profile info`,
@@ -56,7 +56,7 @@ export class HomeComponent implements OnInit {
         `Statistics for posts`,
         `Number of uploaded posts : ${this.posts$?.length || 0}`,
         `number`,
-        `Likes : ${likes || 0}`,
+        `Likes : ${this.likes || 0}`,
         `heart`
       );
     });
