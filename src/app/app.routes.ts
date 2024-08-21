@@ -44,5 +44,5 @@ export const routes: Routes = [
     component: AboutComponent,
     canActivate: [authGuard],
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
 ];
