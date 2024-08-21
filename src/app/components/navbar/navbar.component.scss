@@ -37,6 +37,7 @@
 @media (max-width: 768px) {
   .navbar {
     flex-wrap: wrap;
+    flex-direction: column-reverse;
   }
 
   .nav-list {
