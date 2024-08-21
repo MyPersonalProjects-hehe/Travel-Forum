@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { get, push, ref, remove, set, update } from 'firebase/database';
 import { Database } from '@angular/fire/database';
-import { validatePost } from './validations';
+import { validateComment, validatePost } from './validations';
 
 @Injectable({
   providedIn: 'root',
@@ -76,6 +76,7 @@ export class PostService {
 
   async uploadComment(comment: string, postId: any, userId: any) {
     try {
+      validateComment(comment);
       const postRef = ref(this.db, `posts/${postId}/comments`);
       const userRef = await get(ref(this.db, `users`));
       const snapshot = userRef.val();
@@ -92,10 +93,6 @@ export class PostService {
         comment: comment,
         avatar: avatar,
       };
-
-      if (comment.length <= 3 || !comment) {
-        throw new Error('Comment must be more than 3 characters!');
-      }
 
       await push(postRef, data);
     } catch (error) {

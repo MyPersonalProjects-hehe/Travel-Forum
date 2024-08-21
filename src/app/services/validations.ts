@@ -43,3 +43,12 @@ export const validateLogin = (email: string, password: string) => {
     throw new Error('Please provide a password!');
   }
 };
+
+export const validateComment = (comment: string) => {
+  if (!comment) {
+    throw new Error('Comment must be more than 3 characters!');
+  }
+  if (comment.length < 3) {
+    throw new Error('Comment must be more than 3 characters!');
+  }
+};
