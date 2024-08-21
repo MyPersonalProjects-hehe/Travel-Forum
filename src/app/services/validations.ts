@@ -52,3 +52,9 @@ export const validateComment = (comment: string) => {
     throw new Error('Comment must be more than 3 characters!');
   }
 };
+
+export const validateAvatar = (avatar: string) => {
+  if (!avatar) {
+    throw new Error('Please provide an image!');
+  }
+};

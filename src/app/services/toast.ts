@@ -54,3 +54,19 @@ export const uploadCommentSuccess = {
   detail: `You can view your comment in the full view post!`,
   life: 3000,
 };
+
+export const changeAvatarSuccess = {
+  severity: 'success',
+  summary: 'Success',
+  detail: `You have successfully updated your profile picture!`,
+  life: 3000,
+};
+
+export const changeAvatarError = (error: any) => {
+  return {
+    severity: 'error',
+    summary: 'Error',
+    detail: `${error}`,
+    life: 3000,
+  };
+};
