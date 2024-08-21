@@ -53,7 +53,9 @@ export class AuthService {
   async register(email: string, password: string, username: string) {
     try {
       const usersRef = Object.keys((await get(ref(this.db, `users`))).val());
-      validateRegister(email, username, usersRef);
+      if (usersRef) {
+        validateRegister(email, username, usersRef);
+      }
 
       const userCredential = await createUserWithEmailAndPassword(
         this.fireauth,
