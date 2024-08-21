@@ -22,6 +22,17 @@
   }
 }
 
+@keyframes fade__down {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
 @keyframes fade__right {
   0% {
     transform: translateX(-200px);
