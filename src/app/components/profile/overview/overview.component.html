@@ -1,0 +1,32 @@
+<div class="container">
+  <h2>Overview</h2>
+  <div class="profile__card">
+    <img [src]="userCredentials?.avatar" alt="User Avatar" />
+    <div class="user__credentials">
+      <div class="credential__item">
+        <email></email>
+        <p>{{ userCredentials?.email }}</p>
+      </div>
+      <div class="credential__item">
+        <user></user>
+        <p>{{ userCredentials?.username }}</p>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="showInput = !showInput" class="btn">
+    Change profile picture
+  </button>
+
+  <form (ngSubmit)="changeAvatar()" *ngIf="showInput">
+    <input
+      type="text"
+      name="avatar"
+      class="input"
+      [(ngModel)]="image"
+      placeholder="Provide an image by URL"
+    />
+  </form>
+
+  <p-toast></p-toast>
+</div>
