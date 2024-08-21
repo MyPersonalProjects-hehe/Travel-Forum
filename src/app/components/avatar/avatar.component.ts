@@ -3,22 +3,32 @@ import { AuthService } from '../../services/auth.service';
 import { OnInit } from '@angular/core';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
+import {
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
 
 @Component({
   selector: 'avatar',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './avatar.component.html',
   styleUrl: './avatar.component.scss',
 })
 export class AvatarComponent implements OnInit {
-  currentUser: any = null;
-  currentUserInfo$: any = null;
+  userSubject: any = null;
+  userCredentials$: any = null;
 
-  constructor(private auth: AuthService, private db: Database) {}
+  constructor(
+    private auth: AuthService,
+    private db: Database,
+    private router: Router
+  ) {}
 
   ngOnInit() {
-    this.auth.user$.subscribe((user) => (this.currentUser = user));
+    this.auth.user$.subscribe((user) => (this.userSubject = user));
     const userRef = ref(this.db, `users`);
 
     onValue(userRef, (snapshot) => {
@@ -26,10 +36,14 @@ export class AvatarComponent implements OnInit {
 
       if (data) {
         const filteredUsers = Object.values(data).filter(
-          (obj: any) => obj.email === this.currentUser.email
+          (obj: any) => obj.email === this.userSubject.email
         );
-        this.currentUserInfo$ = filteredUsers[0];
+        this.userCredentials$ = filteredUsers[0];
       }
     });
+  }
+
+  toggleProfileView() {
+    this.router.navigate([`/profile/${this.userCredentials$.username}`]);
   }
 }

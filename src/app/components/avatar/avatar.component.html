@@ -1,4 +1,8 @@
 <div class="avatar">
-  <img [src]="currentUserInfo$?.avatar" alt="profile picture" />
-  <p>Hello {{ currentUserInfo$?.username }}</p>
+  <img [src]="userCredentials$?.avatar" alt="profile picture" />
+  <p>Hello {{ userCredentials$?.username }}</p>
+  <div class="dropdown-menu">
+    <a (click)="toggleProfileView()">Profile</a>
+    <a>Settings</a>
+  </div>
 </div>
