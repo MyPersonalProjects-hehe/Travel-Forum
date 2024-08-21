@@ -7,6 +7,7 @@ import { CreatePost } from './components/posts/create.post/create.post.component
 import { FullViewPostComponent } from './components/posts/full.view.post/full.view.post.component';
 import { AllPostsComponent } from './components/posts/all.posts/all.posts.component';
 import { AboutComponent } from './components/about/about.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 export const routes: Routes = [
   {
@@ -42,6 +43,11 @@ export const routes: Routes = [
   {
     path: 'about',
     component: AboutComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'profile/:id',
+    component: ProfileComponent,
     canActivate: [authGuard],
   },
   { path: '', component: HomeComponent },
