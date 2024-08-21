@@ -1,0 +1,97 @@
+.profile__container {
+  background-image: url("https://fancywalls.eu/wp-content/uploads/minimalist-travel-pattern-repeat-removable-wallpaper-design.jpg");
+  background-size: 70%;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: overlay;
+  display: flex;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  height: 50rem;
+  padding: 20px;
+
+  .sidebar {
+    width: 20rem;
+    background: linear-gradient(
+      135deg,
+      rgba(211, 138, 101, 0.9) 0%,
+
+      rgba(98, 69, 61, 0.9) 100%
+    );
+    color: var(--c-white);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+
+    li {
+      padding: 15px;
+      cursor: pointer;
+      list-style-type: none;
+      border-bottom: 1px solid var(--c-white);
+
+      &:hover {
+        background-color: rgba(98, 69, 61, 0.9);
+        transition: background-color 0.7s ease;
+      }
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .section__overview {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      .profile__card {
+        background-color: rgba(255, 255, 255, 0.85);
+        border-radius: 10px;
+        padding: 20px;
+        width: 80%;
+        max-width: 400px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+
+        img {
+          border-radius: 50%;
+          width: 10rem;
+          height: 10rem;
+          margin-bottom: 1rem;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .user__credentials {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .credential__item {
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 10px;
+            width: 10rem;
+
+            p {
+              text-decoration: underline;
+              margin-top: 10px;
+              margin-left: 8px;
+              font-size: 16px;
+              color: var(--c-dark);
+            }
+          }
+        }
+      }
+
+      form {
+        width: 100%;
+        max-width: 400px;
+        margin-top: 20px;
+        animation: fade__down ease-in 0.3s;
+      }
+    }
+  }
+}
