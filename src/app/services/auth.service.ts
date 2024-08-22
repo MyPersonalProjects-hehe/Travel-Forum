@@ -32,7 +32,6 @@ export class AuthService {
   async login(email: string, password: string) {
     try {
       validateLogin(email, password);
-
       const singedUser = await signInWithEmailAndPassword(
         this.fireauth,
         email,
@@ -44,7 +43,7 @@ export class AuthService {
       return singedUser.user;
     } catch (error: any) {
       if (error.message.includes('(auth/invalid-credential)')) {
-        throw new Error('An account with this email doesn`t exist!');
+        throw new Error('Wrong email or password!');
       }
       throw error;
     }
