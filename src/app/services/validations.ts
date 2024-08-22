@@ -58,3 +58,9 @@ export const validateAvatar = (avatar: string) => {
     throw new Error('Please provide an image!');
   }
 };
+
+export const validateResetPassword = (password: string) => {
+  if (password.length < 6) {
+    throw new Error('New password must be more than 6 characters!');
+  }
+};

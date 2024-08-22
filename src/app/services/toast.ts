@@ -70,3 +70,19 @@ export const changeAvatarError = (error: any) => {
     life: 3000,
   };
 };
+
+export const changePasswordSuccess = {
+  severity: 'success',
+  summary: 'Success',
+  detail: `A password reset email was sent to the given email address!`,
+  life: 3000,
+};
+
+export const changePasswordError = (error: any) => {
+  return {
+    severity: 'error',
+    summary: 'Error',
+    detail: `${error}`,
+    life: 3000,
+  };
+};
