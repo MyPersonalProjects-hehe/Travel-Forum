@@ -8,6 +8,7 @@ import { FullViewPostComponent } from './components/posts/full.view.post/full.vi
 import { AllPostsComponent } from './components/posts/all.posts/all.posts.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { AppComponent } from './app.component';
 
 export const routes: Routes = [
   {
@@ -50,5 +51,5 @@ export const routes: Routes = [
     component: ProfileComponent,
     canActivate: [authGuard],
   },
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent, canActivate: [authGuard] },
 ];

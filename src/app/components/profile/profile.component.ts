@@ -4,11 +4,20 @@ import { Database, onValue, ref } from '@angular/fire/database';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { OverviewComponent } from './overview/overview.component';
+import { FormsModule } from '@angular/forms';
+import { ToastModule } from 'primeng/toast';
+import { ChangePasswordComponent } from './change.password/change.password.component';
 
 @Component({
   selector: 'profile',
   standalone: true,
-  imports: [NgIf, OverviewComponent],
+  imports: [
+    NgIf,
+    OverviewComponent,
+    FormsModule,
+    ToastModule,
+    ChangePasswordComponent,
+  ],
   providers: [MessageService],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',

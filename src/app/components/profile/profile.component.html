@@ -17,10 +17,8 @@
     </div>
 
     <div *ngIf="currentSection === 'changePassword'" class="section__password">
-      <h2>Change Password</h2>
-      <input class="input" type="password" placeholder="Current Password" />
-      <input class="input" type="password" placeholder="New Password" />
-      <input class="input" type="password" placeholder="Confirm New Password" />
+      <change-password></change-password>
     </div>
   </div>
+  <p-toast></p-toast>
 </div>
