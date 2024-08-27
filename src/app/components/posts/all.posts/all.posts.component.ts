@@ -5,11 +5,14 @@ import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { NgFor, NgIf } from '@angular/common';
 import { ScrollTopModule } from 'primeng/scrolltop';
+import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'allPosts',
   standalone: true,
-  imports: [PostComponent, NgFor, NgIf, ScrollTopModule],
+  imports: [PostComponent, NgFor, NgIf, ScrollTopModule, ToastModule],
+  providers: [MessageService],
   templateUrl: './all.posts.component.html',
   styleUrl: './all.posts.component.scss',
 })
