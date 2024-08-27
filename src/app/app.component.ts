@@ -4,7 +4,7 @@ import { NgIf } from '@angular/common';
 import { User } from 'firebase/auth';
 import { AuthService } from './services/auth.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CardComponent } from './components/login/card.component';
+import { CardComponent } from './components/home-unauthenticated/card/card.component';
 
 @Component({
   selector: 'app-root',

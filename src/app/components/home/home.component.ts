@@ -4,7 +4,7 @@ import { NgFor, NgIf } from '@angular/common';
 import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { PostComponent } from '../posts/post/post.component';
-import { BlockComponent } from '../block/block.component';
+import { BlockComponent } from './block/block.component';
 import { CarouselModule } from 'primeng/carousel';
 import { TrendingUsersComponent } from './trending.users/trending.users.component';
 

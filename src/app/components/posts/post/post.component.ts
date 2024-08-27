@@ -1,5 +1,5 @@
 import { AuthService } from './../../../services/auth.service';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgIf } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { LikeComponent } from '../../../icons/like/like.component';
 import { Router } from '@angular/router';
@@ -24,8 +24,6 @@ import { PostService } from '../../../services/post.service';
   imports: [
     NgIf,
     LikeComponent,
-    NgClass,
-    NgFor,
     CommentComponent,
     FormsModule,
     BookmarkHeartComponent,
