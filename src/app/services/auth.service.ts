@@ -106,9 +106,4 @@ export class AuthService {
       throw error;
     }
   }
-
-  isLoggedIn() {
-    this.user$.subscribe((user) => (this.currentUser = user));
-    return this.currentUser;
-  }
 }
