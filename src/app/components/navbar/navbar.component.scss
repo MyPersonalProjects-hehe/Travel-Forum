@@ -3,9 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
-  background-color: var(--c-white);
+  background-color: white;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-bottom: 2px solid var(--c-white);
+  border-bottom: 2px solid white;
+  margin-bottom: 20px;
 }
 
 .flex-1 {
@@ -29,7 +30,7 @@
 }
 
 .nav-link:hover {
-  background-color: var(--c-white);
+  background-color: white;
   color: var(--c-primary);
   cursor: pointer;
 }
@@ -44,7 +45,7 @@
     flex-direction: column;
     width: 100%;
     padding-top: 1rem;
-    border-top: 1px solid var(--c-white);
+    border-top: 1px solid white;
   }
 
   .nav-item {
