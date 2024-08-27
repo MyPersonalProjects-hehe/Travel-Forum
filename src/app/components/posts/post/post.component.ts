@@ -45,7 +45,6 @@ export class PostComponent implements OnInit {
   showComment: boolean = false;
   comment: string = '';
   isLiked: boolean = false;
-  likes: any;
 
   constructor(
     private postService: PostService,
@@ -65,9 +64,6 @@ export class PostComponent implements OnInit {
 
       if (data) {
         const userIds = Object.keys(data);
-        const likes = Object.keys(data).length;
-        this.likes = likes;
-
         if (userIds.includes(this.userId)) {
           this.isLiked = true;
         } else {
