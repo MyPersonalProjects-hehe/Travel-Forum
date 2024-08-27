@@ -1,4 +1,11 @@
-<div class="home__container container">
+<div
+  class="home__container container"
+  [class.empty__home__container]="posts$?.length === 0"
+>
+  <h2 *ngIf="posts$?.length === 0">
+    Create your own posts to see them here! You may be the next trendy user, so
+    what are you waiting for ?
+  </h2>
   <div class="side__info">
     <block [info]="UserInfo"></block>
     <block [info]="PostsInfo"></block>
@@ -18,7 +25,10 @@
     </p-carousel>
   </div>
 
-  <ng-template class="empty home" #emptyHome>
-    <h1>No posts yet</h1>
+  <ng-template #emptyHome>
+    <div class="empty__home">
+      <p>Here are the most trendy users:</p>
+      <trending-users></trending-users>
+    </div>
   </ng-template>
 </div>
