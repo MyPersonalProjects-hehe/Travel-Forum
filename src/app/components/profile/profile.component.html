@@ -1,9 +1,24 @@
 <div class="profile__container container">
   <div class="sidebar">
     <ul>
-      <li (click)="showSection('overview')">Overview</li>
-      <li (click)="showSection('changePassword')">Change Password</li>
-      <li (click)="showSection('accountSettings')">Account Settings</li>
+      <li
+        (click)="showSection('overview')"
+        [class.active__section]="currentSection === 'overview'"
+      >
+        Overview
+      </li>
+      <li
+        (click)="showSection('changePassword')"
+        [class.active__section]="currentSection === 'changePassword'"
+      >
+        Change Password
+      </li>
+      <li
+        (click)="showSection('accountSettings')"
+        [class.active__section]="currentSection === 'accountSettings'"
+      >
+        Account Settings
+      </li>
     </ul>
   </div>
 

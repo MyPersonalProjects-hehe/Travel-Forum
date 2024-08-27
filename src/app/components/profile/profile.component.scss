@@ -34,6 +34,9 @@
     }
   }
 
+  li.active__section {
+    background-color: rgba(98, 69, 61, 0.9);
+  }
   .content {
     flex-grow: 1;
     padding: 20px;
