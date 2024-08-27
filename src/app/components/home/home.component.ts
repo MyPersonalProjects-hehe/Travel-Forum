@@ -52,21 +52,21 @@ export class HomeComponent implements OnInit {
           .map((obj: any) => Object.keys(obj.post.likedBy))
           .flat().length;
       }
-    });
 
-    this.UserInfo.push(
-      `Your profile info`,
-      `Date of register : ${dateOfRegister || 0}`,
-      `calendar`,
-      `Number of friends : ${0}`,
-      `user`
-    );
-    this.PostsInfo.push(
-      `Statistics for posts`,
-      `Number of uploaded posts : ${this.posts$?.length || 0}`,
-      `number`,
-      `Likes : ${this.likes || 0}`,
-      `heart`
-    );
+      this.UserInfo.push(
+        `Your profile info`,
+        `Date of register : ${dateOfRegister || 0}`,
+        `calendar`,
+        `Number of friends : ${0}`,
+        `user`
+      );
+      this.PostsInfo.push(
+        `Statistics for posts`,
+        `Number of uploaded posts : ${this.posts$?.length || 0}`,
+        `number`,
+        `Likes : ${this.likes || 0}`,
+        `heart`
+      );
+    });
   }
 }

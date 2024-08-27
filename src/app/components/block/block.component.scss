@@ -26,12 +26,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    margin-bottom: 10px;
+
+    p {
+      margin-top: 10px;
+    }
   }
 
   .icon {
-    width: 30px;
-    height: auto;
-    margin-right: 10px;
+    margin-right: 7px;
   }
 }

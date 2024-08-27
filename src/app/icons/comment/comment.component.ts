@@ -10,6 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CommentComponent implements OnInit {
   @Input() post: any;
+  @Input() isPostByUser: any;
   countOfComments: any;
 
   ngOnInit() {

@@ -4,11 +4,17 @@
     <img [src]="userCredentials?.avatar" alt="User Avatar" />
     <div class="user__credentials">
       <div class="credential__item">
-        <email></email>
+        <span
+          class="pi pi-envelope"
+          style="color: grey; font-size: var(--icon-size)"
+        ></span>
         <p>{{ userCredentials?.email }}</p>
       </div>
       <div class="credential__item">
-        <user></user>
+        <span
+          class="pi pi-user"
+          style="color: #90caf9; font-size: var(--icon-size)"
+        ></span>
         <p>{{ userCredentials?.username }}</p>
       </div>
     </div>

@@ -1,8 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { MessageService } from 'primeng/api';
-import { EmailComponent } from '../../../icons/email/email.component';
-import { UserComponent } from '../../../icons/user/user.component';
 import { FormsModule } from '@angular/forms';
 import {
   changeAvatarError,
@@ -14,7 +12,7 @@ import { ToastModule } from 'primeng/toast';
 @Component({
   selector: 'overview',
   standalone: true,
-  imports: [EmailComponent, UserComponent, FormsModule, NgIf, ToastModule],
+  imports: [FormsModule, NgIf, ToastModule],
   providers: [MessageService],
   templateUrl: './overview.component.html',
   styleUrl: './overview.component.scss',

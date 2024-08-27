@@ -28,7 +28,7 @@
 
           <ng-template #postByUser>
             <div>
-              <comment [post]="post"></comment>
+              <comment [isPostByUser]="true" [post]="post"></comment>
               <delete [post]="post"></delete>
               <bookmarkHeart [postId]="post.id"></bookmarkHeart>
             </div>

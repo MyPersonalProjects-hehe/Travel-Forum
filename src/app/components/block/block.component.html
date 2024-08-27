@@ -7,7 +7,10 @@
         *ngIf="info[2] === 'calendar'; else elseBlockNumber"
       >
         <div class="icon">
-          <calendar></calendar>
+          <span
+            class="pi pi-calendar-clock"
+            style="font-size: var(--icon-size); color: #cfb280"
+          ></span>
         </div>
         <p>{{ info[1] }}</p>
       </div>
@@ -15,7 +18,10 @@
       <ng-template #elseBlockNumber>
         <div class="info__stats">
           <div class="icon">
-            <uploads></uploads>
+            <span
+              class="pi pi-cloud-upload"
+              style="font-size: var(--icon-size); color: #abbdf6"
+            ></span>
           </div>
           <p>{{ info[1] }}</p>
         </div>
@@ -23,7 +29,10 @@
 
       <div class="info__stats" *ngIf="info[4] === 'user'; else elseBlockHeart">
         <div class="icon">
-          <user></user>
+          <span
+            class="pi pi-user"
+            style="color: #90caf9; font-size: var(--icon-size)"
+          ></span>
         </div>
         <p>{{ info[3] }}</p>
       </div>
@@ -31,7 +40,10 @@
       <ng-template #elseBlockHeart>
         <div class="info__stats">
           <div class="icon">
-            <heart></heart>
+            <span
+              class="pi pi-heart"
+              style="font-size: var(--icon-size); color: red"
+            ></span>
           </div>
           <p>{{ info[3] }}</p>
         </div>
