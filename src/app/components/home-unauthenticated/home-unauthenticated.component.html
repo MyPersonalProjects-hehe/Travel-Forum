@@ -1,0 +1,13 @@
+<div class="login__register">
+  <login
+    (buttonValue)="onButtonClicked($event)"
+    *ngIf="!user && activeComponent === 'Login'"
+    class="fade-in"
+  ></login>
+
+  <register
+    (buttonValue)="onButtonClicked($event)"
+    *ngIf="!user && activeComponent === 'Register'"
+    class="fade-in"
+  ></register>
+</div>
