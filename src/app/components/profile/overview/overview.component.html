@@ -26,6 +26,15 @@
       [(ngModel)]="image"
       placeholder="Provide an image by URL"
     />
+    <button *ngIf="showInput" class="btn" type="submit">Submit</button>
+    <button
+      (click)="showInput = false"
+      *ngIf="showInput"
+      class="btn"
+      type="reset"
+    >
+      Cancel
+    </button>
   </form>
 
   <p-toast></p-toast>
