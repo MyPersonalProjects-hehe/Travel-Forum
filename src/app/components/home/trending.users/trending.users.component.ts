@@ -11,13 +11,13 @@ import { Database, ref, update } from '@angular/fire/database';
   styleUrl: './trending.users.component.scss',
 })
 export class TrendingUsersComponent implements OnInit {
-  map: Map<string, object> = new Map();
   trendingUsers: any;
 
   constructor(private userService: UserService, private db: Database) {}
 
   async ngOnInit() {
     const result = await this.userService.fetchTrendingUsers();
+
     Object.values(result).map((obj: any) => {
       if (!obj) {
         this.trendingUsers = [];
