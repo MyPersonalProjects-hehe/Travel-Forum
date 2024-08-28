@@ -7,6 +7,7 @@ import { PostComponent } from '../posts/post/post.component';
 import { BlockComponent } from './block/block.component';
 import { CarouselModule } from 'primeng/carousel';
 import { TrendingUsersComponent } from './trending.users/trending.users.component';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'home',
@@ -29,13 +30,20 @@ export class HomeComponent implements OnInit {
   PostsInfo: any = [];
   usersWhoLiked: any = [];
   likes: any;
+  status: string = '';
 
-  constructor(private auth: AuthService, private db: Database) {}
+  constructor(
+    private auth: AuthService,
+    private db: Database,
+    private userService: UserService
+  ) {}
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.auth.user$.subscribe((user) => (this.currentUser = user));
     const date = Number(this.currentUser?.metadata?.createdAt);
     const dateOfRegister = new Date(date).toLocaleDateString();
+
+    this.status = await this.userService.isUserTrendy(this.currentUser.uid);
 
     const postsRef = ref(this.db, `posts`);
     onValue(postsRef, (snapshot) => {
@@ -57,7 +65,7 @@ export class HomeComponent implements OnInit {
         `Your profile info`,
         `Date of register : ${dateOfRegister || 0}`,
         `calendar`,
-        `Number of friends : ${0}`,
+        `Status: ${this.status}`,
         `user`
       );
       this.PostsInfo.push(
