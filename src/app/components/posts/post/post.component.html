@@ -10,7 +10,13 @@
       <p>{{ post.post?.shortDescription }}</p>
 
       <div class="post__description" *ngIf="showFullView; else shortView">
-        {{ post.post.description }} <br />
+        {{ post.post.description }}
+        <div class="author">
+          <p>Author: {{ post.post.userEmail }}</p>
+          <img [src]="post.post?.userAvatar" alt="user avatar" />
+        </div>
+
+        <br />
         <button class="btn" (click)="showFullPost(previousNavPath)">
           Go back
         </button>
