@@ -27,6 +27,7 @@ export class PostService {
       throw error;
     }
   }
+
   async fetchPost(postId: any) {
     try {
       const postsRef = (await get(ref(this.db, `posts/${postId}`))).val();
