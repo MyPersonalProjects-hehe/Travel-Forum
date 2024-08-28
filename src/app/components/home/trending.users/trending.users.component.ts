@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user.service';
 import { NgFor, NgIf } from '@angular/common';
+import { Database, ref, update } from '@angular/fire/database';
 
 @Component({
   selector: 'trending-users',
@@ -13,11 +14,22 @@ export class TrendingUsersComponent implements OnInit {
   map: Map<string, object> = new Map();
   trendingUsers: any;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private db: Database) {}
 
   async ngOnInit() {
     const result = await this.userService.fetchTrendingUsers();
-    this.trendingUsers = Object.values(result);
-    console.log(this.trendingUsers);
+    Object.values(result).map((obj: any) => {
+      if (!obj) {
+        this.trendingUsers = [];
+      } else {
+        this.trendingUsers = Object.values(result);
+        const updateVal: any = {};
+        updateVal['trendyUser'] = true;
+        this.trendingUsers.map(
+          async (obj: any) =>
+            await update(ref(this.db, `users/${obj.user.username}`), updateVal)
+        );
+      }
+    });
   }
 }
