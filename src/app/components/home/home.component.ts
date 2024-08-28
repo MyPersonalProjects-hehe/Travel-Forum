@@ -26,9 +26,8 @@ import { UserService } from '../../services/user.service';
 export class HomeComponent implements OnInit {
   currentUser: any = null;
   posts$: any = null;
-  UserInfo: any = [];
-  PostsInfo: any = [];
-  usersWhoLiked: any = [];
+  UserInfo: string[] = [];
+  PostsInfo: string[] = [];
   likes: any;
   status: string = '';
 
@@ -48,6 +47,7 @@ export class HomeComponent implements OnInit {
     const postsRef = ref(this.db, `posts`);
     onValue(postsRef, (snapshot) => {
       const data = snapshot.val();
+
       if (data) {
         this.posts$ = Object.entries(data)
           .map(([id, post]) => ({
@@ -55,6 +55,7 @@ export class HomeComponent implements OnInit {
             post,
           }))
           .filter((obj: any) => obj.post.userId === this.currentUser.uid);
+
         this.likes = this.posts$
           .filter((obj: any) => obj.post.likedBy)
           .map((obj: any) => Object.keys(obj.post.likedBy))
