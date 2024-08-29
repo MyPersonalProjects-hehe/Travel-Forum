@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { PostService } from '../../services/post.service';
+import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'like',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, ButtonModule],
   templateUrl: './like.component.html',
   styleUrl: './like.component.scss',
 })
