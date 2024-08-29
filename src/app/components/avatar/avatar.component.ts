@@ -46,4 +46,8 @@ export class AvatarComponent implements OnInit {
   toggleProfileView() {
     this.router.navigate([`/profile/${this.userCredentials$.username}`]);
   }
+
+  async logout() {
+    await this.auth.logout();
+  }
 }
