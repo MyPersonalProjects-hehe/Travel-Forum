@@ -9,5 +9,5 @@ import { NgIf } from '@angular/common';
   styleUrl: './block.component.scss',
 })
 export class BlockComponent {
-  @Input() info: any = null;
+  @Input() info: string[] = [];
 }

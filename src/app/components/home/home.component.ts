@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
   posts$: any = null;
   UserInfo: string[] = [];
   PostsInfo: string[] = [];
-  likes: any;
+  likes: number = 0;
   status: string = '';
 
   constructor(

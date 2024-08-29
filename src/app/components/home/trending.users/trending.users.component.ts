@@ -11,7 +11,7 @@ import { Database, ref, update } from '@angular/fire/database';
   styleUrl: './trending.users.component.scss',
 })
 export class TrendingUsersComponent implements OnInit {
-  trendingUsers: any;
+  trendingUsers: any[] = [];
 
   constructor(private userService: UserService, private db: Database) {}
 

@@ -9,9 +9,9 @@ import { Component, Input } from '@angular/core';
   styleUrl: './info.byte.component.scss',
 })
 export class InfoByteComponent {
-  @Input() reverse: any;
-  @Input() likeFunctionality: any;
-  @Input() uploadFunctionality: any;
-  @Input() commentFunctionality: any;
-  @Input() creditFunctionality: any;
+  @Input() reverse: boolean = false;
+  @Input() likeFunctionality: boolean = false;
+  @Input() uploadFunctionality: boolean = false;
+  @Input() commentFunctionality: boolean = false;
+  @Input() creditFunctionality: boolean = false;
 }
