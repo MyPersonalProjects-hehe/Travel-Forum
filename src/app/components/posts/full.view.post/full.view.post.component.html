@@ -1,11 +1,17 @@
 <div class="body">
-  <h1>Here you can view all comments and read a story of a wonderful trip!</h1>
+  <h1>
+    Here you can view all comments
+    <p-button
+      icon="pi pi-chevron-right"
+      severity="warning"
+      [rounded]="true"
+      [outlined]="true"
+      (click)="toggleCommentSection()"
+    />
+  </h1>
 
   <div class="post">
     <post [post]="post$" [showFullView]="true"></post>
-    <button class="arrow__button" (click)="toggleCommentSection()">
-      Comment section →
-    </button>
   </div>
   <div class="comment__section" [class.open]="isCommentSectionOpen">
     <h3>
