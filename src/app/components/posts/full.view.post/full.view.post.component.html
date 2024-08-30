@@ -16,11 +16,13 @@
   <div class="comment__section" [class.open]="isCommentSectionOpen">
     <h3>
       Comments
-      <span
+      <p-button
         (click)="toggleCommentSection()"
-        class="pi pi-times"
-        style="font-size: 1rem"
-      ></span>
+        icon="pi pi-times"
+        [rounded]="true"
+        [outlined]="true"
+        severity="warning"
+      ></p-button>
     </h3>
 
     <div *ngIf="comments$?.length > 0; else noComments">
