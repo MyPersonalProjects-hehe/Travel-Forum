@@ -1,32 +1,29 @@
 <div class="container">
-  <div class="content" [class.isReverse]="reverse">
+  <div class="content">
     <div class="blocks">
-      <span *ngIf="likeFunctionality" class="block__content">
-        <span>
-          <span
-            class="pi pi-heart-fill"
-            style="font-size: var(--icon-size); color: red"
-          ></span>
-        </span>
-
+      <div *ngIf="likeFunctionality" class="block__content">
+        <span
+          class="pi pi-heart-fill"
+          style="font-size: var(--icon-size); color: red"
+        ></span>
         <p>Like posts</p>
-      </span>
+      </div>
 
-      <span *ngIf="uploadFunctionality" class="block__content">
+      <div *ngIf="uploadFunctionality" class="block__content">
         <p>Upload posts by sharing experience on your last trip</p>
         <span
           class="pi pi-camera"
           style="font-size: var(--icon-size); color: #774342"
         ></span>
-      </span>
+      </div>
 
-      <span *ngIf="commentFunctionality" class="block__content">
+      <div *ngIf="commentFunctionality" class="block__content">
         <p>Leave your thoughts on posts by commenting</p>
         <span
           class="pi pi-comments"
           style="font-size: var(--icon-size); color: grey"
         ></span>
-      </span>
+      </div>
     </div>
     <div *ngIf="creditFunctionality" class="credits__block">
       <p>
