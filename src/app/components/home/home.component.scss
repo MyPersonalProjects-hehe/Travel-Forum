@@ -1,23 +1,37 @@
 .home__container {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 5rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 6rem;
   padding-top: 5rem;
 
   h2 {
     text-align: center;
   }
 
-  .home__posts {
-    width: 59%;
-    height: auto;
-  }
-
-  .side__info {
+  .posts__side__info {
     display: flex;
-    flex-direction: column;
-    gap: 50px;
+    flex-direction: row;
+    justify-content: center;
+    gap: 6rem;
+
+    .home__posts {
+      width: 35%;
+      height: auto;
+
+      .trending__users {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .side__info {
+      display: flex;
+      flex-direction: column;
+      gap: 2.6rem;
+    }
   }
 }
 

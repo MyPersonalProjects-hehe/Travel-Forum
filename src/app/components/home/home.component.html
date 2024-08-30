@@ -6,23 +6,27 @@
     Create your own posts to see them here! You may be the next trendy user, so
     what are you waiting for ?
   </h2>
-  <div class="side__info">
-    <block [info]="UserInfo"></block>
-    <block [info]="PostsInfo"></block>
+  <div class="posts__side__info">
+    <div class="side__info">
+      <block [info]="UserInfo"></block>
+      <block [info]="PostsInfo"></block>
+    </div>
+    <div class="home__posts" *ngIf="posts$?.length > 0; else emptyHome">
+      <p-carousel
+        [value]="posts$"
+        [numVisible]="1"
+        [numScroll]="1"
+        orientation="horizontal"
+        verticalViewPortHeight="360px"
+      >
+        <ng-template let-post pTemplate="item">
+          <post [post]="post" [userId]="currentUser.uid"></post>
+        </ng-template>
+      </p-carousel>
+    </div>
   </div>
-
-  <div class="home__posts" *ngIf="posts$?.length > 0; else emptyHome">
-    <p-carousel
-      [value]="posts$"
-      [numVisible]="1"
-      [numScroll]="1"
-      orientation="horizontal"
-      verticalViewPortHeight="360px"
-    >
-      <ng-template let-post pTemplate="item">
-        <post [post]="post" [userId]="currentUser.uid"></post>
-      </ng-template>
-    </p-carousel>
+  <div class="trending__users">
+    <trending-users></trending-users>
   </div>
 
   <ng-template #emptyHome>
