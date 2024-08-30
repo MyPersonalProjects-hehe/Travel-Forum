@@ -1,5 +1,7 @@
 .body {
+  display: flex;
   align-items: center;
+  flex-direction: column;
 
   .heading {
     display: flex;
@@ -35,7 +37,7 @@
 
   .byte__four {
     animation: popInSlow 2s ease-in-out forwards;
-    animation-delay: 5s;
+    animation-delay: 8s;
     visibility: hidden;
   }
 }
