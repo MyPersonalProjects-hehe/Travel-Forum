@@ -1,6 +1,5 @@
 .heading {
   text-align: center;
-  margin-bottom: 10px;
 }
 .container {
   display: flex;
@@ -13,7 +12,7 @@
     align-items: center;
     width: 20rem;
     height: 20rem;
-    margin: 10px;
+    margin: 20px;
     border-radius: 5%;
     background-image: url("https://fancywalls.eu/wp-content/uploads/minimalist-travel-pattern-repeat-removable-wallpaper-design.jpg");
     background-size: 70%;
@@ -22,7 +21,6 @@
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
     background-blend-mode: overlay;
     border-radius: 8px;
-    display: flex;
 
     .content {
       text-align: center;
