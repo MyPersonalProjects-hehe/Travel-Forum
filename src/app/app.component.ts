@@ -4,12 +4,11 @@ import { NgIf } from '@angular/common';
 import { User } from 'firebase/auth';
 import { AuthService } from './services/auth.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { CardComponent } from './components/home-unauthenticated/card/card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgIf, CardComponent, NavbarComponent],
+  imports: [RouterOutlet, NgIf, NavbarComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
