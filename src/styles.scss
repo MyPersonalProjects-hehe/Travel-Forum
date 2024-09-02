@@ -1,10 +1,12 @@
+// Dependencies
+@use "primeicons/primeicons.css" as *;
+
+// Local styles
 @use "./styles/components/cards-container" as *;
 @use "./styles/components/animations" as *;
 @use "./styles/variables" as *;
 @use "./styles/overrides" as *;
-@import "primeng/resources/themes/saga-orange/theme.css";
-@import "primeng/resources/primeng.css";
-@import "primeicons/primeicons.css";
+@use "./styles/components/carousel" as *;
 
 .main-body {
   background-color: #ffedd9;

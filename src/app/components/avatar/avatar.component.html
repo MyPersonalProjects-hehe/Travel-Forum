@@ -1,5 +1,7 @@
 <div class="avatar">
-  <img [src]="userCredentials$?.avatar" alt="profile picture" />
+  <div class="image-fit">
+    <img [src]="userCredentials$?.avatar" alt="profile picture" />
+  </div>
   <p>Hello {{ userCredentials$?.username }}</p>
   <div class="dropdown__menu">
     <a (click)="toggleProfileView()"

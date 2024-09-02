@@ -12,11 +12,11 @@
     color: var(--c-primary);
   }
 
-  img {
-    display: flex;
-    border-radius: 60%;
-    width: 90px;
-    height: 90px;
+  .image-fit {
+    padding-bottom: 80px;
+    width: 80px;
+    border-radius: 50%;
+    overflow: hidden;
   }
 
   .dropdown__menu {

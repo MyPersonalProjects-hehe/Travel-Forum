@@ -14,7 +14,9 @@
       <div class="user">
         <div class="content">
           <p>{{ user.user.username }}</p>
-          <img [src]="user.user.avatar" alt="user" />
+          <div class="image-fit">
+            <img [src]="user.user.avatar" alt="user" />
+          </div>
           <div class="stats">
             <div class="likes">
               <span>Likes:</span>
