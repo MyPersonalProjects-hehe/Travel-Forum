@@ -44,7 +44,7 @@
   }
 }
 
-.avatar:hover .dropdown-menu {
+.avatar:hover .dropdown__menu {
   display: block;
   animation: fade__down ease-out 0.5s;
 }
@@ -55,7 +55,7 @@
     justify-content: center;
     margin-bottom: 7px;
 
-    .dropdown-menu {
+    .dropdown__menu {
       display: none;
       position: absolute;
       left: 20%;
