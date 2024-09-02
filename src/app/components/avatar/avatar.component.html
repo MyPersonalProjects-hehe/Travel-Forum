@@ -1,7 +1,7 @@
 <div class="avatar">
   <img [src]="userCredentials$?.avatar" alt="profile picture" />
   <p>Hello {{ userCredentials$?.username }}</p>
-  <div class="dropdown-menu">
+  <div class="dropdown__menu">
     <a (click)="toggleProfileView()"
       >Profile <span class="pi pi-wrench"> </span
     ></a>

@@ -10,7 +10,7 @@
   background-color: #ffedd9;
 }
 
-.activeButton {
+.active__button {
   background-color: var(--c-primary);
 }
 
@@ -101,11 +101,11 @@ p {
   border-radius: 0.375rem;
   box-sizing: border-box;
   margin-bottom: 10px;
-}
 
-.input:focus {
-  outline: none;
-  border-color: var(--c-dark);
+  &:focus {
+    outline: none;
+    border-color: var(--c-dark);
+  }
 }
 
 svg {

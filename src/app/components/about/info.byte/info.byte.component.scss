@@ -15,10 +15,6 @@
     }
   }
 
-  .content:hover {
-    transform: translateY(-10px);
-  }
-
   .content {
     width: 40rem;
     height: auto;
@@ -28,6 +24,10 @@
     margin: 35px;
     overflow: hidden;
     transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
 
     .credits__block {
       width: 38rem;
