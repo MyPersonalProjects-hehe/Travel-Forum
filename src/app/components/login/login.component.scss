@@ -1,0 +1,11 @@
+.form__control {
+  position: relative;
+
+  .toggle__password {
+    position: absolute;
+    z-index: 1;
+    left: 88%;
+    bottom: 27%;
+    cursor: pointer;
+  }
+}

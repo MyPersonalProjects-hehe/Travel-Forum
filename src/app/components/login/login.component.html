@@ -24,13 +24,22 @@
             <span class="label__text">Password</span>
           </label>
           <input
-            type="password"
+            [type]="showPassword ? 'text' : 'password'"
             placeholder="password"
             class="input"
             required
             [(ngModel)]="password"
             name="password"
           />
+          <span
+            [class]="
+              showPassword
+                ? 'pi pi-eye-slash toggle__password'
+                : 'pi pi-eye toggle__password'
+            "
+            style="font-size: 1.2rem; color: grey"
+            (click)="togglePasswordVisibility()"
+          ></span>
         </div>
         <div class="form__buttons">
           <button (click)="takeButtonValue('Login')" type="submit" class="btn">

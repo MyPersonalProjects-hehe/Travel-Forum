@@ -16,6 +16,7 @@ import { loginError, loginSuccess } from '../../services/toast';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  showPassword: boolean = false;
   @Output() buttonValue = new EventEmitter<string>();
 
   constructor(
@@ -37,5 +38,9 @@ export class LoginComponent {
 
   takeButtonValue(value: string) {
     this.buttonValue.emit(value);
+  }
+
+  togglePasswordVisibility() {
+    this.showPassword = !this.showPassword;
   }
 }
