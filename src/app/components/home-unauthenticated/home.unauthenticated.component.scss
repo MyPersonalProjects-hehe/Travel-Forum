@@ -19,7 +19,7 @@
     align-items: center;
     justify-content: center;
 
-    .image-wrapper {
+    > * {
       position: relative;
       background-color: white;
       padding: 30px;
@@ -50,7 +50,6 @@
         width: 26rem;
         height: auto;
         overflow-y: hidden;
-        cursor: pointer;
         transition: filter 0.2s ease-out;
 
         &:hover {

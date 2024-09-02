@@ -10,8 +10,8 @@ import { CardComponent } from './card/card.component';
   selector: 'home-unauthenticated',
   standalone: true,
   imports: [LoginComponent, RegisterComponent, NgIf, CardComponent],
-  templateUrl: './home-unauthenticated.component.html',
-  styleUrl: './home-unauthenticated.component.scss',
+  templateUrl: './home.unauthenticated.component.html',
+  styleUrl: './home.unauthenticated.component.scss',
 })
 export class HomeUnauthenticatedComponent {
   activeComponent: any = 'Login';

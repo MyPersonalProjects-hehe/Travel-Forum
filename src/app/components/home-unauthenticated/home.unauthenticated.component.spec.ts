@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomeUnauthenticatedComponent } from './home-unauthenticated.component';
+import { HomeUnauthenticatedComponent } from './home.unauthenticated.component';
 
 describe('HomeUnauthenticatedComponent', () => {
   let component: HomeUnauthenticatedComponent;
@@ -8,9 +8,8 @@ describe('HomeUnauthenticatedComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HomeUnauthenticatedComponent]
-    })
-    .compileComponents();
+      imports: [HomeUnauthenticatedComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HomeUnauthenticatedComponent);
     component = fixture.componentInstance;

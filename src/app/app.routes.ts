@@ -10,7 +10,7 @@ import {
   redirectLoggedInTo,
   redirectUnauthorizedTo,
 } from '@angular/fire/auth-guard';
-import { HomeUnauthenticatedComponent } from './components/home-unauthenticated/home-unauthenticated.component';
+import { HomeUnauthenticatedComponent } from './components/home-unauthenticated/home.unauthenticated.component';
 
 const redirectUnauthorizedToLogin = () =>
   redirectUnauthorizedTo(['/home-unauthenticated']);
