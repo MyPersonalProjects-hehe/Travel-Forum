@@ -7,11 +7,19 @@ import { NgFor, NgIf } from '@angular/common';
 import { ScrollTopModule } from 'primeng/scrolltop';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import { NoPostsComponent } from './no.posts/no.posts.component';
 
 @Component({
   selector: 'allPosts',
   standalone: true,
-  imports: [PostComponent, NgFor, NgIf, ScrollTopModule, ToastModule],
+  imports: [
+    PostComponent,
+    NgFor,
+    NgIf,
+    ScrollTopModule,
+    ToastModule,
+    NoPostsComponent,
+  ],
   providers: [MessageService],
   templateUrl: './all.posts.component.html',
   styleUrl: './all.posts.component.scss',
