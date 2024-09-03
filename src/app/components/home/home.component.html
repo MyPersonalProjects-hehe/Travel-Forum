@@ -2,14 +2,23 @@
   class="home__container container"
   [class.empty__home__container]="posts$?.length === 0"
 >
-  <h2 *ngIf="posts$?.length === 0">
-    Create your own posts to see them here! You may be the next trendy user, so
-    what are you waiting for ?
-  </h2>
+  <h2 *ngIf="posts$?.length === 0">Create your own posts to see them here!</h2>
+
   <div class="posts__side__info">
     <div class="side__info">
-      <block [info]="UserInfo"></block>
-      <block [info]="PostsInfo"></block>
+      <block
+        [dateOfRegister]="dateOfRegister"
+        [comments]="comments"
+        [likes]="likes"
+        [posts$]="posts$"
+        [isFirstBlock]="true"
+      ></block>
+      <block
+        [dateOfRegister]="dateOfRegister"
+        [comments]="comments"
+        [likes]="likes"
+        [posts$]="posts$"
+      ></block>
     </div>
     <div class="home__posts" *ngIf="posts$?.length > 0; else emptyHome">
       <p-carousel
@@ -25,13 +34,17 @@
       </p-carousel>
     </div>
   </div>
-  <div class="trending__users">
-    <trending-users></trending-users>
-  </div>
 
-  <ng-template #emptyHome>
-    <div class="empty__home">
-      <trending-users></trending-users>
-    </div>
-  </ng-template>
+  <div>
+    <ng-template #emptyHome>
+      <image-wrapper
+        class="image__wrapper"
+        (click)="toggleCreatePost()"
+        [heading]="'Create'"
+        [image]="
+          'https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/12/59/00/3c.jpg'
+        "
+      ></image-wrapper>
+    </ng-template>
+  </div>
 </div>

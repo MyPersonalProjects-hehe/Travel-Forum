@@ -1,7 +1,4 @@
 .home__container {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   padding-top: 3rem;
 
   h2 {
@@ -17,13 +14,6 @@
     .home__posts {
       width: 43rem;
       height: 46rem;
-
-      .trending__users {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-      }
     }
 
     .side__info {
@@ -40,17 +30,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 30px;
 
-  .side__info {
-    display: flex;
-    flex-direction: row;
+  .image__wrapper {
+    cursor: pointer;
   }
 }
 
-@media (max-width: 1123px) {
-  .posts__side__info {
+@media (max-width: 1260px) {
+  .empty__home__container,
+  .home__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+
+    .posts__side__info {
+      margin-top: 60px;
+    }
   }
 }

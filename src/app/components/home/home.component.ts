@@ -6,8 +6,8 @@ import { Database } from '@angular/fire/database';
 import { PostComponent } from '../posts/post/post.component';
 import { BlockComponent } from './block/block.component';
 import { CarouselModule } from 'primeng/carousel';
-import { TrendingUsersComponent } from './trending.users/trending.users.component';
-import { UserService } from '../../services/user.service';
+import { ImageWrapper } from '../image.wrapper/image.wrapper.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'home',
@@ -18,7 +18,7 @@ import { UserService } from '../../services/user.service';
     PostComponent,
     BlockComponent,
     CarouselModule,
-    TrendingUsersComponent,
+    ImageWrapper,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -29,20 +29,19 @@ export class HomeComponent implements OnInit {
   UserInfo: string[] = [];
   PostsInfo: string[] = [];
   likes: number = 0;
-  status: string = '';
+  comments: number = 0;
+  dateOfRegister: string = '';
 
   constructor(
     private auth: AuthService,
     private db: Database,
-    private userService: UserService
+    private route: Router
   ) {}
 
-  async ngOnInit() {
+  ngOnInit() {
     this.auth.user$.subscribe((user) => (this.currentUser = user));
     const date = Number(this.currentUser?.metadata?.createdAt);
-    const dateOfRegister = new Date(date).toLocaleDateString();
-
-    this.status = await this.userService.isUserTrendy(this.currentUser.uid);
+    this.dateOfRegister = new Date(date).toLocaleDateString();
 
     const postsRef = ref(this.db, `posts`);
     onValue(postsRef, (snapshot) => {
@@ -60,22 +59,18 @@ export class HomeComponent implements OnInit {
           .filter((obj: any) => obj.post.likedBy)
           .map((obj: any) => Object.keys(obj.post.likedBy))
           .flat().length;
-      }
 
-      this.UserInfo.push(
-        `Your profile info`,
-        `Date of register : ${dateOfRegister || 0}`,
-        `calendar`,
-        `Status: ${this.status}`,
-        `user`
-      );
-      this.PostsInfo.push(
-        `Statistics for posts`,
-        `Number of uploaded posts : ${this.posts$?.length || 0}`,
-        `number`,
-        `Likes : ${this.likes || 0}`,
-        `heart`
-      );
+        this.comments = this.posts$
+          .filter((obj: any) => obj.post.comments)
+          .map((obj: any) => Object.keys(obj.post.comments))
+          .flat().length;
+      } else {
+        this.posts$ = [];
+      }
     });
+  }
+
+  toggleCreatePost() {
+    this.route.navigate(['/createPost']);
   }
 }
