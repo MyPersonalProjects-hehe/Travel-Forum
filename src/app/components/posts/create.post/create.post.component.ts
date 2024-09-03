@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
 import { RouterOutlet } from '@angular/router';
@@ -16,7 +16,7 @@ import { Database, get, ref } from '@angular/fire/database';
   templateUrl: './create.post.component.html',
   styleUrl: './create.post.component.scss',
 })
-export class CreatePost implements OnInit {
+export class CreatePost {
   user: any = null;
   post: any = {
     title: '',
@@ -36,20 +36,17 @@ export class CreatePost implements OnInit {
     private db: Database
   ) {}
 
-  async ngOnInit() {
-    this.auth.user$.subscribe((user) => (this.user = user));
-    const userRef = (await get(ref(this.db, `users`))).val();
-    const user: any = Object.values(userRef).filter(
-      (user: any) => user.uid === this.user.uid
-    )[0];
-
-    this.post['userAvatar'] = user.avatar;
-    this.post.userEmail = user.email;
-    this.post.userId = user.uid;
-  }
-
   async submitPost() {
     try {
+      this.auth.user$.subscribe((user) => (this.user = user));
+      const userRef = (await get(ref(this.db, `users`))).val();
+      const user: any = Object.values(userRef).filter(
+        (user: any) => user.uid === this.user.uid
+      )[0];
+
+      this.post['userAvatar'] = user.avatar;
+      this.post.userEmail = user.email;
+      this.post.userId = user.uid;
       await this.postService.uploadPost(this.post);
       this.messageService.add(uploadPostSuccess);
       this.post = {};
