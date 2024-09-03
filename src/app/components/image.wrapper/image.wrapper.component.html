@@ -1,4 +1,16 @@
-<div class="image__wrapper">
-  <h1>{{ heading }}</h1>
-  <img [src]="image" alt="image" />
+<div class="image__wrapper" [class.no__posts__wrapper]="isNoPostsComponent">
+  <div>
+    <h1>{{ heading }}</h1>
+    <img [src]="image" alt="image" />
+  </div>
+
+  <div class="content" *ngIf="isNoPostsComponent">
+    <h2>Explore the World, One Post at a Time!</h2>
+    <p>
+      It looks like there are no posts yet. Be the first to share your travel
+      experiences, tips, or dream destinations with our community. Start a
+      conversation and inspire others to explore new horizons. Your journey
+      could be the next great adventure everyone`s talking about!
+    </p>
+  </div>
 </div>

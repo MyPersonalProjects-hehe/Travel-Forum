@@ -36,3 +36,37 @@
     }
   }
 }
+
+.no__posts__wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  background-image: url("https://fancywalls.eu/wp-content/uploads/minimalist-travel-pattern-repeat-removable-wallpaper-design.jpg");
+  background-size: 70%;
+  background-position: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: overlay;
+  display: flex;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+
+  h1 {
+    top: 35%;
+    left: 25%;
+  }
+
+  .content {
+    text-align: center;
+
+    h2 {
+      margin-bottom: 20px;
+    }
+  }
+
+  img {
+    width: 40rem;
+    height: auto;
+    margin-right: 20px;
+  }
+}
