@@ -12,10 +12,11 @@
   .sidebar {
     width: 20rem;
     background: linear-gradient(
-      135deg,
-      rgba(211, 138, 101, 0.9) 0%,
+      125deg,
+      rgb(179, 225, 227) 10%,
 
-      rgba(98, 69, 61, 0.9) 100%
+      var(--c-primary) 20%,
+      var(--c-dark) 100%
     );
     color: white;
     padding: 20px;
@@ -26,16 +27,19 @@
       cursor: pointer;
       list-style-type: none;
       border-bottom: 1px solid white;
+      color: black;
+      font-size: large;
 
       &:hover {
-        background-color: rgba(98, 69, 61, 0.9);
+        background-color: var(--c-dark);
         transition: background-color 0.7s ease;
       }
     }
   }
 
   li.active__section {
-    background-color: rgba(98, 69, 61, 0.9);
+    background-color: var(--c-dark);
+    border-bottom: 0px;
   }
   .content {
     flex-grow: 1;
