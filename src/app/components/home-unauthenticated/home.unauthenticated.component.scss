@@ -18,44 +18,5 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-
-    > * {
-      position: relative;
-      background-color: white;
-      padding: 30px;
-      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-
-      h1 {
-        position: absolute;
-        opacity: 0;
-        top: 35%;
-        left: 37%;
-        color: white;
-        font-size: 2rem;
-        z-index: 2;
-        pointer-events: none;
-      }
-
-      &:hover {
-        transform: scale(1.05);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        h1 {
-          visibility: visible;
-          opacity: 1;
-          transition: opacity 0.6s ease-in;
-        }
-      }
-
-      img {
-        width: 26rem;
-        height: auto;
-        overflow-y: hidden;
-        transition: filter 0.2s ease-out;
-
-        &:hover {
-          filter: brightness(0.5);
-        }
-      }
-    }
   }
 }

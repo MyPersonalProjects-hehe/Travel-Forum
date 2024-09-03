@@ -1,3 +1,4 @@
+import { ImageWrapper } from './../image.wrapper/image.wrapper.component';
 import { Component } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
@@ -9,7 +10,13 @@ import { CardComponent } from './card/card.component';
 @Component({
   selector: 'home-unauthenticated',
   standalone: true,
-  imports: [LoginComponent, RegisterComponent, NgIf, CardComponent],
+  imports: [
+    LoginComponent,
+    RegisterComponent,
+    NgIf,
+    CardComponent,
+    ImageWrapper,
+  ],
   templateUrl: './home.unauthenticated.component.html',
   styleUrl: './home.unauthenticated.component.scss',
 })
