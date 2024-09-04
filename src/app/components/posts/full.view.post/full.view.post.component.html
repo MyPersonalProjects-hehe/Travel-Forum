@@ -1,13 +1,11 @@
 <div class="body">
   <h1>
     View all comments
-    <p-button
-      icon="pi pi-chevron-right"
-      severity="warning"
-      [rounded]="true"
-      [outlined]="true"
+    <span
+      class="pi pi-arrow-circle-right"
       (click)="toggleCommentSection()"
-    />
+      style="font-size: var(--icon-size)"
+    ></span>
   </h1>
 
   <div class="post">
@@ -16,19 +14,20 @@
   <div class="comment__section" [class.open]="isCommentSectionOpen">
     <h3>
       Comments
-      <p-button
+      <span
+        class="pi pi-arrow-circle-left"
         (click)="toggleCommentSection()"
-        icon="pi pi-times"
-        [rounded]="true"
-        [outlined]="true"
-        severity="warning"
-      ></p-button>
+        style="font-size: var(--icon-size)"
+      ></span>
     </h3>
 
     <div *ngIf="comments$?.length > 0; else noComments">
       <div class="comment" *ngFor="let comment of comments$">
         <div class="avatar">
-          <img [src]="comment.avatar" alt="avatar " />
+          <div class="image-fit">
+            <img [src]="comment.avatar" alt="avatar " />
+          </div>
+
           <h4>{{ comment.createdBy }}</h4>
         </div>
         <h1>{{ comment.comment }}</h1>

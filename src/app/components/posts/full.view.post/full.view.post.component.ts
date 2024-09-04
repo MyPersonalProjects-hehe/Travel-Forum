@@ -6,12 +6,11 @@ import { onValue, ref } from 'firebase/database';
 import { Database } from '@angular/fire/database';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { PostService } from '../../../services/post.service';
-import { ButtonModule } from 'primeng/button';
 
 @Component({
   selector: 'fullViewPost',
   standalone: true,
-  imports: [PostComponent, NgFor, NgIf, CommonModule, ButtonModule],
+  imports: [PostComponent, NgFor, NgIf, CommonModule],
   templateUrl: './full.view.post.component.html',
   styleUrl: './full.view.post.component.scss',
 })
