@@ -1,7 +1,10 @@
 <div class="container">
   <h2>Overview</h2>
   <div class="profile__card">
-    <img [src]="userCredentials?.avatar" alt="User Avatar" />
+    <div class="image-fit">
+      <img [src]="userCredentials?.avatar" alt="User Avatar" />
+    </div>
+
     <div class="user__credentials">
       <div class="credential__item">
         <span
