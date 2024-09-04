@@ -4,8 +4,6 @@
   flex-direction: column;
 
   .heading {
-    display: flex;
-    flex-direction: column;
     text-align: center;
     animation: popIn 1s ease-in-out forwards;
     margin: 20px;
@@ -14,31 +12,42 @@
 
   .byte__one {
     animation: fade__right 2s ease-out forwards;
-    animation-delay: 2s;
+    animation-delay: 1.2s;
     visibility: hidden;
-    display: flex;
-    justify-content: flex-start;
   }
 
   .byte__two {
     animation: fade__left 2s ease-out forwards;
-    animation-delay: 4s;
+    animation-delay: 2s;
     visibility: hidden;
-    display: flex;
-    justify-content: flex-end;
   }
 
   .byte__three {
     animation: fade__right 2s ease-out forwards;
-    animation-delay: 6s;
+    animation-delay: 3s;
     visibility: hidden;
-    display: flex;
-    justify-content: flex-start;
   }
 
   .byte__four {
     animation: popInSlow 2s ease-in-out forwards;
-    animation-delay: 8s;
+    animation-delay: 4s;
     visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    p {
+      background-color: rgba(255, 255, 255, 0.582);
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      border-radius: 15px;
+      width: 6rem;
+      height: auto;
+      transition: transform 0.3s ease-out;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
   }
 }

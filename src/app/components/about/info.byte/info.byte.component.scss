@@ -1,28 +1,11 @@
 .container {
-  .block__content {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: row;
-    gap: 10px;
-
-    p {
-      margin-top: 5px;
-    }
-
-    span {
-      margin-top: 2px;
-    }
-  }
-
   .content {
     width: 40rem;
     height: auto;
     background-color: rgba(255, 255, 255, 0.582);
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 35px;
-    overflow: hidden;
+    margin: 15px;
     transition: transform 0.3s ease;
 
     &:hover {
@@ -51,6 +34,22 @@
         border: 2px solid #fff;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+    }
+  }
+
+  .block__content {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+
+    p {
+      margin-top: 5px;
+    }
+
+    span {
+      margin-top: 2px;
     }
   }
 }
