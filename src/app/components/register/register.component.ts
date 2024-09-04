@@ -11,7 +11,7 @@ import { registerError } from '../../services/toast';
   imports: [FormsModule, ToastModule],
   providers: [MessageService],
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css',
+  styleUrl: './register.component.scss',
 })
 export class RegisterComponent {
   email: string = '';
