@@ -22,7 +22,7 @@
     display: none;
     position: absolute;
     top: 100%;
-    left: -13%;
+    left: -14%;
     background-color: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
@@ -36,8 +36,7 @@
 
       &:hover {
         cursor: pointer;
-        color: var(--c-primary);
-        background-color: whitesmoke;
+        background-color: var(--c-dark);
       }
     }
   }
@@ -57,8 +56,10 @@
     .dropdown__menu {
       display: none;
       position: absolute;
-      left: 20%;
+      left: -15%;
       top: 100%;
+      width: 18rem;
+      height: auto;
     }
   }
 }
