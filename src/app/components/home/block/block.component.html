@@ -1,6 +1,6 @@
 <div class="block__container">
   <div class="block__body" *ngIf="isFirstBlock; else second__block">
-    <h2>{{ userInfo[0] }}</h2>
+    <h2>{{ userInfo[0] }}:</h2>
     <div class="info__stats">
       <div class="icon">
         <span
@@ -23,7 +23,7 @@
   <div>
     <ng-template #second__block>
       <div class="block__body">
-        <h2>{{ postsInfo[0] }}</h2>
+        <h2>{{ postsInfo[0] }}:</h2>
         <div class="info__stats">
           <div class="icon">
             <span
