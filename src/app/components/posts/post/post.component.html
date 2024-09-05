@@ -6,6 +6,9 @@
 
     <div class="post__content">
       <h2 class="post__title">{{ post.post?.title }}</h2>
+      <div class="badge" *ngIf="post.post.userId === userId">
+        <p>Your post</p>
+      </div>
 
       <p>{{ post.post?.shortDescription }}</p>
 
@@ -33,11 +36,9 @@
           </button>
 
           <ng-template #postByUser>
-            <div>
-              <comment [isPostByUser]="true" [post]="post"></comment>
-              <delete [post]="post"></delete>
-              <bookmarkHeart [postId]="post.id"></bookmarkHeart>
-            </div>
+            <comment [isPostByUser]="true" [post]="post"></comment>
+            <delete [post]="post"></delete>
+            <bookmarkHeart [postId]="post.id"></bookmarkHeart>
           </ng-template>
         </div>
       </ng-template>
