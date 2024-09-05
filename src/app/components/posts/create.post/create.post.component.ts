@@ -34,11 +34,12 @@ export class CreatePost {
     private postService: PostService,
     private messageService: MessageService,
     private db: Database
-  ) {}
+  ) {
+    this.auth.user$.subscribe((user) => (this.user = user));
+  }
 
   async submitPost() {
     try {
-      this.auth.user$.subscribe((user) => (this.user = user));
       const userRef = (await get(ref(this.db, `users`))).val();
       const user: any = Object.values(userRef).filter(
         (user: any) => user.uid === this.user.uid
