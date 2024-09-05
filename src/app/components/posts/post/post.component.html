@@ -1,14 +1,14 @@
 <div class="post">
   <div class="post__body" *ngIf="post">
     <div class="post__img image-fit">
+      <div class="badge" *ngIf="post.post.userId === userId">
+        <p>Your post</p>
+      </div>
       <img [src]="post.post?.image" alt="Post Image" />
     </div>
 
     <div class="post__content">
       <h2 class="post__title">{{ post.post?.title }}</h2>
-      <div class="badge" *ngIf="post.post.userId === userId">
-        <p>Your post</p>
-      </div>
 
       <p>{{ post.post?.shortDescription }}</p>
 
@@ -31,9 +31,7 @@
             <comment (click)="toggleComment()" [post]="post"></comment>
             <like [isLiked]="isLiked" [post]="post" [userId]="userId"></like>
           </div>
-          <button (click)="showFullPost(post?.id)" class="btn">
-            Full view
-          </button>
+          <button (click)="showFullPost(post?.id)" class="btn">See more</button>
 
           <ng-template #postByUser>
             <comment [isPostByUser]="true" [post]="post"></comment>
