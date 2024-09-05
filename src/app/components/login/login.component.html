@@ -1,60 +1,54 @@
 <div class="form">
-  <div class="form__content">
+  <div class="form__body">
     <div class="form__text">
       <h1>Login now!</h1>
       <h3 class="py-6">Your travel buddies are waiting for you!</h3>
     </div>
-    <div class="form__body">
-      <form (ngSubmit)="login()" class="form__input">
-        <div class="form__control">
-          <label class="label">
-            <span class="label__text">Email</span>
-          </label>
-          <input
-            type="email"
-            placeholder="email"
-            class="input"
-            required
-            [(ngModel)]="email"
-            name="email"
-          />
-        </div>
-        <div class="form__control">
-          <label class="label">
-            <span class="label__text">Password</span>
-          </label>
-          <input
-            [type]="showPassword ? 'text' : 'password'"
-            placeholder="password"
-            class="input"
-            required
-            [(ngModel)]="password"
-            name="password"
-          />
-          <span
-            [class]="
-              showPassword
-                ? 'pi pi-eye-slash toggle__password'
-                : 'pi pi-eye toggle__password'
-            "
-            style="font-size: 1.2rem; color: grey"
-            (click)="togglePasswordVisibility()"
-          ></span>
-        </div>
-        <div class="form__buttons">
-          <button (click)="takeButtonValue('Login')" type="submit" class="btn">
-            Login
-          </button>
-          <button
-            (click)="takeButtonValue('Register')"
-            type="button"
-            class="btn"
-          >
-            Register
-          </button>
-        </div>
-      </form>
-      <p-toast></p-toast>
-    </div>
+    <form (ngSubmit)="login()" class="form__input">
+      <div class="form__control">
+        <label class="label">
+          <span class="label__text">Email</span>
+        </label>
+        <input
+          type="email"
+          placeholder="email"
+          class="input"
+          required
+          [(ngModel)]="email"
+          name="email"
+        />
+      </div>
+      <div class="form__control">
+        <label class="label">
+          <span class="label__text">Password</span>
+        </label>
+        <input
+          [type]="showPassword ? 'text' : 'password'"
+          placeholder="password"
+          class="input"
+          required
+          [(ngModel)]="password"
+          name="password"
+        />
+        <span
+          [class]="
+            showPassword
+              ? 'pi pi-eye-slash toggle__password'
+              : 'pi pi-eye toggle__password'
+          "
+          style="font-size: 1.2rem; color: grey"
+          (click)="togglePasswordVisibility()"
+        ></span>
+      </div>
+      <div class="form__buttons">
+        <button (click)="takeButtonValue('Login')" type="submit" class="btn">
+          Login
+        </button>
+        <button (click)="takeButtonValue('Register')" type="button" class="btn">
+          Register
+        </button>
+      </div>
+    </form>
+    <p-toast></p-toast>
   </div>
 </div>
