@@ -42,6 +42,19 @@
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
+    .comment__avatar {
+      display: flex;
+      align-items: center;
+
+      .image-fit {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 10px;
+      }
+    }
+
     h1 {
       font-size: 1em;
       color: #555;
@@ -60,14 +73,6 @@
       color: #999;
       margin-top: auto;
       text-align: right;
-    }
-
-    .avatar img {
-      border-radius: 60%;
-      width: 50px;
-      height: 50px;
-      left: -35px;
-      top: -5px;
     }
   }
 

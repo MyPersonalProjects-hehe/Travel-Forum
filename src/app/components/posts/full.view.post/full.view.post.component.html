@@ -23,7 +23,7 @@
 
     <div *ngIf="comments$?.length > 0; else noComments">
       <div class="comment" *ngFor="let comment of comments$">
-        <div class="avatar">
+        <div class="comment__avatar">
           <div class="image-fit">
             <img [src]="comment.avatar" alt="avatar " />
           </div>
