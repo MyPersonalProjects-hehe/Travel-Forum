@@ -7,6 +7,7 @@
 @use "./styles/variables" as *;
 @use "./styles/overrides" as *;
 @use "./styles/components/carousel" as *;
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 .main-body {
   background-image: url("../public/background-image.jpg");
@@ -40,8 +41,11 @@
 
 .avatar {
   display: flex;
-  align-items: row;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
+  margin-right: 20px;
+  border-right: solid 2px rgb(83, 83, 83);
+  padding-right: 20px;
 }
 
 h1 {
@@ -71,8 +75,8 @@ p {
 
   .form__body {
     background-color: #ffffff;
-    width: 10cm;
     height: auto;
+    min-width: 400px;
     padding: 2rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -124,7 +128,7 @@ svg {
 .icons {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
 
   > div {
     display: flex;

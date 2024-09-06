@@ -12,20 +12,22 @@
   display: flex;
   align-items: center;
   list-style: none;
+  gap: 10px;
 }
 
 .nav__link {
   font-size: large;
-  color: black;
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 0.25rem;
   transition: background-color 0.3s, color 0.3s;
-  width: 3cm;
+  color: black;
 
-  &:hover {
+  &:hover,
+  &.active__button {
     background-color: var(--c-dark);
     cursor: pointer;
+    color: white;
   }
 }
 

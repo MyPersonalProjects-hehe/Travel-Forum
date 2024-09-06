@@ -8,39 +8,41 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
   height: 50rem;
   padding: 20px;
+  border-radius: 8px;
 
   .sidebar {
     width: 20rem;
-    background: linear-gradient(
-      125deg,
-      rgb(179, 225, 227) 10%,
-
-      var(--c-primary) 20%,
-      var(--c-dark) 100%
-    );
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(1px);
+    border-radius: 8px;
     color: white;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 
     li {
       padding: 15px;
+      border-radius: 5px;
       cursor: pointer;
       list-style-type: none;
       border-bottom: 1px solid white;
       color: black;
       font-size: large;
+      transition: background-color 0.3s, color 0.3s;
+
+      &.active__section {
+        background-color: var(--c-primary);
+        border-bottom: 0px;
+        border: solid 2px;
+        color: white;
+      }
 
       &:hover {
-        background-color: var(--c-dark);
-        transition: background-color 0.7s ease;
+        background-color: var(--c-primary);
+        color: white;
       }
     }
   }
 
-  li.active__section {
-    background-color: var(--c-dark);
-    border-bottom: 0px;
-  }
   .content {
     flex-grow: 1;
     padding: 20px;

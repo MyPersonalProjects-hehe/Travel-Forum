@@ -1,22 +1,22 @@
 .card {
   display: flex;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
   border-width: 1px;
   border-radius: 10px;
-  width: 16cm;
-  padding: 1cm;
+  padding: 30px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
   img {
-    height: 5cm;
+    height: 13rem;
     width: auto;
     border-radius: 10px;
   }
 
   .card__body {
-    margin-left: 1cm;
+    margin-left: 10px;
     text-align: center;
 
     h2 {

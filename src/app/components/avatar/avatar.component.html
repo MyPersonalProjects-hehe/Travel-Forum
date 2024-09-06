@@ -2,7 +2,7 @@
   <div class="image-fit">
     <img [src]="userCredentials$?.avatar" alt="profile picture" />
   </div>
-  <p>Hello {{ userCredentials$?.username }}</p>
+  <p>{{ userCredentials$?.username }}</p>
   <div class="dropdown__menu">
     <a (click)="toggleProfileView()"
       >Profile <span class="pi pi-wrench"> </span

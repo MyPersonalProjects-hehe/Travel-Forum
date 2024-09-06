@@ -1,4 +1,4 @@
-<div class="post">
+<div [class.post--full-view]="showFullView" class="post">
   <div class="post__body" *ngIf="post">
     <div class="post__img image-fit">
       <div class="badge" *ngIf="post.post.userId === userId">
@@ -26,17 +26,21 @@
       </div>
 
       <ng-template #shortView>
-        <div class="icons">
+        <div class="post__actions">
           <div *ngIf="post.post.userId !== userId; else postByUser">
-            <comment (click)="toggleComment()" [post]="post"></comment>
-            <like [isLiked]="isLiked" [post]="post" [userId]="userId"></like>
+            <div class="icons">
+              <comment (click)="toggleComment()" [post]="post"></comment>
+              <like [isLiked]="isLiked" [post]="post" [userId]="userId"></like>
+            </div>
           </div>
           <button (click)="showFullPost(post?.id)" class="btn">See more</button>
 
           <ng-template #postByUser>
-            <comment [isPostByUser]="true" [post]="post"></comment>
-            <delete [post]="post"></delete>
-            <bookmarkHeart [postId]="post.id"></bookmarkHeart>
+            <div class="icons">
+              <comment [isPostByUser]="true" [post]="post"></comment>
+              <delete [post]="post"></delete>
+              <bookmarkHeart [postId]="post.id"></bookmarkHeart>
+            </div>
           </ng-template>
         </div>
       </ng-template>

@@ -1,4 +1,16 @@
 <div class="body">
+  <card></card>
+  <div class="login__register">
+    <login
+      (buttonValue)="onButtonClicked($event)"
+      *ngIf="!user && activeComponent === 'Login'"
+    ></login>
+
+    <register
+      (buttonValue)="onButtonClicked($event)"
+      *ngIf="!user && activeComponent === 'Register'"
+    ></register>
+  </div>
   <div class="images">
     <div>
       <image-wrapper
@@ -24,17 +36,5 @@
         "
       ></image-wrapper>
     </div>
-  </div>
-  <card></card>
-  <div class="login__register">
-    <login
-      (buttonValue)="onButtonClicked($event)"
-      *ngIf="!user && activeComponent === 'Login'"
-    ></login>
-
-    <register
-      (buttonValue)="onButtonClicked($event)"
-      *ngIf="!user && activeComponent === 'Register'"
-    ></register>
   </div>
 </div>
