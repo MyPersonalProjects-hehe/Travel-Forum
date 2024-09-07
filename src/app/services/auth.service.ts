@@ -51,9 +51,10 @@ export class AuthService {
 
   async register(email: string, password: string, username: string) {
     try {
-      const usersRef = Object.keys((await get(ref(this.db, `users`))).val());
+      const usersRef = (await get(ref(this.db, `users`))).val();
       if (usersRef) {
-        validateRegister(email, username, usersRef);
+        const users = Object.keys(usersRef);
+        validateRegister(email, username, users);
       }
 
       const userCredential = await createUserWithEmailAndPassword(
