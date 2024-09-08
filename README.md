@@ -18,6 +18,7 @@ Due to security measures, content uploading/deleting is rejected.
 
 **Languages:** <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" height="20"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/images/TS-logo.png" height="20" > <br />
 **Frameworks/Libraries:** <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/images/angular-logo.png" height="30"> <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/images/primeng-icon.png" height="30">
+**Styles:** <img src="https://github.com/MyPersonalProjects-hehe/Travel-Forum/blob/main/images/SCSS-icon.png" height="30">
 
 **Databases:** <img src="https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white" height="20">
 
