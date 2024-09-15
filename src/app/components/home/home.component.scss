@@ -38,14 +38,11 @@
   }
 }
 
-@media (max-width: 1260px) {
-  .empty__home__container,
-  .home__container {
+@media (max-width: 900px) {
+  .posts__side__info {
     display: flex;
-    flex-direction: column;
-
-    .posts__side__info {
-      margin-top: 60px;
-    }
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

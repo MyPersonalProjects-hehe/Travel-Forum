@@ -23,11 +23,11 @@
     position: absolute;
     border-radius: 8px;
     top: 100%;
-    left: -14%;
+    left: -22%;
     background-color: white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    min-width: 160px;
+    width: 11rem;
 
     a {
       color: black;
@@ -58,12 +58,8 @@
     margin: 0;
 
     .dropdown__menu {
-      display: none;
-      position: absolute;
-      left: -15%;
-      top: 100%;
-      width: 18rem;
-      height: auto;
+      width: 12.2rem;
+      left: -25%;
     }
   }
 }
