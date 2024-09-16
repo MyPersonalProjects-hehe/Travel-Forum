@@ -4,8 +4,11 @@ This is a small testing application developed to explore the basics of Angular. 
 
 You may have noticed that TS is weakly written. As i mentioned TS and Angular are unknown to me, my focus right now is on Angular`s basics and in the future i will correct the types when i have more solid understanding of how TS works.
 
-Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚
-Due to security measures, content uploading/deleting is rejected. 
+Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚 <br/>
+
+<h1>Due to security measures, content uploading/deleting is rejected. </h1>
+
+
 
 <h2> Functionalities 🛠️</h2>
 
