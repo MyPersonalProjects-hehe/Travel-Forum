@@ -7,7 +7,7 @@ You may have noticed that TS is weakly written. As i mentioned TS and Angular ar
 Since it is challenging to find up-to-date information about Angular's updates, I welcome any advice or suggestions, especially from those with Angular experience. 📚 <br/>
 
 
-
+<h1>Due to security measures content uploading/deleting is denied! Functionality can be granted at any time!</h1>
 
 
 <h2> Functionalities 🛠️</h2>
